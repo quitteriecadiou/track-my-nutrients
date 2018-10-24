@@ -1,14 +1,4 @@
 Rails.application.routes.draw do
-  get 'profiles/new'
-  get 'profiles/create'
-  get 'profiles/show'
-  get 'profiles/update'
-  get 'profiles/edit'
-  get 'added_recipes/index'
-  get 'added_recipes/new'
-  get 'added_recipes/create'
-  get 'recipes/index'
-  get 'recipes/show'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
