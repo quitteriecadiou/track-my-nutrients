@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/styleguide', to: 'pages#styleguide'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :profiles, only: [:show, :update, :edit, :new, :create] do
     get '/dashboard', to: "added_recipes#index"
