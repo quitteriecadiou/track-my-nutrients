@@ -22,6 +22,14 @@ $border-radius-base:  2px;
 $border-radius-large: 2px;
 $border-radius-small: 2px;
 
+// Button radius
+$btn-border-radius-base: 17px;
+
+// Progress bars
+$progress-bar-bg:         $medium-gray;
+$progress-bar-success-bg: $medium-green;
+$progress-bar-warning-bg: $medium-orange;
+
 
 // Patch to make simple_form compatible with bootstrap 3
 .invalid-feedback {
