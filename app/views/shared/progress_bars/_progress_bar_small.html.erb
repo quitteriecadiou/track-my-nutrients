@@ -1,0 +1,13 @@
+<div class="progress progress-style progress-small">
+  <% if (percentage_done + percentage_estimate) > 1 %>
+    <div class="progress-bar progress-bar-warning progress-bar-small-round" role="progressbar" style="width: <%= percentage_done * 100 %>%">
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-estimate progress-bar-small-round" role="progressbar" style="width: <%= (percentage_estimate + percentage_done - 1)  * 100 %>%">
+    </div>
+  <% else %>
+    <div class="progress-bar progress-bar-success progress-bar-small-round" role="progressbar" style="width: <%= percentage_done * 100 %>%">
+    </div>
+    <div class="progress-bar progress-bar-success progress-bar-estimate progress-bar-small-round" role="progressbar" style="width: <%= percentage_estimate * 100 %>%">
+    </div>
+  <% end %>
+</div>
