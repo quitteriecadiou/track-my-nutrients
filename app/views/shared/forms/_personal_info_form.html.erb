@@ -1,0 +1,24 @@
+<div class="container complete-form">
+  <h2>Personal Details</h2>
+  <%= simple_form_for :user do |f| %>
+    <%= f.input :first_name, label: false, placeholder: 'Firstname'%>
+    <%= f.input :last_name, label: false, placeholder: 'Lastname'%>
+    <div class="inline-row">
+      <%= f.input_field :gender, as: :radio_buttons, label: false, collection: [['0', 'Female'], ['1', 'Male']], label_method: :second, value_method: :first%>
+    </div>
+    <%= f.input :date_of_birth, as: :date, input_html: { class: 'medium' }, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:day, :month, :year] %>
+    <div class="inline-row">
+      <%= f.input :height, input_html: { class: 'small' }, label: false%>
+      <p>cm</p>
+      <%= f.input :weight, input_html: { class: 'small' }, label: false %>
+      <p>kg</p>
+    </div>
+    <%= f.button :submit, "SUBMIT", class: "btn-light-orange" %>
+  <% end %>
+
+</div>
+
+
+height
+weight
+diet

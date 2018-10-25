@@ -1,0 +1,8 @@
+<div class="container complete-form">
+  <h2>Sign In</h2>
+  <%= simple_form_for :user do |f| %>
+    <%= f.input :email, label: false, placeholder: 'Email'%>
+    <%= f.input :password, label: false, placeholder: 'Password'%>
+    <%= f.button :submit, "SIGN IN", class: "btn-light-orange" %>
+  <% end %>
+</div>

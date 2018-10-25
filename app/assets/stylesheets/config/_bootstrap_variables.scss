@@ -58,4 +58,51 @@ $progress-bar-warning-bg: $medium-orange;
   display: block;
 }
 
+
+
+
+
+
+
+
+
+
+$input-color:                    $dark-gray;
+$input-border:                   $medium-gray;
+$input-border-radius:            3px;
+
+
+//** Border color for inputs on focus
+$input-border-focus:             $medium-gray;
+
+//** Placeholder text color
+$input-color-placeholder:        $dark-gray;
+
+//** Default `.form-control` height
+$input-height-base:              45px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Override other variables below!
