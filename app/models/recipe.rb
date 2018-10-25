@@ -7,5 +7,5 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true
   validates :portion, presence: true
-  validates :category, presence: true, inlcusion: { in: ['breakfast', 'lunch', 'dinner', 'snack', 'dessert'] }
+  validates :category, presence: true, inclusion: { in: ['breakfast', 'lunch', 'dinner', 'snack', 'dessert'] }
 end
