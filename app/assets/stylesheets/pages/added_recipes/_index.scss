@@ -2,9 +2,14 @@
   display: table;
   padding: 2% 5%;
   margin: 0;
+  background-color: white;
 }
 
-
+.dashboard-gray-line-background {
+  height: 1px;
+  width: 100%;
+  background-color: white;
+}
 
 .dashboard-orange-line {
   background-color: $light-orange;
