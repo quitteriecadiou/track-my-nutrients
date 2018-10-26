@@ -1,0 +1,75 @@
+<div class="nutrient-tracker">
+  <div class="nutrient-tracker-header">
+    <h3>Food Diary</h3>
+    <div class="nutrient-tracker-view">
+      <a href="#" class="selected">Daily</a><span> | </span><a href="#">Weekly</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+         <%= link_to '#' do %>
+          <div class="food-diary-card add-meal">
+            <div class="add-meal-container">
+              <div>
+                <%= image_tag "bowl-spoon.png", height: 50 %>
+              </div>
+              <div class="btn btn-light-orange btn-action btn-large">
+                <i class="fas fa-plus"></i>
+                ADD MEAL
+              </div>
+            </div>
+          </div>
+         <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to '#' do %>
+          <div class ="food-diary-card added-recipe">
+            <div class="added-recipe-container">
+              <div class="added-recipe-category">
+                <p>Breakfast</p>
+                <div class="orange-bar">
+                </div>
+              </div>
+              <div class="added-recipe-name">
+                <p>Ceasar green salad</p>
+              </div>
+            </div>
+          </div>
+          <%end%>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to '#' do %>
+          <div class ="food-diary-card added-recipe">
+            <div class="added-recipe-container">
+              <div class="added-recipe-category">
+                <p>Breakfast</p>
+                <div class="orange-bar">
+                </div>
+              </div>
+              <div class="added-recipe-name">
+                <p>Ceasar green salad</p>
+              </div>
+            </div>
+          </div>
+        <%end%>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+         <%= link_to '#' do %>
+          <div class ="food-diary-card added-recipe">
+            <div class="added-recipe-container">
+              <div class="added-recipe-category">
+                <p>Breakfast</p>
+                <div class="orange-bar">
+                </div>
+              </div>
+              <div class="added-recipe-name">
+                <p>Ceasar green salad</p>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.recipe-tracker {
+  height: 130px;
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.recipe-nutrient-tracker {
+  width: 430px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-tracker-arrow {
+  width: 25px;
+}
+
+.recipe-nutrient-tracker-content {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.recipe-nutrient-tracker-content h4 {
+  margin: 0;
+}

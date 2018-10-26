@@ -1,0 +1,49 @@
+<div class="recipe-tracker">
+  <div class="recipe-nutrient-tracker">
+    <div class="recipe-nutrient-tracker-header">
+      <span>Nutrient 1</span>
+    </div>
+    <div class="recipe-nutrient-tracker-content">
+      <h4>+5g</h4>
+      <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
+      <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.4, percentage_estimate: 0.2 %>
+      <div class="recipe-card-fraction body-small"><span>15g</span><span class="thin"> / 20g</span></div>
+    </div>
+  </div>
+
+  <div class="recipe-nutrient-tracker">
+    <div class="recipe-nutrient-tracker-header">
+      <span>Nutrient 2</span>
+    </div>
+    <div class="recipe-nutrient-tracker-content">
+      <h4>+5g</h4>
+      <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
+      <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.8, percentage_estimate: 0.7 %>
+      <div class="recipe-card-fraction body-small"><span>15g</span><span class="thin"> / 20g</span></div>
+    </div>
+  </div>
+
+  <div class="recipe-nutrient-tracker">
+    <div class="recipe-nutrient-tracker-header">
+      <span>Nutrient 3</span>
+    </div>
+    <div class="recipe-nutrient-tracker-content">
+      <h4>+5g</h4>
+      <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
+      <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.2, percentage_estimate: 0.6 %>
+      <div class="recipe-card-fraction body-small"><span>15g</span><span class="thin"> / 20g</span></div>
+    </div>
+  </div>
+
+  <div class="recipe-nutrient-tracker">
+    <div class="recipe-nutrient-tracker-header">
+      <span>Nutrient 4</span>
+    </div>
+    <div class="recipe-nutrient-tracker-content">
+      <h4>+5g</h4>
+      <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
+      <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.56, percentage_estimate: 0.23 %>
+      <div class="recipe-card-fraction body-small"><span>15g</span><span class="thin"> / 20g</span></div>
+    </div>
+  </div>
+</div>
