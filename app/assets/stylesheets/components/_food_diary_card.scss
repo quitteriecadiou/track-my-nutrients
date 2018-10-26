@@ -1,0 +1,86 @@
+/*FOOD DIARY : general frame for food diary cards*/
+.food-diary-card {
+  margin-top: 20px;
+  display: flex;
+  align-item: center;
+  justify-content: center;
+  height: 209px;
+  width: 289px;
+  background-size: cover !important;
+  border-radius: 3px;
+  text-align: center;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+
+/*FOOD DIARY : first card to suggest "add a meal" */
+.add-meal {
+  background: rgba(242, 242, 242, 0.59);  border-radius: 3px;
+}
+
+.add-meal:hover {
+  background: linear-gradient(rgba(0,0,0,0.06), rgba(0,0,0,0.06));
+}
+
+.add-meal-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  height: 55%;
+}
+
+.add-meal-container img {
+  opacity: 0.65;
+}
+
+/*FOOD DIARY : recipes added */
+.added-recipe {
+  background: asset-url('added-recipe-test.jpg');
+}
+
+.added-recipe:hover {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url('added-recipe-test.jpg');
+}
+
+.added-recipe-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  height: 40%;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.added-recipe-category {
+position: absolute;
+width: 100%;
+height: 50%;
+background: #FFFFFF;
+padding: 5px;
+color: $medium-gray;
+font-weight: 400;
+}
+
+.orange-bar {
+position: absolute;
+width: 160px;
+height: 5px;
+background: $light-orange;
+border-radius: 3.5px;
+top: 38px;
+left: 14%;
+z-index: 1;
+}
+
+.added-recipe-name {
+position: absolute;
+width: 100%;
+padding-top: 20%;
+}
