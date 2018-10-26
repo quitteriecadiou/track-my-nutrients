@@ -1,0 +1,50 @@
+<div class="recipe-card">
+  <div class="recipe-card-header">
+    <h4 class="text-center">Recipe Name</h4>
+    <div class="recipe-card-orange-line"></div>
+  </div>
+  <div class="recipe-card-content">
+    <div class="recipe-card-photo">
+
+    </div>
+    <div class="recipe-card-tracker">
+      <div class="recipe-card-nutrient">
+        <p class="recipe-card-nutrient-name body-small">Nutrient 1</p>
+        <div class="recipe-card-impact">
+          <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.15, percentage_estimate: 0.1 %><span>+5g</span>
+        </div>
+      </div>
+      <div class="recipe-card-nutrient">
+        <p class="recipe-card-nutrient-name body-small">Nutrient 2</p>
+        <div class="recipe-card-impact">
+          <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.9, percentage_estimate: 0.3 %><span>+4g</span>
+        </div>
+      </div>
+      <div class="recipe-card-nutrient">
+        <p class="recipe-card-nutrient-name body-small">Nutrient 3</p>
+        <div class="recipe-card-impact">
+          <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.5, percentage_estimate: 0.2 %><span>+10g</span>
+        </div>
+      </div>
+      <div class="recipe-card-nutrient">
+        <p class="recipe-card-nutrient-name body-small">Nutrient 4</p>
+        <div class="recipe-card-impact">
+          <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0, percentage_estimate: 0.2 %><span>+2g</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recipe-card-footer">
+    <div class="recipe-card-attributes">
+      <div class="recipe-card-attribute">
+        <i class="far fa-clock"></i><span class="body-small"> 30 minutes</span>
+      </div>
+      <div class="recipe-card-attribute">
+        <i class="fas fa-utensils"></i><span class="body-small"> Lunch</span>
+      </div>
+    </div>
+    <div class="recipe-card-add">
+      <a href="#" class="btn btn-action btn-small btn-dark-green"><i class="fas fa-plus"></i> ADD MEAL TO FOOD DIARY</a>
+    </div>
+  </div>
+</div>
