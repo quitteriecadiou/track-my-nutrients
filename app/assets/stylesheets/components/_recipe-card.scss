@@ -1,0 +1,71 @@
+.recipe-card {
+  width: 400px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid $light-gray;
+}
+
+
+.recipe-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-card-orange-line {
+  height: 4px;
+  width: 70%;
+  border-radius: 2px;
+  background-color: $light-orange;
+}
+
+.recipe-card-content {
+  display: flex;
+}
+
+
+.recipe-card-photo {
+  width: 50%;
+  // To change with height %
+  height: 180px;
+  background-color: $light-gray;
+}
+
+.recipe-card-tracker {
+  width: 50%;
+  // To change with height %
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2%;
+}
+
+.recipe-card-nutrient-name {
+  margin-bottom: 0;
+  padding-left: 4%;
+}
+
+.recipe-card-impact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.recipe-card-impact span {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.recipe-card-attributes {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+}
