@@ -1,0 +1,55 @@
+
+/* HOMEPAGE - from le wagon component*/
+.banner {
+  color: white;
+  height: calc(100vh - 40px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: asset-url('background-dark-green.jpg');
+}
+/* [wrapper] - white transparent banner with title and buttons */
+.banner-content {
+  background-color: rgba(255,255,255,0.9);
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+  text-align: center;
+  color: $dark-green;
+}
+
+.green-bar {
+width: 100%;
+height: 8px;
+background: $dark-green;
+border-radius: 3.5px;
+}
+
+.banner-content h4 {
+  color: black;
+  font-weight: 400;
+}
+
+.banner-body {
+  width: 50%;
+  display: flex; /* contexte sur le parent */
+  flex-direction: column; /* direction d'affichage verticale */
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.banner-title {
+  display: relative
+}
+
+.banner-btn {
+  justify-content: center;
+}
+
+.btn-margin {
+  margin: 0 10px;
+}
