@@ -1,0 +1,36 @@
+.diet-card {
+  width: 230px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid $medium-gray;
+  display: flex;
+  flex-direction: column; /* direction d'affichage verticale */
+  align-items: center;
+  padding: 10px;
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  p.body-small{
+  font-weight: 200;
+}
+}
+
+.diet-card-purple-bar {
+  height: 4px;
+  width: 70%;
+  border-radius: 4px;
+  background-color: $purple;
+  margin: 3px;
+}
+
+
+
+
+.diet-title {
+  text-align: center;
+}
+
+
+
+
