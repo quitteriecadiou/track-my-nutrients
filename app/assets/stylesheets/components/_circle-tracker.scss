@@ -1,0 +1,21 @@
+.circle-tracker {
+  width: 300px;
+  height: 350px;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 1px solid $light-gray;
+}
+
+.circle-tracker-progress {
+  height: 280px;
+  background-color: white;
+}
+
+.circle-tracker-title {
+  height: 69px;
+  background-color: rgba(255,255,255,0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 0 3px 3px;
+}

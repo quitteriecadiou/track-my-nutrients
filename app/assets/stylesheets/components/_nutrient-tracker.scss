@@ -1,0 +1,26 @@
+.nutrient-tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 80%;
+  background-color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.nutrient-tracker-view a {
+  color: $dark-gray;
+}
+
+.nutrient-tracker-view a:hover {
+  text-decoration: none;
+}
+
+.nutrient-tracker-body {
+  background-color: rgba(255,255,255,0.9);
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+}
