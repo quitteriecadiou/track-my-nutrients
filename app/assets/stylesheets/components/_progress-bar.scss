@@ -1,13 +1,9 @@
+// Larger progress bar (for Nutrient Tracker in Dashboard)
+
 .progress-style {
   background-color: #F2F2F2;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 0;
-}
-
-.progress-small {
-  width: 130px;
-  height: 13px;
-  border-radius: 6.5px;
 }
 
 .progress-large {
@@ -16,20 +12,10 @@
   border-radius: 12px;
 }
 
-.progress-bar-small-round {
-  border-radius: 0 6.5px 6.5px 0;
-  box-shadow: none;
-}
-
 .progress-bar-large-round {
   border-radius: 12px;
   box-shadow: none;
   position: relative;
-}
-
-.progress-bar-estimate {
-  opacity: 0.5;
-  box-shadow: none;
 }
 
 .progress-bar-label-inside {
@@ -50,3 +36,30 @@
   left: 175px;
   top: -1.5px;
 }
+
+// Smaller progress bar used in Recipe cards (in recipe index and recipe show)
+
+.progress-bar-small-round {
+  border-radius: 6.5px;
+  height: 13px;
+  height: 13px;
+}
+
+.progress-bar-base {
+  background-color: #F2F2F2;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 130px;
+  position: relative;
+}
+
+.progress-bar-estimate {
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+}
+
+.progress-bar-done {
+  position: absolute;
+  left: 0;
+}
+
