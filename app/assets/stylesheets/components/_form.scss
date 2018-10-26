@@ -1,37 +1,44 @@
 form {
-  margin-top : 40px;
-  display: flex; /* contexte sur le parent */
-  flex-direction: column; /* direction d'affichage verticale */
+  margin-top : 30px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 
-  .btn-light-orange{
-    margin-top: 25px;
-  }
 }
 
+input:placeholder {
+  color: red;
+}
+
+label {
+  font-weight: 200;
+}
+
+
 .complete-form{
-  display: flex; /* contexte sur le parent */
-  flex-direction: column; /* direction d'affichage verticale */
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin : 10px;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 80vh;
+  width: 50vh;
+}
+
+.form-control {
+  box-shadow: none;
+  width: 250px;
+  margin: 15px 15px 15px 15px;
+  border-radius: 3px;
 }
 
 .form-control.input-small {
     width: 80px;
   }
 
-.form-control {
-  box-shadow: none;
-  width: 250px;
-  margin: 15px 5px 15px 15px;
-  border-radius: 3px;
-}
-
 .form-control.input-medium {
     width: 110px;
   }
-
-
 
 .inline-row{
   display: flex;
@@ -43,6 +50,7 @@ form {
   display: inline-block;
 }
 
+
 #personal-info-form {
   .form-control {
     margin: 3px;
@@ -50,6 +58,36 @@ form {
   p{
     margin-right: 10px;
   }
+}
+
+#filter-bar {
+  flex-direction : row;
+  .form-group {
+  margin: 0;
+  }
+  form {
+    margin-top: 0px;
+  }
+}
+
+.filters {
+  display: flex;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+}
+
+.d-flex.flex-row.justify-content-between.align-items-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper_and_form {
+  display: flex;
+  justify-content: center;
 }
 
 

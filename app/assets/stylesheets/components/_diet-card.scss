@@ -1,19 +1,17 @@
 .diet-card {
-  width: 230px;
+  width: 250px;
   background-color: white;
   border-radius: 3px;
   border: 1px solid $medium-gray;
   display: flex;
-  flex-direction: column; /* direction d'affichage verticale */
+  flex-direction: column;
   align-items: center;
   padding: 10px;
+  margin: 10px;
   p {
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  p.body-small{
-  font-weight: 200;
-}
 }
 
 .diet-card-purple-bar {
