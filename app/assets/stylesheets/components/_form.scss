@@ -9,8 +9,6 @@ form {
   }
 }
 
-
-
 .complete-form{
   display: flex; /* contexte sur le parent */
   flex-direction: column; /* direction d'affichage verticale */
@@ -18,34 +16,41 @@ form {
   margin : 10px;
 }
 
+.form-control.input-small {
+    width: 80px;
+  }
 
 .form-control {
   box-shadow: none;
   width: 250px;
-  margin: 15px;
+  margin: 15px 5px 15px 15px;
+  border-radius: 3px;
 }
 
-.form-control.medium {
+.form-control.input-medium {
     width: 110px;
   }
 
-.form-control.small {
-    width: 80px;
-  }
+
 
 .inline-row{
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .inline-date{
   display: inline-block;
 }
 
-.form-check{
-  padding: 10px;
-  .radio_buttons {
-    margin: 5px;
+#personal-info-form {
+  .form-control {
+    margin: 3px;
+  }
+  p{
+    margin-right: 10px;
   }
 }
+
+
+

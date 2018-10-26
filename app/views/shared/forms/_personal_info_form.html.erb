@@ -1,24 +1,29 @@
-<div class="container complete-form">
+<div class="container complete-form" id="personal-info-form">
   <h2>Personal Details</h2>
   <%= simple_form_for :user do |f| %>
     <%= f.input :first_name, label: false, placeholder: 'Firstname'%>
     <%= f.input :last_name, label: false, placeholder: 'Lastname'%>
+    <%= f.input :gender, as: :select, prompt: 'Gender', label: false, collection: ['Female','Male']%>
+    <!-- Date of birth : à mettre en inline + changer taille des input -->
+    <%= f.input :date_of_birth, as: :date, input_html: { class: 'input-medium' }, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:day, :month, :year] %>
+    <!-- Reussir à mettre les deux sous div de part et d'autre de la premiere div pour que tout soit aligné -->
     <div class="inline-row">
-      <%= f.input_field :gender, as: :radio_buttons, label: false, collection: [['0', 'Female'], ['1', 'Male']], label_method: :second, value_method: :first%>
+      <div class="inline-row">
+        <%= f.input :height, input_html: { class: 'input-small' }, label: false %>
+        <p>cm</p>
+      </div>
+      <div class="inline-row">
+        <%= f.input :weight, input_html: { class: 'input-small' }, label: false %>
+        <p>kg</p>
+      </div>
     </div>
-    <%= f.input :date_of_birth, as: :date, input_html: { class: 'medium' }, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:day, :month, :year] %>
-    <div class="inline-row">
-      <%= f.input :height, input_html: { class: 'small' }, label: false%>
-      <p>cm</p>
-      <%= f.input :weight, input_html: { class: 'small' }, label: false %>
-      <p>kg</p>
+    <%= f.input :diet, as: :select, prompt: 'Choose your diet', label: false, collection: ['diet_name1', 'diet_name2', 'diet_name3']%>
+    <%= f.button :submit, "SUBMIT", class: "btn btn-action btn-purple" %>
+    <div>
+      <!-- Diet-card with description-->
     </div>
-    <%= f.button :submit, "SUBMIT", class: "btn-light-orange" %>
   <% end %>
 
 </div>
 
-
-height
-weight
-diet
+<!-- A voir : Label, border radius des select -->
