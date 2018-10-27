@@ -1,13 +1,64 @@
 <div class="container recipe-header">
   <div class="recipe-gray-line"></div>
   <div class ="recipe-header-content">
-    <h2>
-      Recipe Name
-      <div class="recipe-green-line"></div>
-    </h2>
-    <%= render "shared/recipe_tracker" %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="recipe-header-text">
+          <h3>
+            Recipe Name
+            <div class="recipe-green-line"></div>
+          </h3>
+          <%= render "shared/recipe_tracker" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 pull-right">
+        <div class="recipe-header-photo">
+          <%= image_tag 'added-recipe-test.jpg' %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="recipe-header-photo">
+</div>
 
+
+<div class="medium-green-wrapper">
+  <div class="container recipe-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="recipe-attributes">
+            <div class="recipe-attribute">
+              <i class="far fa-clock"></i><span> 30 minutes</span>
+            </div>
+            <div class="recipe-attribute">
+              <i <i class="far fa-user"></i><span> 4</span>
+            </div>
+            <div class="recipe-attribute">
+              <i class="fas fa-signal"></i><span> Medium</span>
+            </div>
+            <div class="recipe-attribute">
+              <i class="fas fa-utensils"></i><span> Lunch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-5">
+        <div class="recipe-ingredients recipe-in">
+          <h4>
+            Ingredients
+            <div class="recipe-small-green-line"></div>
+          </h4>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-7">
+        <div class="recipe-instructions recipe-in">
+          <h4>
+            Instructions
+            <div class="recipe-small-green-line"></div>
+          </h4>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

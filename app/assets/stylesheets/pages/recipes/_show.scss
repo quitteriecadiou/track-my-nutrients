@@ -1,15 +1,15 @@
 .recipe-header {
   background-color: white;
-  display: flex;
-  justify-content: space-between;
+  width: 70%;
+  padding: 2% 5%;
 }
 
-.recipe-header-content h2 {
+.recipe-header-text h3 {
   display: table;
 }
 
 .recipe-green-line {
-  background-color: $dark-green;
+  background-color: $medium-green;
   height: 6px;
   width: 100%;
   border-radius: 3px;
@@ -19,12 +19,53 @@
   background-color: $medium-gray;
   opacity: 0.7;
   height: 1px;
-  width: 90%;
-  margin: 0 5%;
+  width: 100%;
+  margin: 0;
 }
 
-.recipe-header-photo {
-  width: 50%;
-  background-color: red;
-  height: 100px;
+.recipe-header-photo img {
+  width: 80%;
+  height: 200px;
+  margin-left: 20%;
 }
+
+.recipe-container {
+  width: 75%;
+  height: 300px;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.recipe-attributes {
+  background-color: white;
+  width: 84%;
+  margin: 2% 8%;
+  display: flex;
+  justify-content: space-around;
+  padding: 2% 0;
+}
+
+.recipe-in {
+  background-color: white;
+}
+
+.recipe-in h4 {
+  display: table;
+  padding-top: 2%;
+  padding-left: 4%;
+}
+
+.recipe-small-green-line  {
+  background-color: $medium-green;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.recipe-ingredients {
+  margin-left: 20%;
+}
+
+.recipe-instructions {
+  margin-right: 14%;
+}
+
