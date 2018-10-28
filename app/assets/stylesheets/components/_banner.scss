@@ -9,6 +9,8 @@
   align-items: center;
   justify-content: center;
   background: asset-url('background-dark-green.jpg');
+  background-position: center;
+  overflow: scroll;
 }
 /* [wrapper] - white transparent banner with title and buttons */
 .banner-content {
@@ -52,4 +54,36 @@ border-radius: 3.5px;
 
 .btn-margin {
   margin: 0 10px;
+}
+
+/*LOGO HEADER BAR */
+.logo-header {
+margin-top: 20px;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+/* SECTION 1 */
+.wrapper-home {
+  height: 60vh;
+  background-color: #F2F2F2;
+  border: 2px solid red;
+}
+
+.section-body {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+
+.section-text {
+  border: 2px green solid;
+}
+
+.screenshot {
+  width: 80%;
+  height: 80%;
 }
