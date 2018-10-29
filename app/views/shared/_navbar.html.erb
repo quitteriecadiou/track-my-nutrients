@@ -13,7 +13,9 @@
       <!-- Links when logged in -->
       <%= link_to "Dashboard", "#", class: "navbar-tmn-item navbar-tmn-link" %>
       <%= link_to "Recipes", "#", class: "navbar-tmn-item navbar-tmn-link" %>
-
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+      <% end %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-tmn-item">
         <div class="dropdown">
