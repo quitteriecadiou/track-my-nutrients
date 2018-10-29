@@ -1,3 +1,4 @@
+  <!-- BANNER for aLl screens EXCEPT MOBILES -->
 <div class="banner hidden-xs" >
   <div class="banner-content">
     <div class="banner-body">
@@ -10,21 +11,26 @@
       <h4>Find out more</h4>
       <% end %>
       <div>
-        <div class="banner-btn">
-          <div class="btn btn-action btn-dark-green btn-large btn-margin">
-          Sign up
+        <% if !user_signed_in? %>
+          <div class="banner-btn">
+            <%= link_to new_user_registration_path do %>
+              <div class="btn btn-action btn-dark-green btn-large btn-margin">
+              Sign up
+              </div>
+            <% end %>
+            <%= link_to new_user_session_path do %>
+              <div class="btn btn-action btn-dark-green btn-large btn-margin">
+              Sign in
+              </div>
+            <% end %>
           </div>
-          <div class="btn btn-action btn-dark-green btn-large btn-margin">
-          Sign in
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 
-
-  <!-- On mobile only -->
+  <!-- Banner on mobile only -->
   <div class="hidden-sm hidden-md hidden-lg">
     <div class="banner" >
       <div class="banner-content-mobile">
@@ -38,29 +44,36 @@
           <p>Find out more</p>
           <% end %>
           <div>
+           <% if !user_signed_in? %>
             <div class="banner-btn">
-              <div class="btn btn-action btn-dark-green btn-small btn-margin">
-              Sign up
-              </div>
-              <div class="btn btn-action btn-dark-green btn-small btn-margin">
-              Sign in
-              </div>
+              <%= link_to new_user_registration_path do %>
+                <div class="btn btn-action btn-dark-green btn-small btn-margin">
+                Sign up
+                </div>
+              <% end %>
+              <%= link_to new_user_session_path do %>
+                <div class="btn btn-action btn-dark-green btn-small btn-margin">
+                Sign in
+                </div>
+              <% end %>
             </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
 </div>
 
+  <!-- ALL SCREENS -->
 <div class="header-white">
   <%= image_tag "logo.png", height: 100 %>
 </div>
 
 <div class="container-fluid" id="grid">
 
-  <div class="row row-1">
-    <div class="col-xs-12 col-sm-12 col-md-6 text">
-       <i class="fas fa-chart-pie"></i>
+  <div class="row-1 row">
+    <div class="text col-xs-12 col-sm-12 col-md-6">
+       <i class="fas fa-chart-pie fas-home"></i>
        <h2>1. Check your tracker</h2>
        <p>With Track My Nutrients, you can get an overview of your daily nutritional intake to keep track of your diet.
       </p>
@@ -74,35 +87,37 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 image" id="image1">
+    <div class="image col-xs-12 col-sm-12 col-md-6" id="image1">
     </div>
   </div>
 
-  <div class="row row-2">
-    <div class="col-xs-12 col-sm-12 col-md-6 image" id="image2">
+  <div class="row-2 row">
+    <div class="image col-xs-12 col-sm-12 col-md-6" id="image2">
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 text">
-      <i class="fas fa-chalkboard-teacher"></i>
-       <h2>2. See your recipes</h2>
-        <p>You can choose to follow one of our three different diets. Diet-related recipes will be suggested and you can filter them according to the ingredients you have, the name or the category of the meal.</p>
+    <div class="text col-xs-12 col-sm-12 col-md-6">
+      <i class="fas fa-chalkboard-teacher fas-home"></i>
+      <h2>2. See your recipes</h2>
+      <p>You can choose to follow one of our three different diets. Diet-related recipes will be suggested and you can filter them according to the ingredients you have, the name or the category of the meal.</p>
     </div>
   </div>
 
-  <div class="row row-3">
-    <div class="col-xs-12 col-sm-12 col-md-6 text">
-       <i class="fas fa-utensils"></i>
+  <div class="row-3 row">
+    <div class="text col-xs-12 col-sm-12 col-md-6">
+       <i class="fas fa-utensils fas-home"></i>
        <h2>3. Add a meal to your tracker</h2>
-        <p>With Track My NUtrients, you can add the meal you have eaten to your food diary.<br>
-        The tracker will automatically compute the nutrients intake of the recipe.</p>
+       <p>With Track My NUtrients, you can add the meal you have eaten to your food diary.<br>The tracker will automatically compute the nutrients intake of the recipe.</p>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 image" id="image3">
+    <div class="image col-xs-12 col-sm-12 col-md-6" id="image3">
     </div>
   </div>
 
 </div>
 
-<div class="header-white padding-bottom">
-  <div class="btn btn-action btn-dark-green btn-large btn-margin">
-  Sign up
+<% if !user_signed_in? %>
+  <div class="header-white padding-bottom">
+    <%= link_to new_user_registration_path do %>
+      <div class="btn btn-action btn-dark-green btn-large btn-margin">Sign up
+      </div>
+    <% end %>
   </div>
-</div>
+<% end %>
