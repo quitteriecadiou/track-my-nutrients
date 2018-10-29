@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+
+
   root to: 'pages#home'
   get '/styleguide', to: 'pages#styleguide'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -8,5 +10,5 @@ Rails.application.routes.draw do
     post '/dashboard', to: "added_recipes#create"
     get '/dashboard/new', to: "added_recipes#new"
   end
-  resources :recipes, only: [:index, :show]
+    resources :recipes, only: [:index, :show]
 end

@@ -9,5 +9,5 @@ class Profile < ApplicationRecord
   validates :personal_diet, presence: true
   validates :height, presence: true
   validates :weight, presence: true
-  validates :gender, inclusion: { in: ['female', 'male'] }
+  validates :gender, inclusion: { in: ['Female', 'Male'] }
 end
