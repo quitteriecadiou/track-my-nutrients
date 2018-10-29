@@ -21,20 +21,20 @@
 .progress-bar-label-inside {
   position: absolute;
   right: 5px;
-  top: -1.5px;
+  top: 2px;
 }
 
 .progress-bar-label-outside {
   position: absolute;
   right: -32px;
-  top: -1.5px;
+  top: 2px;
   color: $medium-gray;
 }
 
 .progress-bar-label-inside-fixed {
   position: absolute;
-  left: 175px;
-  top: -1.5px;
+  right: 5px;
+  top: 2px;
 }
 
 // Smaller progress bar used in Recipe cards (in recipe index and recipe show)

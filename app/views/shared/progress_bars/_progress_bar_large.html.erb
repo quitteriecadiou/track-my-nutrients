@@ -1,6 +1,6 @@
 <div class="progress progress-style progress-large">
   <% if percentage > 1 %>
-    <div class="progress-bar progress-bar-warning progress-bar-large-round" role="progressbar"  style="width: <%= percentage * 100 %>%">
+    <div class="progress-bar progress-bar-warning progress-bar-large-round" role="progressbar"  style="width: 100%">
       <span class="progress-bar-label-inside-fixed"><%= (percentage * 100).round %>%</span>
     </div>
   <% elsif percentage >= 0.17 %>

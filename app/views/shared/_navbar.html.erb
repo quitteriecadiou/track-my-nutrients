@@ -13,9 +13,10 @@
       <!-- Links when logged in -->
       <%= link_to "Dashboard", "#", class: "navbar-tmn-item navbar-tmn-link" %>
       <%= link_to "Recipes", "#", class: "navbar-tmn-item navbar-tmn-link" %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "navbar-tmn-item navbar-tmn-link" do %>
         <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
       <% end %>
+  
       <!-- Avatar with dropdown menu -->
       <div class="navbar-tmn-item">
         <div class="dropdown">
@@ -47,7 +48,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-tmn-dropdown-menu">
         <li><a href="#">Settings</a></li>
-        <li><a href="#">Log out</a></li>
+
       </ul>
     </div>
   </div>
