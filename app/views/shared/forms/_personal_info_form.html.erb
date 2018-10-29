@@ -15,7 +15,7 @@
         <p>kg</p>
       </div>
     </div>
-    <%= f.input :personal_diet, as: :select, prompt: 'Choose your diet', label: false, collection: ['diet_name1', 'diet_name2', 'diet_name3'] %>
+    <%= f.input :personal_diet, as: :select, prompt: 'Choose your diet', label: false, collection: [nil, 1,'diet_name1', 'diet_name2', 'diet_name3'] %>
     <div>
       <%= render 'shared/diet_card' %>
     </div>
