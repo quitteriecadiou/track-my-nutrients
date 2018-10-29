@@ -1,0 +1,48 @@
+.search-bar {
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-list-header {
+  background-color: white;
+  width: 145vh;
+}
+
+.recipe-list-header-text h3 {
+  display: table;
+  padding-bottom: 3%;
+}
+
+.recipe-list-green-line {
+  background-color: $dark-green;
+  height: 6px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.recipe-list-gray-line {
+  background-color: $medium-gray;
+  opacity: 0.7;
+  height: 1px;
+  width: 140vh;
+  margin: 10px;
+}
+
+.recipe-list-grey-background {
+  background-color: $light-gray;
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-card {
+  margin-bottom: 10px;
+}
+
+.recipe-card-container{
+  padding: 0 5%;
+}
