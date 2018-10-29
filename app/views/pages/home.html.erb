@@ -1,4 +1,4 @@
-<div class="banner" >
+<div class="banner hidden-xs" >
   <div class="banner-content">
     <div class="banner-body">
       <div class="banner-title">
@@ -6,7 +6,9 @@
         <div class="green-bar">
         </div>
       </div>
+      <%= link_to '#image1' do %>
       <h4>Find out more</h4>
+      <% end %>
       <div>
         <div class="banner-btn">
           <div class="btn btn-action btn-dark-green btn-large btn-margin">
@@ -21,20 +23,86 @@
   </div>
 </div>
 
-<div class="logo-header">
+
+  <!-- On mobile only -->
+  <div class="hidden-sm hidden-md hidden-lg">
+    <div class="banner" >
+      <div class="banner-content-mobile">
+        <div class="banner-body-mobile">
+          <div class="banner-title">
+            <h3>Track My Nutrients</h3>
+            <div class="green-bar">
+            </div>
+          </div>
+          <%= link_to '#image1' do %>
+          <p>Find out more</p>
+          <% end %>
+          <div>
+            <div class="banner-btn">
+              <div class="btn btn-action btn-dark-green btn-small btn-margin">
+              Sign up
+              </div>
+              <div class="btn btn-action btn-dark-green btn-small btn-margin">
+              Sign in
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="header-white">
   <%= image_tag "logo.png", height: 100 %>
 </div>
 
-<div class="wrapper-home" id="section 1">
-  <div class="section-container">
-    <div class="section-body">
-      <div class="section-text">
-        <h2>1.Check your tracker</h2>
-        <p>With Track My NUtrients, do that that and thaaat.</p>
-      </div>
-      <div class="screenshot">
-      <%= image_tag "home-dash.png", height: 300 %>
+<div class="container-fluid" id="grid">
+
+  <div class="row row-1">
+    <div class="col-xs-12 col-sm-12 col-md-6 text">
+       <i class="fas fa-chart-pie"></i>
+       <h2>1. Check your tracker</h2>
+       <p>With Track My Nutrients, you can get an overview of your daily nutritional intake to keep track of your diet.
+      </p>
+      <br>
+      <div class="explanation">
+        <div class="spots">
+          <div class="spot green-spot"></div><p>  You almost completed your daily needs.</p>
+        </div>
+        <div class="spots">
+          <div class="spot orange-spot"></div><p>  You exceeded your daily needs.</p>
+        </div>
       </div>
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 image" id="image1">
+    </div>
+  </div>
+
+  <div class="row row-2">
+    <div class="col-xs-12 col-sm-12 col-md-6 image" id="image2">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 text">
+      <i class="fas fa-chalkboard-teacher"></i>
+       <h2>2. See your recipes</h2>
+        <p>You can choose to follow one of our three different diets. Diet-related recipes will be suggested and you can filter them according to the ingredients you have, the name or the category of the meal.</p>
+    </div>
+  </div>
+
+  <div class="row row-3">
+    <div class="col-xs-12 col-sm-12 col-md-6 text">
+       <i class="fas fa-utensils"></i>
+       <h2>3. Add a meal to your tracker</h2>
+        <p>With Track My NUtrients, you can add the meal you have eaten to your food diary.<br>
+        The tracker will automatically compute the nutrients intake of the recipe.</p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 image" id="image3">
+    </div>
+  </div>
+
+</div>
+
+<div class="header-white padding-bottom">
+  <div class="btn btn-action btn-dark-green btn-large btn-margin">
+  Sign up
   </div>
 </div>
