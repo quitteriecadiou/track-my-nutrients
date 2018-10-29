@@ -1,0 +1,172 @@
+
+/* HOMEPAGE - from le wagon component*/
+.banner {
+  color: white;
+  height: calc(100vh - 40px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: asset-url('background-dark-green.jpg');
+  background-position: center;
+  overflow: scroll;
+}
+/* [wrapper] - white transparent banner with title and buttons */
+.banner-content {
+  background-color: rgba(255,255,255,0.9);
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+  text-align: center;
+  color: $dark-green;
+}
+
+.banner-content-mobile {
+  background-color: rgba(255,255,255,0.9);
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0;
+  text-align: center;
+  color: $dark-green;
+}
+
+.green-bar {
+width: 100%;
+height: 8px;
+background: $dark-green;
+border-radius: 3.5px;
+}
+
+.banner-content h4 {
+  color: black;
+  font-weight: 400;
+}
+
+.banner-body {
+  width: 50%;
+  display: flex; /* contexte sur le parent */
+  flex-direction: column; /* direction d'affichage verticale */
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.banner-body-mobile {
+  width: 80%;
+  height: 80%;
+  display: flex; /* contexte sur le parent */
+  flex-direction: column; /* direction d'affichage verticale */
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.banner-title {
+  display: relative
+}
+
+.banner-btn {
+  justify-content: center;
+}
+
+.btn-margin {
+  margin: 0 10px;
+}
+
+/*LOGO HEADER BAR */
+.header-white {
+margin-top: 30px;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* GRID */
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 30px;
+    color: white;
+}
+
+.row {
+  height: 524px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.row-1 {
+  background-color: $orange;
+}
+
+.row-2 {
+    background-color: $dark-green;
+}
+
+.row-3 {
+    background-color: $orange;
+}
+
+.text {
+  padding: 3%;
+}
+
+#image1 {
+  background: asset-url('home-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover !important;
+
+}
+
+#image2 {
+  background: asset-url('home-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover !important;
+}
+
+#image3 {
+  background: asset-url('home-3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover !important;
+}
+
+.col-md-6 {
+  height: 100%;
+  width: 50%;
+}
+
+/* BUTTON SING UP END OF PAGE*/
+.padding-bottom {
+  padding-bottom: 30px;
+}
+
+/*ICONS in each section above h2*/
+.fas {
+  font-size: 70px;
+}
+
+/* SPOTS */
+.spots {
+  display: flex;
+}
+
+.spot {
+  border-radius : 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+}
+
+.green-spot {
+  background-color: $dark-green;
+}
+
+.orange-spot {
+  background-color: $medium-orange;
+}
