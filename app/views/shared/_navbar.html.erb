@@ -1,7 +1,7 @@
 
 <div class="navbar-tmn">
   <!-- Logo -->
-  <%= link_to root_path do %>
+  <%= link_to profile_dashboard_path(current_user) do %>
     <%= image_tag "logo-without-text.png" %>
   <% end %>
 
@@ -11,12 +11,12 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Dashboard", "#", class: "navbar-tmn-item navbar-tmn-link" %>
-      <%= link_to "Recipes", "#", class: "navbar-tmn-item navbar-tmn-link" %>
+      <%= link_to "Dashboard", profile_dashboard_path(current_user), class: "navbar-tmn-item navbar-tmn-link" %>
+      <%= link_to "Recipes", recipes_path, class: "navbar-tmn-item navbar-tmn-link" %>
       <%= link_to destroy_user_session_path, method: :delete, class: "navbar-tmn-item navbar-tmn-link" do %>
         <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
       <% end %>
-  
+
       <!-- Avatar with dropdown menu -->
       <div class="navbar-tmn-item">
         <div class="dropdown">
