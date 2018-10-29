@@ -1,6 +1,6 @@
 .recipe-tracker {
   height: 130px;
-  width: 430px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
 }
 
 .recipe-nutrient-tracker {
-  width: 430px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

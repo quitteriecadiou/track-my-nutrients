@@ -1,11 +1,13 @@
 // Layout
 
 .circle-tracker {
-  width: 300px;
+  width: 100%;
   height: 350px;
   background-color: transparent;
   border-radius: 3px;
   border: 1px solid $light-gray;
+  padding: 0;
+  margin: 5% 0;
 }
 
 .circle-tracker-progress {

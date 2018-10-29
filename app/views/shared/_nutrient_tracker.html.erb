@@ -5,15 +5,23 @@
       <a href="#" class="selected">Daily</a><span> | </span><a href="#">Weekly</a>
     </div>
   </div>
-  <div class="nutrient-tracker-body">
-    <div class="nutrient-tracker-full">
-      <%= render '/shared/nutrient_tracker/full_tracker' %>
-    </div>
-    <div class="nutrient-tracker-circle">
-      <%= render '/shared/nutrient_tracker/circle_tracker' %>
-    </div>
-    <div class="nutrient-tracker-recipes">
-      <%= render '/shared/nutrient_tracker/suggested_recipes' %>
-    </div>
+  <div class="row nutrient-tracker-body">
+    <!-- <div class="row"> -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="nutrient-tracker-full">
+          <%= render '/shared/nutrient_tracker/full_tracker' %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="nutrient-tracker-circle">
+          <%= render '/shared/nutrient_tracker/circle_tracker' %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="nutrient-tracker-recipes">
+          <%= render '/shared/nutrient_tracker/suggested_recipes' %>
+        </div>
+      </div>
+    <!-- </div> -->
   </div>
 </div>
