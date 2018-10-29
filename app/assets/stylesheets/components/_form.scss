@@ -10,10 +10,6 @@ form {
 
 }
 
-input:placeholder {
-  color: red;
-}
-
 label {
   font-weight: 200;
 }
@@ -55,10 +51,6 @@ label {
   justify-content: space-between;
 }
 
-.inline-date{
-  display: inline-block;
-}
-
 
 #personal-info-form {
   .form-control {
@@ -70,6 +62,8 @@ label {
 }
 
 #filter-bar {
+  width: 140vh;
+  height: 15vh;
   flex-direction : row;
   .form-group {
   margin: 0;

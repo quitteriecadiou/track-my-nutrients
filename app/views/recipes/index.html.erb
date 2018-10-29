@@ -1,2 +1,49 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+
+
+
+
+<div class="container recipe-list-header">
+  <div class ="recipe-list-header-content">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="recipe-list-header-text">
+          <h3>
+            Recipes
+            <div class="recipe-list-green-line"></div>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dark-green-wrapper search-bar">
+  <div class="background">
+    <%= render 'shared/forms/filter_bar_form' %>
+  </div>
+</div>
+<div class="recipe-list-grey-background">
+  <div class="recipe-list-gray-line"></div>
+  <div class="container recipe-card-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <%= render 'shared/recipe_card' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= render 'shared/recipe_card' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= render 'shared/recipe_card' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= render 'shared/recipe_card' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= render 'shared/recipe_card' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= render 'shared/recipe_card' %>
+      </div>
+    </div>
+</div>
+</div>
+
