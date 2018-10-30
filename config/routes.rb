@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     get '/dashboard', to: "added_recipes#index"
     post '/dashboard', to: "added_recipes#create"
     get '/dashboard/new', to: "added_recipes#new"
-  end
     resources :recipes, only: [:index, :show]
+  end
 end

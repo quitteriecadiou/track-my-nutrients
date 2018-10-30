@@ -7,4 +7,5 @@ class AddedRecipesController < ApplicationController
 
   def create
   end
+
 end
