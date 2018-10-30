@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_143038) do
+ActiveRecord::Schema.define(version: 2018_10_30_151441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,39 +43,39 @@ ActiveRecord::Schema.define(version: 2018_10_24_143038) do
   create_table "diets", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.float "protein_obj_diet"
-    t.float "carbohydrate_obj_diet"
-    t.float "fat_obj_diet"
-    t.float "sugars_obj_diet"
-    t.float "fibres_obj_diet"
-    t.float "fa_saturated_obj_diet"
-    t.float "fa_mono_obj_diet"
-    t.float "fa_poly_obj_diet"
-    t.float "cholesterol_obj_diet"
-    t.float "salt_obj_diet"
-    t.float "calcium_obj_diet"
-    t.float "copper_obj_diet"
-    t.float "iron_obj_diet"
-    t.float "magnesium_obj_diet"
-    t.float "manganese_obj_diet"
-    t.float "phosphorus_obj_diet"
-    t.float "potassium_obj_diet"
-    t.float "sodium_obj_diet"
-    t.float "zinc_obj_diet"
-    t.float "retinol_obj_diet"
-    t.float "beta_carotene_obj_diet"
-    t.float "vitamin_d_obj_diet"
-    t.float "vitamin_e_obj_diet"
-    t.float "vitamin_c_obj_diet"
-    t.float "vitamin_b1_obj_diet"
-    t.float "vitamin_b2_obj_diet"
-    t.float "vitamin_b3_obj_diet"
-    t.float "vitamin_b5_obj_diet"
-    t.float "vitamin_b6_obj_diet"
-    t.float "vitamin_b9_obj_diet"
-    t.float "vitamin_b12_obj_diet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "protein_factor_diet"
+    t.float "carbohydrate_factor_diet"
+    t.float "fat_factor_diet"
+    t.float "sugars_factor_diet"
+    t.float "fibres_factor_diet"
+    t.float "fa_saturated_factor_diet"
+    t.float "fa_mono_factor_diet"
+    t.float "fa_poly_factor_diet"
+    t.float "cholesterol_factor_diet"
+    t.float "salt_factor_diet"
+    t.float "calcium_factor_diet"
+    t.float "copper_factor_diet"
+    t.float "iron_factor_diet"
+    t.float "magnesium_factor_diet"
+    t.float "manganese_factor_diet"
+    t.float "phosphorus_factor_diet"
+    t.float "potassium_factor_diet"
+    t.float "sodium_factor_diet"
+    t.float "zinc_factor_diet"
+    t.float "retinol_factor_diet"
+    t.float "beta_carotene_factor_diet"
+    t.float "vitamin_d_factor_diet"
+    t.float "vitamin_e_factor_diet"
+    t.float "vitamin_c_factor_diet"
+    t.float "vitamin_b1_factor_diet"
+    t.float "vitamin_b2_factor_diet"
+    t.float "vitamin_b3_factor_diet"
+    t.float "vitamin_b5_factor_diet"
+    t.float "vitamin_b6_factor_diet"
+    t.float "vitamin_b9_factor_diet"
+    t.float "vitamin_b12_factor_diet"
   end
 
   create_table "food_items", force: :cascade do |t|
@@ -127,7 +127,6 @@ ActiveRecord::Schema.define(version: 2018_10_24_143038) do
   end
 
   create_table "personal_diets", force: :cascade do |t|
-    t.bigint "diet_id"
     t.float "protein_obj_personal"
     t.float "carbohydrate_obj_personal"
     t.float "fat_obj_personal"
@@ -161,7 +160,8 @@ ActiveRecord::Schema.define(version: 2018_10_24_143038) do
     t.float "vitamin_b12_obj_personal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["diet_id"], name: "index_personal_diets_on_diet_id"
+    t.bigint "profile_id"
+    t.index ["profile_id"], name: "index_personal_diets_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -172,10 +172,10 @@ ActiveRecord::Schema.define(version: 2018_10_24_143038) do
     t.integer "height"
     t.integer "weight"
     t.bigint "user_id"
-    t.bigint "personal_diet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["personal_diet_id"], name: "index_profiles_on_personal_diet_id"
+    t.bigint "diet_id"
+    t.index ["diet_id"], name: "index_profiles_on_diet_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -240,8 +240,8 @@ ActiveRecord::Schema.define(version: 2018_10_24_143038) do
   add_foreign_key "diet_recipes", "recipes"
   add_foreign_key "ingredients", "food_items"
   add_foreign_key "ingredients", "recipes"
-  add_foreign_key "personal_diets", "diets"
-  add_foreign_key "profiles", "personal_diets"
+  add_foreign_key "personal_diets", "profiles"
+  add_foreign_key "profiles", "diets"
   add_foreign_key "profiles", "users"
   add_foreign_key "recipes", "categories"
 end
