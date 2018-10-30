@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  belongs_to :diet
   has_one :personal_diet
   has_many :added_recipes
 

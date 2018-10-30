@@ -20,17 +20,21 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.where(user: current_user).first
+    @profile = Profile.find(params[:id])
   end
 
   def update
-
-    redirect_to profile_dashboard_path(@profile)
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to profile_dashboard_path(@profile)
+    else
+      render :edit
+    end
   end
 
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :gender, :height, :weight, :user_id)
+    params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :gender, :height, :weight, :user_id, :diet_id)
   end
 end
