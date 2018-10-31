@@ -13,9 +13,6 @@
     <%= render 'shared/navbar' if ((Profile.where(user: current_user).count > 0) && user_signed_in?)%>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= link_to destroy_user_session_path, method: :delete do %>
-      <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
-    <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
