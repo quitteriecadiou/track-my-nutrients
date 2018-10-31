@@ -14,8 +14,14 @@
       <%= link_to profile_dashboard_path(Profile.where(user: current_user).first), class: "navbar-tmn-item navbar-tmn-link" do %>
         <i class="far fa-chart-bar"></i> Dashboard
       <% end %>
-      <%= link_to recipes_path, class: "navbar-tmn-item navbar-tmn-link" do %>
-        <i class="fas fa-book-open"></i> Recipes
+      <% if params[:profile_id].nil? %>
+        <%= link_to profile_recipes_path(profile_id: params[:id]), class: "navbar-tmn-item navbar-tmn-link" do %>
+          <i class="fas fa-book-open"></i> Recipes
+        <% end %>
+      <% else %>
+        <%= link_to profile_recipes_path, class: "navbar-tmn-item navbar-tmn-link" do %>
+          <i class="fas fa-book-open"></i> Recipes
+        <% end %>
       <% end %>
 
       <!-- Avatar with dropdown menu -->
