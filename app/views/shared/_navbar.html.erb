@@ -1,7 +1,7 @@
 
 <div class="navbar-tmn">
   <!-- Logo -->
-  <%= link_to profile_dashboard_path(Profile.where(user: current_user).first) do %>
+  <%= link_to dashboard_path(current_user.profile.id) do %>
     <%= image_tag "logo-without-text.png" %>
   <% end %>
 
@@ -11,15 +11,15 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to profile_dashboard_path(Profile.where(user: current_user).first), class: "navbar-tmn-item navbar-tmn-link" do %>
+      <%= link_to dashboard_path(current_user.profile.id), class: "navbar-tmn-item navbar-tmn-link" do %>
         <i class="far fa-chart-bar"></i> Dashboard
       <% end %>
       <% if params[:profile_id].nil? %>
-        <%= link_to profile_recipes_path(profile_id: params[:id]), class: "navbar-tmn-item navbar-tmn-link" do %>
+        <%= link_to recipes_path, class: "navbar-tmn-item navbar-tmn-link" do %>
           <i class="fas fa-book-open"></i> Recipes
         <% end %>
       <% else %>
-        <%= link_to profile_recipes_path, class: "navbar-tmn-item navbar-tmn-link" do %>
+        <%= link_to recipes_path, class: "navbar-tmn-item navbar-tmn-link" do %>
           <i class="fas fa-book-open"></i> Recipes
         <% end %>
       <% end %>
@@ -30,7 +30,7 @@
           <div class="navbar-tmn-link dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"><i class="far fa-user"></i><span> Account</span></div>
           <ul class="dropdown-menu dropdown-menu-right navbar-tmn-dropdown-menu">
             <li>
-              <%= link_to edit_profile_path(Profile.where(user: current_user).first) do %>
+              <%= link_to settings_path(current_user.profile.id) do %>
                 <i class="fa fa-cog"></i><span> Settings</span>
               <% end %>
             </li>

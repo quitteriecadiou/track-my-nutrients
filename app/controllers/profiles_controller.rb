@@ -12,18 +12,18 @@ class ProfilesController < ApplicationController
       @personal_diet = PersonalDiet.create(profile_id: @profile.id)
       @personal_diet.compute_personal_diet(@profile)
 
-      redirect_to profile_dashboard_path(@profile)
+      redirect_to dashboard_path(@profile)
+
     else
       render :new
     end
   end
 
   def show
-
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find(current_user.profile.id)
   end
 
   def update
@@ -32,7 +32,7 @@ class ProfilesController < ApplicationController
       @personal_diet = PersonalDiet.where(profile_id: @profile.id).first
       @personal_diet.compute_personal_diet(@profile)
 
-      redirect_to profile_dashboard_path(@profile)
+      redirect_to dashboard_path(@profile)
     else
       render :edit
     end
