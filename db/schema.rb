@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_151441) do
+ActiveRecord::Schema.define(version: 2018_10_31_141821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,13 +113,14 @@ ActiveRecord::Schema.define(version: 2018_10_30_151441) do
     t.float "vitamin_b12"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "unit"
+    t.integer "mg_equivalent_per_unit"
   end
 
   create_table "ingredients", force: :cascade do |t|
     t.bigint "food_item_id"
     t.bigint "recipe_id"
     t.integer "quantity"
-    t.string "unit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_item_id"], name: "index_ingredients_on_food_item_id"
