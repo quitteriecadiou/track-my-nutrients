@@ -1,7 +1,19 @@
-.recipe-header {
+.recipe-header-md-lg {
   background-color: white;
   width: 70%;
   padding: 2% 5%;
+}
+
+.recipe-header-xs {
+  background-color: white;
+  width: 100%;
+  padding: 2% 4%;
+}
+
+.recipe-header-sm {
+  background-color: white;
+  width: 80%;
+  padding: 2% 6%;
 }
 
 .recipe-header-text h3 {
@@ -26,7 +38,7 @@
 
 .recipe-header-photo img {
   width: 80%;
-  height: 200px;
+  height: 100%;
   margin-left: 20%;
 }
 
@@ -39,16 +51,18 @@
   width: 75%;
   flex-grow: 1;
   background-color: rgba(255,255,255,0.9);
+  padding: 0 7%;
 }
 
 .recipe-add-meal {
   margin: 30px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .recipe-attributes {
   background-color: white;
-  width: 84%;
-  margin: 0 8% 1% 8%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   padding: 1% 0;
@@ -80,12 +94,4 @@
   border-radius: 2px;
 }
 
-.recipe-ingredients {
-  margin-left: 20%;
-
-}
-
-.recipe-instructions {
-  margin-right: 14%;
-}
 
