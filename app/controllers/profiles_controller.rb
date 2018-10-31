@@ -9,24 +9,23 @@ class ProfilesController < ApplicationController
     @profile.user = User.find(current_user.id)
 
     if @profile.save
-      redirect_to profile_dashboard_path(@profile)
+      redirect_to dashboard_path(@profile)
     else
       render :new
     end
   end
 
   def show
-
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find(current_user.profile.id)
   end
 
   def update
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
-      redirect_to profile_dashboard_path(@profile)
+      redirect_to dashboard_path(@profile)
     else
       render :edit
     end
