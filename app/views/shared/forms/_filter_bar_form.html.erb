@@ -2,9 +2,9 @@
   <%= simple_form_for :recipes do |f| %>
     <div class="inline-row">
       <div class="inline-row filters">
-        <%= f.input :diet, as: :select, prompt: 'Recipe name', label: false, collection: ['recipe_name1', 'recipe_name2', 'recipe_name3']%>
-        <%= f.input :diet, as: :select, prompt: 'Meal type', label: false, collection: ['meal_type1', 'meal_typ2', 'meal_type3'], input_html: { class: "hidden-sm hidden-xs" }%>
-        <%= f.input :ingredients, label: false, placeholder: 'Ingredient', input_html: { class: "hidden-sm hidden-xs" } %>
+        <%= f.input :name, prompt: 'Recipe name', label: false, as: :select, collection: Recipe.order(:name) %>
+        <%= f.input :name, prompt: 'Meal type', label: false, collection: Category.order(:name), input_html: { class: "hidden-sm hidden-xs" }%>
+        <%= f.input :name, as: :select, collection: FoodItem.order(:name), label: false, prompt: 'Ingredient', input_html: { class: "hidden-sm hidden-xs" } %>
 
       </div>
       <div class="filter-btn">

@@ -12,7 +12,7 @@
 
 <div class="dark-green-wrapper recipe-list-filter-bar">
   <div class="filter-bar-container">
-    <%= render 'shared/forms/filter_bar_form' %>
+    <%= render 'shared/forms/filter_bar_form', recipes: @recipes %>
   </div>
 </div>
 
@@ -23,25 +23,12 @@
   <div class="container recipe-card-container">
     <div class="recipe-list-gray-line"></div>
     <div class="row">
+      <% @recipes.each do |recipe| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= render 'shared/recipe_card' %>
+        <%= render 'shared/recipe_card', recipe: recipe %>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= render 'shared/recipe_card' %>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= render 'shared/recipe_card' %>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= render 'shared/recipe_card' %>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= render 'shared/recipe_card' %>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= render 'shared/recipe_card' %>
-      </div>
+      <% end %>
     </div>
-</div>
+  </div>
 </div>
 

@@ -1,6 +1,6 @@
 <div class="recipe-card">
   <div class="recipe-card-header">
-    <h4 class="text-center">Recipe Name</h4>
+    <h4 class="text-center"><%= recipe.name %></h4>
     <div class="recipe-card-green-line"></div>
   </div>
   <div class="recipe-card-content">
@@ -37,10 +37,10 @@
   <div class="recipe-card-footer">
     <div class="recipe-card-attributes">
       <div class="recipe-card-attribute">
-        <i class="far fa-clock"></i><span class="body-small"> 30 minutes</span>
+        <i class="far fa-clock"></i><span class="body-small"> <%=  recipe.prep_time %></span>
       </div>
       <div class="recipe-card-attribute">
-        <i class="fas fa-utensils"></i><span class="body-small"> Lunch</span>
+        <i class="fas fa-utensils"></i><span class="body-small"> <%= recipe.category.name %></span>
       </div>
     </div>
     <div class="recipe-card-add">
