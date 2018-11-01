@@ -9,7 +9,6 @@ function circleTracker() {
       }],
     },
   });
-  circleTrackerTry
 };
 
 export { circleTracker };

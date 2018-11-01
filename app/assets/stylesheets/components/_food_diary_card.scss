@@ -69,11 +69,13 @@ a:hover {
 
 /*FOOD DIARY : recipes added */
 .added-recipe {
-  background: asset-url('added-recipe-test.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .added-recipe:hover {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url('added-recipe-test.jpg');
+  background-position: bottom;
 }
 
 .added-recipe-container {

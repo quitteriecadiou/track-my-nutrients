@@ -10,7 +10,7 @@
       <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
     </div>
     <div class="recipe-nutrient-tracker-content-bar">
-      <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:protein] / @personal_diet.protein_obj_personal, percentage_estimate: @recipe.protein_per_portion %>
+      <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:protein] / @personal_diet.protein_obj_personal, percentage_estimate: @recipe.protein_per_portion / @personal_diet.protein_obj_personal %>
     </div>
     <div class="recipe-nutrient-tracker-content-fraction">
       <div class="recipe-card-fraction body-small"><span><%= ((@tracker[:protein] + @recipe.protein_per_portion) / 1000).round %>g</span><span class="thin"> / <%= (@personal_diet.protein_obj_personal / 1000).round  %>g</span></div>
@@ -28,7 +28,7 @@
       <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
     </div>
     <div class="recipe-nutrient-tracker-content-bar">
-      <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:carbohydrate] / @personal_diet.carbohydrate_obj_personal, percentage_estimate: @recipe.carbohydrate_per_portion %>
+      <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:carbohydrate] / @personal_diet.carbohydrate_obj_personal, percentage_estimate: @recipe.carbohydrate_per_portion / @personal_diet.carbohydrate_obj_personal %>
     </div>
     <div class="recipe-nutrient-tracker-content-fraction">
       <div class="recipe-card-fraction body-small"><span><%= ((@tracker[:carbohydrate] + @recipe.carbohydrate_per_portion) / 1000).round %>g</span><span class="thin"> / <%= (@personal_diet.carbohydrate_obj_personal / 1000).round  %>g</span></div>
@@ -46,7 +46,7 @@
       <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
     </div>
     <div class="recipe-nutrient-tracker-content-bar">
-      <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:calcium] / @personal_diet.calcium_obj_personal, percentage_estimate: @recipe.calcium_per_portion %>
+      <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:calcium] / @personal_diet.calcium_obj_personal, percentage_estimate: @recipe.calcium_per_portion / @personal_diet.calcium_obj_personal %>
     </div>
     <div class="recipe-nutrient-tracker-content-fraction">
       <div class="recipe-card-fraction body-small"><span><%= ((@tracker[:calcium] + @recipe.calcium_per_portion) / 1000).round %>g</span><span class="thin"> / <%= (@personal_diet.calcium_obj_personal / 1000).round  %>g</span></div>
