@@ -1,14 +1,26 @@
 require 'csv'
 
-# Destroy PersonalDiets and Profiles
+# Destroy everything
 PersonalDiet.destroy_all
 puts "Deleted personal diets"
+
+Diet.destroy_all
+puts "Deleted diets"
+
 Profile.destroy_all
 puts "Deleted profiles"
 
+Ingredient.destroy_all
+puts "Deleted ingredients"
+
+Recipe.destroy_all
+puts "Deleted recipes"
+
+Category.destroy_all
+puts "Deleted categories"
+
+
 # Diets
-Diet.destroy_all
-puts "Deleted diets"
 
 Diet.create(name:"Regular", description:"For people who do not have any dietary restrictions and who only wish to track their daily nutrional intake.", protein_factor_diet: 1, carbohydrate_factor_diet: 1, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 1, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 1, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
 Diet.create(name:"High Protein", description:"For people who do not have any dietary restrictions and who only wish to track their daily nutrional intake.", protein_factor_diet: 2.25, carbohydrate_factor_diet: 1, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 1, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 1, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
@@ -18,14 +30,12 @@ puts "Created diets"
 
 
 # Categories
-Category.destroy_all
-puts "Deleted categories"
 
-Category.create(name: "Lunch")
-Category.create(name: "Dinner")
-Category.create(name: "Breakfast")
-Category.create(name: "Snack")
-Category.create(name: "Dessert")
+Category.create(name: "lunch")
+Category.create(name: "dinner")
+Category.create(name: "breakfast")
+Category.create(name: "snack")
+Category.create(name: "dessert")
 puts "Created categories"
 
 
@@ -43,21 +53,25 @@ puts "Created food items"
 
 
 # Recipes
-Recipe.destroy_all
-puts "Deleted recipes"
 
 csv_options = { headers: :first_row }
 csv_filepath_recipes = Rails.root.join('lib', 'seeds', 'recipes.csv')
 csv = CSV.parse(File.open(csv_filepath_recipes, "r:windows-1251:utf-8"), headers: true)
+
 csv.each do |row|
-  Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], category: row["category"])
+  puts row["name"]
+  puts row["description"]
+  puts row["portion"]
+  puts row["prep_time"]
+  puts row["difficulty"]
+  puts Category.where(name: row["category"]).first
+
+  recipe = Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], category: Category.where(name: row["category"]).first)
 end
 puts "Created recipes"
 
 
 # Ingredients
-Ingredient.destroy_all
-puts "Deleted ingredients"
 
 csv_options = { headers: :first_row }
 csv_filepath_ingredients = Rails.root.join('lib', 'seeds', 'ingredients.csv')
