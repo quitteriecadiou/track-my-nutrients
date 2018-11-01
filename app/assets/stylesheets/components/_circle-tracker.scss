@@ -27,29 +27,13 @@
   border-radius: 0 0 3px 3px;
 }
 
-// Circle
+// Canvas
 
-.green-circle {
-  background-color: $medium-green;
-  border-radius: 50%;
-  width: 210px;
-  height: 210px;
-  position: relative;
+#circle-tracker-animation {
+  height: 280px;
+  width: 100%;
 }
 
-.white-circle {
-  background-color: white;
-  border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 // Fraction
 
