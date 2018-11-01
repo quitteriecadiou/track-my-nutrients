@@ -29,7 +29,9 @@
   width: 50%;
   // To change with height %
   height: 180px;
-  background-color: $medium-gray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .recipe-card-tracker {
@@ -61,6 +63,14 @@
 .recipe-card-attributes {
   display: flex;
   flex-direction: column;
+  i {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+.recipe-card-add form {
+  margin: 0;
 }
 
 .recipe-card-footer {
