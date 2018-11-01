@@ -4,11 +4,14 @@ require 'csv'
 PersonalDiet.destroy_all
 puts "Deleted personal diets"
 
+Diet.destroy_all
+puts "Deleted diets"
+
 Profile.destroy_all
 puts "Deleted profiles"
 
-Diet.destroy_all
-puts "Deleted diets"
+DietRecipe.destroy_all
+puts "Deleted diet recipes"
 
 Ingredient.destroy_all
 puts "Deleted ingredients"
@@ -59,11 +62,12 @@ csv_filepath_recipes = Rails.root.join('lib', 'seeds', 'recipes.csv')
 csv = CSV.parse(File.open(csv_filepath_recipes, "r:windows-1251:utf-8"), headers: true)
 
 csv.each do |row|
-  row["name"]
-  row["description"]
-  row["portion"]
-  row["prep_time"]
-  row["difficulty"]
+  puts row["name"]
+  puts row["description"]
+  puts row["portion"]
+  puts row["prep_time"]
+  puts row["difficulty"]
+  puts Category.where(name: row["category"]).first
 
   recipe = Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], category: Category.where(name: row["category"]).first)
 end
@@ -79,4 +83,14 @@ csv.each do |row|
   Ingredient.create(food_item: FoodItem.where(name: row["food_item"]).first, recipe: Recipe.where(name: row["recipe"]).first, quantity: row["quantity"])
 end
 puts "Created ingredients"
+
+# Diet Recipes
+
+DietRecipe.create(recipe: Recipe.where(name: "High protein breakfast").first, diet: Diet.where(name: "High Protein").first)
+DietRecipe.create(recipe: Recipe.where(name: "Indian chicken protein pots").first, diet: Diet.where(name: "High Protein").first)
+DietRecipe.create(recipe: Recipe.where(name: "Creamy courgette lasagne").first, diet: Diet.where(name: "Regular").first)
+DietRecipe.create(recipe: Recipe.where(name: "Chocolate brownie cake").first, diet: Diet.where(name: "Regular").first)
+DietRecipe.create(recipe: Recipe.where(name: "Moroccan chickpea soup").first, diet: Diet.where(name: "Low Carb").first)
+DietRecipe.create(recipe: Recipe.where(name: "Mushroom risotto").first, diet: Diet.where(name: "Low Sodium").first)
+puts "Created diet recipes"
 
