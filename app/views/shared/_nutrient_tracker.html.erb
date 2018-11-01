@@ -6,7 +6,7 @@
     <!-- <div class="row"> -->
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="nutrient-tracker-full">
-          <%= render '/shared/nutrient_tracker/full_tracker' %>
+          <%= render '/shared/nutrient_tracker/full_tracker', tracker: @tracker, personal_diet: @personal_diet %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
