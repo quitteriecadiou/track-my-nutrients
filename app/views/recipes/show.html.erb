@@ -5,7 +5,7 @@
       <div class="col-xs-12 col-md-7">
         <div class="recipe-header-text">
           <h3>
-            Recipe Name
+            <%= @recipe.name %>
             <div class="recipe-green-line"></div>
           </h3>
           <%= render "shared/recipe_tracker" %>
@@ -27,7 +27,7 @@
       <div class="col-xs-12 col-md-7">
         <div class="recipe-header-text">
           <h3>
-            Recipe Name
+            <%= @recipe.name %>
             <div class="recipe-green-line"></div>
           </h3>
           <%= render "shared/recipe_tracker" %>
@@ -44,7 +44,7 @@
       <div class="col-xs-12 col-md-7">
         <div class="recipe-header-text">
           <h3>
-            Recipe Name
+            <%= @recipe.name %>
             <div class="recipe-green-line"></div>
           </h3>
           <%= render "shared/recipe_tracker" %>
@@ -61,8 +61,10 @@
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
           <div class="recipe-add-meal">
-            <a href="#" class="btn btn-action btn-large btn-medium-green"><i class="fas fa-plus"></i>
-            ADD MEAL TO FOOD DIARY</a>
+            <%= simple_form_for :added_recipe, url: added_recipes_path, method: :post do |f| %>
+              <%= f.hidden_field :recipe_id, value: @recipe.id %>
+              <%= f.button :submit, "ADD MEAL TO FOOD DIARY", class: "btn btn-action btn-large btn-medium-green" %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -71,16 +73,16 @@
         <div class="col-xs-12">
           <div class="recipe-attributes">
             <div class="recipe-attribute">
-              <i class="far fa-clock"></i><span> 30 minutes</span>
+              <i class="far fa-clock"></i><span> <%= @recipe.prep_time %></span>
             </div>
             <div class="recipe-attribute">
-              <i <i class="far fa-user"></i><span> 4</span>
+              <i <i class="far fa-user"></i><span> <%= @recipe.portion %></span>
             </div>
             <div class="recipe-attribute">
-              <i class="fas fa-signal"></i><span> Medium</span>
+              <i class="fas fa-signal"></i><span> <%= @recipe.difficulty.capitalize %></span>
             </div>
             <div class="recipe-attribute">
-              <i class="fas fa-utensils"></i><span> Lunch</span>
+              <i class="fas fa-utensils"></i><span> <%= @recipe.category.name.capitalize %></span>
             </div>
           </div>
         </div>
@@ -94,12 +96,9 @@
             <div class="recipe-small-green-line"></div>
           </h4>
           <ul>
-            <li>1/2 cup butter</li>
-            <li>3 cloves garlic, chopped</li>
-            <li>1 small onion, chopped</li>
-            <li>1 (10 ounce) package frozen chopped spinach, thawed and drained</li>
-            <li>1 (4.5 ounce) can mushrooms, drained</li>
-            <li>1 (6 ounce) package herb and garlic feta, crumbled</li>
+            <% @recipe.ingredients.each do |ingredient| %>
+              <li><%= ingredient.quantity %><%= ingredient.food_item.unit unless ingredient.food_item.unit == "no_unit" %> <%= ingredient.food_item.name %></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -109,12 +108,9 @@
             Instructions
             <div class="recipe-small-green-line"></div>
           </h4>
-          <ul>
-            <li>Preheat oven to 375 degrees F (190 degrees C).</li>
-            <li>In a medium skillet, melt butter over medium heat. Saute garlic and onion in butter until lightly browned, about 7 minutes. Stir in spinach, mushrooms, feta and 1/2 cup Cheddar cheese. Season with salt and pepper. Spoon mixture into pie crust.</li>
-            <li>In a medium bowl, whisk together eggs and milk. Season with salt and pepper. Pour into the pastry shell, allowing egg mixture to thoroughly combine with spinach mixture.</li>
-            <li>Bake in preheated oven for 15 minutes. Sprinkle top with remaining Cheddar cheese, and bake an additional 35 to 40 minutes, until set in center. Allow to stand 10 minutes before serving.</li>
-          </ul>
+          <p>
+            <%= @recipe.description %>
+          </p>
         </div>
       </div>
     </div>

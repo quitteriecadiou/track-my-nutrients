@@ -6,72 +6,40 @@
 
   <div class="row food-diary-container">
 
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= link_to recipes_path do %>
-          <div class="food-diary-card add-meal">
-            <div class="add-meal-container">
-              <div>
-                <%= image_tag "bowl-spoon.png", height: 50 %>
-              </div>
-              <div class="btn btn-light-orange btn-action btn-large">
-                <i class="fas fa-plus"></i>
-                ADD MEAL
-              </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= link_to recipes_path do %>
+        <div class="food-diary-card add-meal">
+          <div class="add-meal-container">
+            <div>
+              <%= image_tag "bowl-spoon.png", height: 50 %>
+            </div>
+            <div class="btn btn-light-orange btn-action btn-large">
+              <i class="fas fa-plus"></i>
+              ADD MEAL
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+    </div>
 
+    <% added_recipes.reverse.each do |added_recipe| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= link_to recipe_path(1) do %>
+        <%= link_to recipe_path(added_recipe.recipe) do %>
           <div class ="food-diary-card added-recipe">
             <div class="added-recipe-container">
               <div class="added-recipe-category">
-                <p>Breakfast</p>
+                <p><%= added_recipe.recipe.category.name.capitalize %></p>
               </div>
               <div class="orange-bar">
               </div>
               <div class="added-recipe-name">
-                <p class="thin">Ceasar green salad</p>
+                <p class="thin"><%= added_recipe.recipe.name.capitalize %></p>
               </div>
             </div>
           </div>
         <%end%>
       </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= link_to recipe_path(1) do %>
-          <div class ="food-diary-card added-recipe">
-            <div class="added-recipe-container">
-              <div class="added-recipe-category">
-                <p>Breakfast</p>
-              </div>
-              <div class="orange-bar">
-              </div>
-              <div class="added-recipe-name">
-                <p class="thin">Ceasar green salad</p>
-              </div>
-            </div>
-          </div>
-        <%end%>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= link_to recipe_path(1) do %>
-          <div class ="food-diary-card added-recipe">
-            <div class="added-recipe-container">
-              <div class="added-recipe-category">
-                <p>Breakfast</p>
-              </div>
-              <div class="orange-bar">
-              </div>
-              <div class="added-recipe-name">
-                <p class="thin">Ceasar green salad</p>
-              </div>
-            </div>
-          </div>
-        <%end%>
-      </div>
+    <% end %>
 
   </div>
 </div>

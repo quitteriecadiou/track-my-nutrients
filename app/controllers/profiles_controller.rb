@@ -20,6 +20,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(current_user.profile.id)
+    @added_recipes = @profile.added_recipes
   end
 
   def edit
@@ -27,6 +29,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
+
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       @personal_diet = PersonalDiet.where(profile_id: @profile.id).first
