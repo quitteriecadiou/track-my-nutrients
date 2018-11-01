@@ -4,11 +4,11 @@ require 'csv'
 PersonalDiet.destroy_all
 puts "Deleted personal diets"
 
-Diet.destroy_all
-puts "Deleted diets"
-
 Profile.destroy_all
 puts "Deleted profiles"
+
+Diet.destroy_all
+puts "Deleted diets"
 
 Ingredient.destroy_all
 puts "Deleted ingredients"
@@ -59,12 +59,11 @@ csv_filepath_recipes = Rails.root.join('lib', 'seeds', 'recipes.csv')
 csv = CSV.parse(File.open(csv_filepath_recipes, "r:windows-1251:utf-8"), headers: true)
 
 csv.each do |row|
-  puts row["name"]
-  puts row["description"]
-  puts row["portion"]
-  puts row["prep_time"]
-  puts row["difficulty"]
-  puts Category.where(name: row["category"]).first
+  row["name"]
+  row["description"]
+  row["portion"]
+  row["prep_time"]
+  row["difficulty"]
 
   recipe = Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], category: Category.where(name: row["category"]).first)
 end
