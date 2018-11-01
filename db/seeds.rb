@@ -66,6 +66,8 @@ csv_recipes = CSV.parse(File.open(csv_filepath_recipes, "r:windows-1251:utf-8"),
 
 csv_recipes.each do |row|
   recipe = Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], category: Category.where(name: row["category"]).first)
+  recipe[:photo] = row["photo"]
+  recipe.save
 end
 puts "Created recipes"
 
