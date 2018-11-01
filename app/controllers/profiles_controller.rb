@@ -22,6 +22,10 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(current_user.profile.id)
     @added_recipes = @profile.added_recipes
+    @personal_diet = @profile.personal_diet
+
+    @tracker = AddedRecipe.tracker(@added_recipes)
+
   end
 
   def edit

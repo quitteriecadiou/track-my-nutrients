@@ -9,27 +9,27 @@
     </div>
     <div class="recipe-card-tracker">
       <div class="recipe-card-nutrient">
-        <p class="recipe-card-nutrient-name body-small">Nutrient 1</p>
+        <p class="recipe-card-nutrient-name body-small">Protein</p>
         <div class="recipe-card-impact">
-          <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.15, percentage_estimate: 0.1 %><span>+5g</span>
+          <%= render "shared/progress_bars/progress_bar_small", percentage_done: tracker[:protein] / personal_diet.protein_obj_personal, percentage_estimate: 0.1 %><span>+5g</span>
         </div>
       </div>
       <div class="recipe-card-nutrient">
-        <p class="recipe-card-nutrient-name body-small">Nutrient 2</p>
+        <p class="recipe-card-nutrient-name body-small">Carbohydrate</p>
         <div class="recipe-card-impact">
-          <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.9, percentage_estimate: 0.3 %><span>+4g</span>
+          <%= render "shared/progress_bars/progress_bar_small", percentage_done: tracker[:carbohydrate] / personal_diet.carbohydrate_obj_personal, percentage_estimate: 0.3 %><span>+4g</span>
         </div>
       </div>
       <div class="recipe-card-nutrient">
-        <p class="recipe-card-nutrient-name body-small">Nutrient 3</p>
+        <p class="recipe-card-nutrient-name body-small">Calcium</p>
         <div class="recipe-card-impact">
-          <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0.5, percentage_estimate: 0.2 %><span>+10g</span>
+          <%= render "shared/progress_bars/progress_bar_small", percentage_done: tracker[:calcium] / personal_diet.calcium_obj_personal, percentage_estimate: 0.2 %><span>+10g</span>
         </div>
       </div>
       <div class="recipe-card-nutrient">
-        <p class="recipe-card-nutrient-name body-small">Nutrient 4</p>
+        <p class="recipe-card-nutrient-name body-small">Sodium</p>
         <div class="recipe-card-impact">
-          <%= render "shared/progress_bars/progress_bar_small", percentage_done: 0, percentage_estimate: 0.2 %><span>+2g</span>
+          <%= render "shared/progress_bars/progress_bar_small", percentage_done: tracker[:sodium] / personal_diet.sodium_obj_personal, percentage_estimate: 0.2 %><span>+2g</span>
         </div>
       </div>
     </div>

@@ -18,11 +18,27 @@
   width: 25px;
 }
 
-.recipe-nutrient-tracker-content {
-  width: 70%;
+.recipe-nutrient-tracker-header {
+  width: 30%;
+}
+
+.recipe-nutrient-tracker-content-g {
+  width: 10%;
+}
+
+.recipe-nutrient-tracker-content-arrow {
+  width: 10%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+}
+
+.recipe-nutrient-tracker-content-bar {
+  width: 30%;
+}
+
+.recipe-nutrient-tracker-content-fraction {
+  width: 20%;
 }
 
 .recipe-nutrient-tracker-content h4 {

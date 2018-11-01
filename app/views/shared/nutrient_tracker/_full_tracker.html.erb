@@ -1,18 +1,18 @@
 <div class="full-tracker">
   <div class="single-tracker">
-    <h4 class="selected">Nutrient 1</h4>
-    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: 1.5 %>
+    <h4 class="selected">Protein</h4>
+    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[:protein] / personal_diet.protein_obj_personal %>
   </div>
    <div class="single-tracker">
-    <h4>Nutrient 2</h4>
-    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: 0.7 %>
+    <h4>Carbohydrate</h4>
+    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[:carbohydrate] / personal_diet.carbohydrate_obj_personal %>
   </div>
    <div class="single-tracker">
-    <h4>Nutrient 3</h4>
-    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: 0.15 %>
+    <h4>Calcium</h4>
+    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[:calcium] / personal_diet.calcium_obj_personal %>
   </div>
    <div class="single-tracker">
-    <h4>Nutrient 4</h4>
-    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: 1 %>
+    <h4>Sodium</h4>
+    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[:sodium] / personal_diet.sodium_obj_personal %>
   </div>
 </div>
