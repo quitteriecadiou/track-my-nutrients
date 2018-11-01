@@ -4,14 +4,17 @@ require 'csv'
 PersonalDiet.destroy_all
 puts "Deleted personal diets"
 
-Diet.destroy_all
-puts "Deleted diets"
+AddedRecipe.destroy_all
+puts "Deleted added recipes"
 
 Profile.destroy_all
 puts "Deleted profiles"
 
 DietRecipe.destroy_all
 puts "Deleted diet recipes"
+
+Diet.destroy_all
+puts "Deleted diets"
 
 Ingredient.destroy_all
 puts "Deleted ingredients"
@@ -59,16 +62,9 @@ puts "Created food items"
 
 csv_options = { headers: :first_row }
 csv_filepath_recipes = Rails.root.join('lib', 'seeds', 'recipes.csv')
-csv = CSV.parse(File.open(csv_filepath_recipes, "r:windows-1251:utf-8"), headers: true)
+csv_recipes = CSV.parse(File.open(csv_filepath_recipes, "r:windows-1251:utf-8"), headers: true)
 
-csv.each do |row|
-  puts row["name"]
-  puts row["description"]
-  puts row["portion"]
-  puts row["prep_time"]
-  puts row["difficulty"]
-  puts Category.where(name: row["category"]).first
-
+csv_recipes.each do |row|
   recipe = Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], category: Category.where(name: row["category"]).first)
 end
 puts "Created recipes"
@@ -78,18 +74,22 @@ puts "Created recipes"
 
 csv_options = { headers: :first_row }
 csv_filepath_ingredients = Rails.root.join('lib', 'seeds', 'ingredients.csv')
-csv = CSV.parse(File.open(csv_filepath_ingredients, "r:windows-1251:utf-8"), headers: true)
-csv.each do |row|
+csv_ingredients = CSV.parse(File.open(csv_filepath_ingredients, "r:windows-1251:utf-8"), headers: true)
+csv_ingredients.each do |row|
   Ingredient.create(food_item: FoodItem.where(name: row["food_item"]).first, recipe: Recipe.where(name: row["recipe"]).first, quantity: row["quantity"])
 end
 puts "Created ingredients"
 
+Recipe.all.each do |recipe|
+  recipe.compute_recipe_nutrients
+end
+
 # Diet Recipes
 
 DietRecipe.create(recipe: Recipe.where(name: "High protein breakfast").first, diet: Diet.where(name: "High Protein").first)
-DietRecipe.create(recipe: Recipe.where(name: "Indian chicken protein pots").first, diet: Diet.where(name: "High Protein").first)
 DietRecipe.create(recipe: Recipe.where(name: "Creamy courgette lasagne").first, diet: Diet.where(name: "Regular").first)
 DietRecipe.create(recipe: Recipe.where(name: "Chocolate brownie cake").first, diet: Diet.where(name: "Regular").first)
+DietRecipe.create(recipe: Recipe.where(name: "Indian chicken protein pots").first, diet: Diet.where(name: "High Protein").first)
 DietRecipe.create(recipe: Recipe.where(name: "Moroccan chickpea soup").first, diet: Diet.where(name: "Low Carb").first)
 DietRecipe.create(recipe: Recipe.where(name: "Mushroom risotto").first, diet: Diet.where(name: "Low Sodium").first)
 puts "Created diet recipes"
