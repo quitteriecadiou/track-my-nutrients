@@ -4,7 +4,10 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @added_recipe = AddedRecipe.new
+    @profile = current_user.profile
+    @added_recipe = @profile.added_recipes
+    @personal_diet = @profile.personal_diet
+    @tracker = AddedRecipe.tracker(@added_recipe)
   end
 
 end
