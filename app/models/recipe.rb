@@ -9,18 +9,16 @@ class Recipe < ApplicationRecord
   validates :portion, presence: true
   validates :category, presence: true
 
-  def compute_recipe_nutrients(recipe)
-    @recipe = recipe
-    nutrients = ["protein", "carbohydrate", "fat", "sugars", "fibres", "fa_saturated", "fa_mono", "fa_poly", "cholesterol", "salt", "calcium", "copper", "iron", "magnesium", "manganese", "phosphorus", "potassium", "sodium", "zinc", "retinol", "beta_carotene", "vitamin_d", "vitamin_e", "vitamin_c", "vitamin_b1", "vitamin_b2", "vitamin_b3", "vitamin_b5", "vitamin_b6", "vitamin_b9", "vitamin_b12"]
-    nutrients.each do |nutrient|
+  def compute_recipe_nutrients
+    NUTRIENTS.each do |nutrient|
       nutrient_per_portion = "#{nutrient}_per_portion".to_sym
       nutrient = "#{nutrient}".to_sym
-      @recipe[nutrient_per_portion] = 0
-      @recipe.ingredients.each do |ingredient|
-        @recipe[nutrient_per_portion] += (((ingredient.food_item[nutrient] * ingredient.food_item[:mg_equivalent_per_unit]) / 100000 ) * ingredient.quantity) / @recipe.portion
+      self[nutrient_per_portion] = 0
+      self.ingredients.each do |ingredient|
+        self[nutrient_per_portion] += (((ingredient.food_item[nutrient] * ingredient.food_item[:mg_equivalent_per_unit]) / 100000 ) * ingredient.quantity) / self.portion
       end
     end
-    @recipe.save
+    self.save
   end
 end
 
