@@ -1,26 +1,37 @@
 <div class="container complete-form" id="filter-bar">
+  <div class="inline-row">
+    <div class="filters ">
+      <div class="search-recipes">
+        <%= form_tag recipes_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control search-query",
+              placeholder: "Find A Recipe" %>
+        <% end %>
+        <%= link_to recipes_path(current_user.profile.id) do %>
+          <div class="btn btn-action btn-medium-green btn-small">
+            All Recipes
+          </div>
+        <% end %>
+      </div>
 
-<%-# [SEARCH] for the search bar by name %>
-<%= form_tag recipes_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a recipe" %>
-    <% end %>
+        <%= form_tag recipes_path, method: :get do %>
+            <%= collection_select(:category, :id, Category.joins(:recipes).order(:name).distinct, :id, :name,
+              {:prompt => "All Meal Types"},
+              {:class => "form-control hidden-xs"})%>
+                <%= submit_tag "Search", class: "btn btn-action btn-medium-green btn-small hidden-xs"%>
+        <% end %>
 
-<%= form_tag recipes_path, method: :get do %>
-    <%= collection_select :category, :id, Category.joins(:recipes).distinct, :id, :name,
-      class: "form-control",
-      prompt: "Choose a category" %>
-      <%= submit_tag "Filter"%>
-    <% end %>
+        <%= form_tag recipes_path, method: :get do %>
+            <%= collection_select(:fooditem, :id, FoodItem.joins(:recipes).order(:name).distinct, :id, :name,
+              {prompt: "All Ingredients"},
+              {class: "form-control hidden-xs"},
+              )%>
+              <%= submit_tag "Search", class: "btn btn-action btn-medium-green btn-small hidden-xs"%>
+        <% end %>
+    </div>
+  </div>
 
-<%= form_tag recipes_path, method: :get do %>
-    <%= collection_select :fooditem, :id, FoodItem.joins(:recipes).distinct, :id, :name,
-      class: "form-control",
-      prompt: "Choose an ingredient"%>
-      <%= submit_tag "Filter"%>
-    <% end %>
 </div>
 
 
