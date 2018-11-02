@@ -1,0 +1,6 @@
+<%= simple_form_for(@recipe) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :portion %>
+  <%= f.association :category %>
+  <%= f.submit class: "btn btn-action btn-medium-green"%>
+<% end %>

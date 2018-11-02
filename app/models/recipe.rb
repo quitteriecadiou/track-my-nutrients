@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :category
+  belongs_to :profile
   has_many :ingredients
   has_many :food_item, through: :ingredients
   has_many :diet_recipes
@@ -8,6 +9,7 @@ class Recipe < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :portion, presence: true
   validates :category, presence: true
+
   mount_uploader :photo, PhotoUploader
 
   def compute_recipe_nutrients

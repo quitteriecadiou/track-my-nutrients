@@ -1,0 +1,5 @@
+<%= simple_form_for [@ingredient.recipe, @ingredient] do |f| %>
+  <%= f.association :food_item, prompt: "Choose an ingredient", label: false, remote: true %>
+  <%= f.input :quantity %>
+  <%= f.button :submit, "SUBMIT", class: "btn btn-action btn-medium-green" %>
+<% end %>
