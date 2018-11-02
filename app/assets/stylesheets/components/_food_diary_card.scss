@@ -128,18 +128,22 @@ a:hover {
   width: 100%;
   margin: auto;
   height: 100%;
+  border-radius: 3px;
 }
 
 .front {
   position: absolute;
   top:0px;
   background-color: $light-gray;
-
 }
 
 .back {
   -webkit-transform: rotateY(-180deg);
-  background-color: orange;
+  background-color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .food-diary-card:hover .back {
@@ -155,4 +159,44 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.add-meal-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+.add-meal-or {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  color: $medium-gray;
+}
+
+.add-meal-or-line {
+  background-color: $medium-gray;
+  opacity: 0.8;
+  height: 1px;
+  width: 100%;
+  margin: 0 5%;
+}
+
+.add-meal-card-content-front {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.orange-bar-add {
+  background: $light-orange;
+  border-radius: 2px;
+  height: 4px;
+  width: 80%;
 }
