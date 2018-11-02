@@ -1,0 +1,22 @@
+<div class="medium-green-wrapper">
+  <div class="new-recipe-container container">
+    <div class="new-recipe-card">
+      <div class="new-recipe-card-content">
+        <h3>
+          Create a recipe
+          <div class="new-recipe-green-line"></div>
+        </h3>
+        <div id="ingredients">
+          <% if @recipe.ingredients.blank? %>
+            Add the first ingredient to <%= @recipe.name %>
+          <% else %>
+            <% @recipe.ingredients.each do |ingredient| %>
+              <%= render 'ingredients/show', ingredient: ingredient %>
+            <% end %>
+          <% end %>
+        </div>
+        <%= render 'ingredients/form', recipe: @recipe, ingredient: @ingredient %>
+      </div>
+    </div>
+  </div>
+</div>

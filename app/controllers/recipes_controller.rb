@@ -39,12 +39,18 @@ class RecipesController < ApplicationController
     @recipe[:photo] = "ilins8un6sxf3hhcqm2d.jpg" if @recipe[:photo].nil?
     @recipe.profile_id = current_user.profile.id
 
+
     if @recipe.save
       redirect_to new_recipe_ingredient_path(@recipe)
     else
       render :new
     end
 
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+    @ingredient = Ingredient.new
   end
 
   private
