@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   def index
     @profile = current_user.profile
-    @added_recipe = @profile.added_recipes
+    @added_recipe = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
     @tracker = AddedRecipe.tracker(@added_recipe)
 
@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
   def show
     @profile = current_user.profile
     @recipe = Recipe.find(params[:id])
-    @added_recipe = @profile.added_recipes
+    @added_recipe = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
     @tracker = AddedRecipe.tracker(@added_recipe)
   end
