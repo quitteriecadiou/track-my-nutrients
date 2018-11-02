@@ -49,19 +49,9 @@ a:hover {
 
 /*FOOD DIARY : first card to suggest "add a meal" */
 .add-meal {
-  background: $light-gray;
+  background: white;
 }
 
-.add-meal:hover {
-  background: linear-gradient(rgba(0,0,0,0.06), rgba(0,0,0,0.06));
-}
-
-.add-meal-container {
-  position: relative;
-  width: 80%;
-  margin: auto;
-  height: 55%;
-}
 
 .add-meal-container img {
   opacity: 0.65;
@@ -125,4 +115,44 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.food-diary-card {
+  -webkit-perspective: 600px;
+}
+
+.front, .back {
+  transition: -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+.front {
+  position: absolute;
+  top:0px;
+  background-color: $light-gray;
+
+}
+
+.back {
+  -webkit-transform: rotateY(-180deg);
+  background-color: orange;
+}
+
+.food-diary-card:hover .back {
+  -webkit-transform: rotateY(0);
+}
+
+.food-diary-card:hover .front {
+  -webkit-transform: rotateY(180deg);
+}
+
+.add-meal-card-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

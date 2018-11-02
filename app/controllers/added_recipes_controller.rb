@@ -15,6 +15,13 @@ class AddedRecipesController < ApplicationController
 
   end
 
+  def destroy
+    @added_recipe = AddedRecipe.find(added_recipe_params)
+    @added_recipe.destroy
+  end
+
+  private
+
   def added_recipe_params
     params.require(:added_recipe).permit(:recipe_id)
   end
