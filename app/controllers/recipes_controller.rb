@@ -34,6 +34,7 @@ class RecipesController < ApplicationController
     @recipe.profile_id = current_user.profile.id
 
     if @recipe.save
+      @recipe.compute_recipe_nutrients
       redirect_to dashboard_path
     else
       render :new
@@ -44,7 +45,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :category_id, :portion, :prep_time, :ingredient_id, :difficulty)
+    params.require(:recipe).permit(:name, :description, :category_id, :portion, :prep_time, :ingredient_id, :difficulty, :photo)
   end
 
 end
