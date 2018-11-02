@@ -3,47 +3,20 @@
     <h4 class="text-center">Suggested Recipes</h4>
     <div class="suggested-recipes-header-orange"></div>
   </div>
+
   <div class="suggested-recipes-list">
+    <% @suggested_recipes.each do |recipe| %>
     <div class="suggested-recipe">
       <div class="suggested-recipe-icon">
         <%= image_tag "bowl-spoon.png", alt: "Bowl with spoon", class: "suggested-recipe-icon" %>
       </div>
       <div class="suggested-recipe-content">
-        <p>Recipe name</p>
-        <%= link_to "View", recipe_path(1), class: "body-small" %><span class="body-small"> | </span><%= link_to "Add",  dashboard_path, class: "body-small" %>
+        <p><%= recipe.name.capitalize %></p>
+        <%= link_to "View", recipe_path(recipe), class: "body-small" %><span class="body-small"> | </span><%= link_to "Add",  dashboard_path, class: "body-small" %>
       </div>
     </div>
-
-    <div class="suggested-recipe">
-      <div class="suggested-recipe-icon">
-        <%= image_tag "bowl-spoon.png", alt: "Bowl with spoon", class: "suggested-recipe-icon" %>
-      </div>
-      <div class="suggested-recipe-content">
-        <p>Recipe name</p>
-        <%= link_to "View", recipe_path(1), class: "body-small" %><span class="body-small"> | </span><%= link_to "Add",  dashboard_path, class: "body-small" %>
-      </div>
-    </div>
-
-    <div class="suggested-recipe">
-      <div class="suggested-recipe-icon">
-        <%= image_tag "bowl-spoon.png", alt: "Bowl with spoon", class: "suggested-recipe-icon" %>
-      </div>
-      <div class="suggested-recipe-content">
-        <p>Recipe name</p>
-        <%= link_to "View", recipe_path(1), class: "body-small" %><span class="body-small"> | </span><%= link_to "Add",  dashboard_path, class: "body-small" %>
-      </div>
-    </div>
-
-    <div class="suggested-recipe">
-      <div class="suggested-recipe-icon">
-        <%= image_tag "bowl-spoon.png", alt: "Bowl with spoon", class: "suggested-recipe-icon" %>
-      </div>
-      <div class="suggested-recipe-content">
-        <p>Recipe name</p>
-        <%= link_to "View", recipe_path(1), class: "body-small" %><span class="body-small"> | </span><%= link_to "Add",  dashboard_path, class: "body-small" %>
-      </div>
-    </div>
-
-
+    <% end %>
   </div>
+
 </div>
+

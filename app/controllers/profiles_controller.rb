@@ -23,6 +23,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(current_user.profile.id)
     @added_recipes = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
+    @suggested_recipes = @profile.suggested_recipes(@added_recipes)
 
     @tracker = AddedRecipe.tracker(@added_recipes)
 
