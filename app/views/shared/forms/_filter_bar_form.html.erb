@@ -12,30 +12,15 @@
     <%= collection_select :category, :id, Category.joins(:recipes).distinct, :id, :name,
       class: "form-control",
       prompt: "Choose a category" %>
+      <%= submit_tag "Filter"%>
     <% end %>
 
 <%= form_tag recipes_path, method: :get do %>
     <%= collection_select :fooditem, :id, FoodItem.joins(:recipes).distinct, :id, :name,
       class: "form-control",
       prompt: "Choose an ingredient"%>
+      <%= submit_tag "Filter"%>
     <% end %>
 </div>
 
-<div class="container complete-form" id="filter-bar">
 
-
-<%- # TEST- TO DELETE >> [FILTER] by category and by ingredients - PB : we don't want to save data to database(=submit), but only display stuff %>
-  <%= simple_form_for :recipes, method: :get do |f| %>
-    <div class="inline-row">
-      <div class="inline-row filters">
-        <%= f.input :name, prompt: 'Recipe name', label: false, as: :select, collection: Recipe.order(:name) %>
-        <%= f.input :name, prompt: 'Category', label: false, collection: Category.order(:name), input_html: { class: "hidden-sm hidden-xs" }%>
-        <%= f.input :name, as: :select, collection: FoodItem.joins(:recipes).order(:name).distinct, label: false, prompt: 'Ingredient', input_html: { class: "hidden-sm hidden-xs" } %>
-
-      </div>
-      <div class="filter-btn">
-        <%= f.button :button, "FILTER", class: "btn btn-action btn-medium-green" %>
-      </div>
-    </div>
-  <% end %>
-</div>

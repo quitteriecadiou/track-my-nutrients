@@ -8,9 +8,12 @@ class RecipesController < ApplicationController
     if params[:query].present?
       @recipes = Recipe.where("name ILIKE ?", "%#{params[:query]}%")
     elsif params[:category].present?
-      @recipes = Recipe.where(name: "#{params[:category]}")
+      @recipes = Recipe.where(category_id: params[:category][:id])
+    elsif params[:fooditem].present?
+      ingredients = FoodItem.find(params[:fooditem][:id]).ingredients
+      @recipes = ingredients.map { |i| i.recipe }
     else
-    @recipes = Recipe.all
+      @recipes = Recipe.all
     end
   end
 
