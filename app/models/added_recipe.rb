@@ -9,11 +9,9 @@ class AddedRecipe < ApplicationRecord
     end
 
     added_recipes.each do |added_recipe|
-      if added_recipe.date == Date.today
-        NUTRIENTS.each do |nutrient|
-          nutrient_per_portion = "#{nutrient}_per_portion".to_sym
-          tracker[nutrient.to_sym] += added_recipe.recipe[nutrient_per_portion]
-        end
+      NUTRIENTS.each do |nutrient|
+        nutrient_per_portion = "#{nutrient}_per_portion".to_sym
+        tracker[nutrient.to_sym] += added_recipe.recipe[nutrient_per_portion]
       end
     end
     return tracker
