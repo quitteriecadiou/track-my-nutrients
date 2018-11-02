@@ -25,6 +25,26 @@ class RecipesController < ApplicationController
     @tracker = AddedRecipe.tracker(@added_recipe)
   end
 
-private
+  def new
+    @recipe = Recipe.new
+  end
+
+  def create
+    @recipe = Recipe.new(recipe_params)
+    @recipe.profile_id = current_user.profile.id
+
+    if @recipe.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
+
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :description, :category_id, :portion, :prep_time, :ingredient_id, :difficulty)
+  end
 
 end

@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :category
+  belongs_to :profile
   has_many :ingredients
   has_many :food_item, through: :ingredients
   has_many :diet_recipes

@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :profiles, only: [:update, :new, :create]
   get '/dashboard', to: 'profiles#show', format: false
   get '/settings', to: 'profiles#edit', format: false
-  resources :recipes, only: [:index, :show, :new, :create]
+  resources :recipes, only: [:index, :show, :new, :create] do
+    resources :ingredients, only: [:new, :create]
+  end
   resources :added_recipes, only: [ :new, :create]
 
 end
