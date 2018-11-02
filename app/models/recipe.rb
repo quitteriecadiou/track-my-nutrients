@@ -9,6 +9,7 @@ class Recipe < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :portion, presence: true
   validates :category, presence: true
+
   mount_uploader :photo, PhotoUploader
 
   def compute_recipe_nutrients

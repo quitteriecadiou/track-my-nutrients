@@ -1,11 +1,6 @@
 <%= simple_form_for(@recipe) do |f| %>
   <%= f.input :name %>
-  <%= f.input :description %>
   <%= f.input :portion %>
   <%= f.association :category %>
-  <%= f.input :prep_time %>
-  <%= f.input :difficulty %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "btn btn-action btn-medium-green"%>
 <% end %>
