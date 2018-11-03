@@ -8,7 +8,7 @@
             <%= @recipe.name %>
             <div class="recipe-green-line"></div>
           </h3>
-          <%= render "shared/recipe_tracker" %>
+          <%= render "shared/recipe_tracker", nutrients_unit: ApplicationHelper::NUTRIENTS_UNIT, unit_conv: ApplicationHelper::UNIT_CONV %>
         </div>
       </div>
       <div class="col-xs-12 col-md-5 pull-right">
@@ -30,7 +30,7 @@
             <%= @recipe.name %>
             <div class="recipe-green-line"></div>
           </h3>
-          <%= render "shared/recipe_tracker" %>
+          <%= render "shared/recipe_tracker", nutrients_unit: ApplicationHelper::NUTRIENTS_UNIT, unit_conv: ApplicationHelper::UNIT_CONV %>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
             <%= @recipe.name %>
             <div class="recipe-green-line"></div>
           </h3>
-          <%= render "shared/recipe_tracker" %>
+          <%= render "shared/recipe_tracker", nutrients_unit: ApplicationHelper::NUTRIENTS_UNIT, unit_conv: ApplicationHelper::UNIT_CONV %>
         </div>
       </div>
     </div>
