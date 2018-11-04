@@ -1,6 +1,6 @@
 <div class="container complete-form" id="personal-info-form">
   <h2>Personal Details</h2>
-  <%= simple_form_for @profile do |f| %>
+  <%= simple_form_for(@profile, remote: true) do |f| %>
     <%= f.input :first_name, label: false, placeholder: 'Firstname'%>
     <%= f.input :last_name, label: false, placeholder: 'Lastname'%>
     <%= f.input :gender, as: :select, prompt: 'Gender', label: false, collection: ['Female','Male']%>
