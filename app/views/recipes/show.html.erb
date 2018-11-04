@@ -2,7 +2,7 @@
   <div class="recipe-gray-line"></div>
   <div class ="recipe-header-content">
     <div class="row">
-      <div class="col-xs-12 col-md-7">
+      <div class="col-xs-12 col-md-8">
         <div class="recipe-header-text">
           <h3>
             <%= @recipe.name %>
@@ -11,7 +11,7 @@
           <%= render "shared/recipe_tracker", nutrients_unit: ApplicationHelper::NUTRIENTS_UNIT, unit_conv: ApplicationHelper::UNIT_CONV %>
         </div>
       </div>
-      <div class="col-xs-12 col-md-5 pull-right">
+      <div class="col-xs-12 col-md-4 pull-right">
         <div class="recipe-header-photo">
           <%= cl_image_tag(@recipe.photo) %>
         </div>
@@ -24,7 +24,7 @@
   <div class="recipe-gray-line"></div>
   <div class ="recipe-header-content">
     <div class="row">
-      <div class="col-xs-12 col-md-7">
+      <div class="col-xs-12 col-md-8">
         <div class="recipe-header-text">
           <h3>
             <%= @recipe.name %>
@@ -41,7 +41,7 @@
   <div class="recipe-gray-line"></div>
   <div class ="recipe-header-content">
     <div class="row">
-      <div class="col-xs-12 col-md-7">
+      <div class="col-xs-12 col-md-8">
         <div class="recipe-header-text">
           <h3>
             <%= @recipe.name %>
