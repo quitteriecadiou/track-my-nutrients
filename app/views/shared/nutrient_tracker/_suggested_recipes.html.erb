@@ -1,18 +1,56 @@
 <div class="suggested-recipes">
   <div class="suggested-recipes-header">
-    <h4 class="text-center">Suggested Recipes</h4>
+    <h4 class="text-center" id="suggested-recipes-title">Suggested Recipes</h4>
     <div class="suggested-recipes-header-orange"></div>
   </div>
 
-  <div class="suggested-recipes-list">
+  <div class="suggested-recipes-list" id ="suggested-recipe-content">
     <% @suggested_recipes.each do |recipe| %>
     <div class="suggested-recipe">
       <div class="suggested-recipe-icon">
         <%= image_tag "bowl-spoon.png", alt: "Bowl with spoon", class: "suggested-recipe-icon" %>
       </div>
       <div class="suggested-recipe-content">
-        <p><%= recipe.name.capitalize %></p>
-        <%= link_to "View", recipe_path(recipe), class: "body-small" %><span class="body-small"> | </span><%= link_to "Add",  dashboard_path, class: "body-small" %>
+        <p class="suggested-recipe-title"><%= recipe.name.capitalize %></p>
+        <p  class="body-small view-nutritional-impact"><%= link_to "View nutritional impact"  %></p>
+        <div class="suggested-recipe-nutrients hidden">
+          <div class="recipe-card-tracker">
+            <div class="recipe-card-nutrient">
+              <p class="recipe-card-nutrient-name body-small">Protein</p>
+              <div class="recipe-card-impact">
+                <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:protein] / @personal_diet.protein_obj_personal, percentage_estimate: recipe.protein_per_portion / @personal_diet.protein_obj_personal %><span>+<%= (recipe.protein_per_portion / 1000).round %>g</span>
+              </div>
+            </div>
+            <div class="recipe-card-nutrient">
+              <p class="recipe-card-nutrient-name body-small">Carbohydrate</p>
+              <div class="recipe-card-impact">
+                <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:carbohydrate] / @personal_diet.carbohydrate_obj_personal, percentage_estimate: recipe.carbohydrate_per_portion / @personal_diet.carbohydrate_obj_personal %><span>+<%= (recipe.carbohydrate_per_portion / 1000).round %>g</span>
+              </div>
+            </div>
+            <div class="recipe-card-nutrient">
+              <p class="recipe-card-nutrient-name body-small">Calcium</p>
+              <div class="recipe-card-impact">
+                <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:calcium] / @personal_diet.calcium_obj_personal, percentage_estimate: recipe.calcium_per_portion / @personal_diet.calcium_obj_personal %><span>+<%= (recipe.calcium_per_portion / 1000).round %>g</span>
+              </div>
+            </div>
+            <div class="recipe-card-nutrient">
+              <p class="recipe-card-nutrient-name body-small">Sodium</p>
+              <div class="recipe-card-impact">
+                <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:sodium] / @personal_diet.sodium_obj_personal, percentage_estimate: recipe.sodium_per_portion / @personal_diet.sodium_obj_personal %><span>+<%= (recipe.sodium_per_portion / 1000).round %>g</span>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-card-add">
+            <%= simple_form_for :added_recipe, url: added_recipes_path, method: :post do |f| %>
+              <%= f.hidden_field :recipe_id, value: recipe.id %>
+              <%= f.button :submit, "ADD TO FOOD DIARY", class: "btn btn-action btn-small btn-medium-green" %>
+            <% end %>
+          </div>
+          <div>
+            <%=link_to "SEE THE RECIPE", recipe_path(recipe), class: "btn btn-action btn-small btn-medium-green" %>
+
+          </div>
+        </div>
       </div>
     </div>
     <% end %>
