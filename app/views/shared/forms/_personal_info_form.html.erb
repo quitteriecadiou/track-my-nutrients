@@ -15,7 +15,7 @@
         <p>kg</p>
       </div>
     </div>
-    <%= f.association :diet, prompt: 'Choose your diet', label: false, remote: true %>
+    <%= f.association :diet, prompt: 'Choose your diet', label: false, remote: true, input_html: { id: "selected-diet"} %>
     <%= f.button :submit, "SUBMIT", class: "btn btn-action btn-purple" %>
   <% end %>
 </div>
