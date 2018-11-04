@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  belongs_to :category
+  has_many :categories
   belongs_to :profile
   has_many :ingredients
   has_many :food_item, through: :ingredients
@@ -8,7 +8,7 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :portion, presence: true
-  validates :category, presence: true
+  # validates :category, presence: true
 
   mount_uploader :photo, PhotoUploader
 

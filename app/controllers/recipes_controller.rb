@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
   def index
-    # fail
     @profile = current_user.profile
     @added_recipe = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
@@ -56,7 +55,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :category_id, :portion, :prep_time, :ingredient_id, :difficulty, :photo)
+    params.require(:recipe).permit(:name, :description, :portion, :prep_time, :ingredient_id, :difficulty, :photo, :category_ids)
   end
-
 end
