@@ -10,5 +10,14 @@ class Profile < ApplicationRecord
   validates :diet_id, presence: true
   validates :height, presence: true
   validates :weight, presence: true
-  validates :gender, inclusion: { in: ['Female', 'Male'] }
+  validates :gender, inclusion: { in: ['Female', 'Male'] }, presence: true
+
+  after_create :add_personal_diet
+
+  private
+
+# compute les objectifs de la personal diet apres la creation du profile
+  def add_personal_diet
+    PersonalDiet.create(profile: self).compute_personal_diet(self)
+  end
 end
