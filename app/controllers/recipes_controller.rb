@@ -1,6 +1,5 @@
 class RecipesController < ApplicationController
   def index
-    # fail
     @profile = current_user.profile
     @added_recipe = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet

@@ -2,9 +2,9 @@ import "bootstrap";
 import Chart from 'chart.js';
 
 
-import { showsDietCard } from '../components/personal_info_form';
+import { selectedDiet } from '../components/personal_info_form';
 import { circleTracker } from '../components/circle_tracker';
 
 
-showsDietCard();
+selectedDiet();
 circleTracker();

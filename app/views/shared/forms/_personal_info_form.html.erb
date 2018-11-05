@@ -16,6 +16,13 @@
       </div>
     </div>
     <%= f.association :diet, prompt: 'Choose your diet', label: false, remote: true, input_html: { id: "selected-diet"} %>
+    <div class="diets">
+      <% Diet.all.each do |diet| %>
+        <div class="diet-card-description hidden">
+          <%= render 'shared/diet_card', diet: diet %>
+        </div>
+      <% end %>
+    </div>
     <%= f.button :submit, "SUBMIT", class: "btn btn-action btn-purple" %>
   <% end %>
 </div>
