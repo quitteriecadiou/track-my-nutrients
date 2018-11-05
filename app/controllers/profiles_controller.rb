@@ -9,8 +9,6 @@ class ProfilesController < ApplicationController
     @profile.user = User.find(current_user.id)
 
     if @profile.save
-      @personal_diet = PersonalDiet.create(profile_id: @profile.id)
-      @personal_diet.compute_personal_diet(@profile)
 
       redirect_to dashboard_path(@profile)
 
@@ -40,7 +38,6 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       @personal_diet = PersonalDiet.where(profile_id: @profile.id).first
       @personal_diet.compute_personal_diet(@profile)
-
       redirect_to dashboard_path(@profile)
     else
       render :edit

@@ -4,23 +4,24 @@ require 'csv'
 PersonalDiet.destroy_all
 puts "Deleted personal diets"
 
-AddedRecipe.destroy_all
-puts "Deleted added recipes"
-
-Profile.destroy_all
-puts "Deleted profiles"
-
 DietRecipe.destroy_all
 puts "Deleted diet recipes"
 
-Diet.destroy_all
-puts "Deleted diets"
+AddedRecipe.destroy_all
+puts "Deleted added recipes"
 
 Ingredient.destroy_all
 puts "Deleted ingredients"
 
 Recipe.destroy_all
 puts "Deleted recipes"
+
+Profile.destroy_all
+puts "Deleted profiles"
+
+
+Diet.destroy_all
+puts "Deleted diets"
 
 Category.destroy_all
 puts "Deleted categories"
@@ -34,6 +35,21 @@ Diet.create(name:"Low Sodium", description:"For people who do not have any dieta
 Diet.create(name:"Low Carb", description:"A low-carb diet is a diet that restricts carbohydrates, such as those found in sugary foods, pasta and bread. It is high in protein, fat and healthy vegetables.", protein_factor_diet: 1.5, carbohydrate_factor_diet: 0.5, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 1, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 1, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
 puts "Created diets"
 
+# User
+admin = User.create(email: "admin@admin.com", password:"password") if User.find_by_email("admin@admin.com").nil?
+
+
+# Profile admin created
+profile_admin = Profile.create(first_name:"Admin", last_name:"admin", date_of_birth:Date.new, diet:Diet.first, height:165, weight:55, gender:"Female", user:admin )
+puts "Profile admin created"
+
+# User
+admin = User.create(email: "admin@admin.com", password:"password") if User.find_by_email("admin@admin.com").nil?
+
+
+# Profile admin created
+profile_admin = Profile.create(first_name:"Admin", last_name:"admin", date_of_birth:Date.new, diet:Diet.first, height:165, weight:55, gender:"Female", user:admin )
+puts "Profile admin created"
 
 # Categories
 
@@ -65,9 +81,13 @@ csv_filepath_recipes = Rails.root.join('lib', 'seeds', 'recipes.csv')
 csv_recipes = CSV.parse(File.open(csv_filepath_recipes, "r:windows-1251:utf-8"), headers: true)
 
 csv_recipes.each do |row|
-  recipe = Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], category: Category.where(name: row["category"]).first)
+
+  recipe = Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], profile: profile_admin)
+  [row["category1"], row["category2"]].each do |category|
+    recipe.categories << Category.where(name: category).first unless category == nil
+  end
   recipe[:photo] = row["photo"]
-  recipe.save
+  recipe.save!
 end
 puts "Created recipes"
 
@@ -79,6 +99,7 @@ csv_filepath_ingredients = Rails.root.join('lib', 'seeds', 'ingredients.csv')
 csv_ingredients = CSV.parse(File.open(csv_filepath_ingredients, "r:windows-1251:utf-8"), headers: true)
 csv_ingredients.each do |row|
   Ingredient.create(food_item: FoodItem.where(name: row["food_item"]).first, recipe: Recipe.where(name: row["recipe"]).first, quantity: row["quantity"])
+  # .find_by_name(row["food_item"])
 end
 puts "Created ingredients"
 
@@ -88,11 +109,21 @@ end
 
 # Diet Recipes
 
-DietRecipe.create(recipe: Recipe.where(name: "High protein breakfast").first, diet: Diet.where(name: "High Protein").first)
-DietRecipe.create(recipe: Recipe.where(name: "Creamy courgette lasagne").first, diet: Diet.where(name: "Regular").first)
-DietRecipe.create(recipe: Recipe.where(name: "Chocolate brownie cake").first, diet: Diet.where(name: "Regular").first)
-DietRecipe.create(recipe: Recipe.where(name: "Indian chicken protein pots").first, diet: Diet.where(name: "High Protein").first)
-DietRecipe.create(recipe: Recipe.where(name: "Moroccan chickpea soup").first, diet: Diet.where(name: "Low Carb").first)
-DietRecipe.create(recipe: Recipe.where(name: "Mushroom risotto").first, diet: Diet.where(name: "Low Sodium").first)
-puts "Created diet recipes"
+# DietRecipe.create(recipe: Recipe.where(name: "High protein breakfast").first, diet: Diet.where(name: "High Protein").first)
+# DietRecipe.create(recipe: Recipe.where(name: "Creamy courgette lasagne").first, diet: Diet.where(name: "Regular").first)
+# DietRecipe.create(recipe: Recipe.where(name: "Chocolate brownie cake").first, diet: Diet.where(name: "Regular").first)
+# DietRecipe.create(recipe: Recipe.where(name: "Indian chicken protein pots").first, diet: Diet.where(name: "High Protein").first)
+# DietRecipe.create(recipe: Recipe.where(name: "Moroccan chickpea soup").first, diet: Diet.where(name: "Low Carb").first)
+# DietRecipe.create(recipe: Recipe.where(name: "Mushroom risotto").first, diet: Diet.where(name: "Low Sodium").first)
+# puts "Created diet recipes"
+
+puts "check models counts"
+
+puts "user: #{User.count}"
+puts "profile: #{Profile.count}"
+puts "category: #{Category.count}"
+puts "diet: #{Diet.count}"
+puts "food_item: #{FoodItem.count}"
+puts "recipe: #{Recipe.count}"
+puts "ingr: #{Ingredient.count}"
 

@@ -1,0 +1,14 @@
+<%= simple_form_for([recipe, ingredient], remote: true) do |f| %>
+  <%= f.association :food_item, prompt: "Choose an ingredient", label: false, remote: true %>
+  <div class="quantity-ingredient">
+    <%= f.input :quantity, input_html: {style: 'width: 100px'}, label: false, placeholder: "Quantity" %>
+    <% FoodItem.all.each do |item| %>
+      <% if item.unit == "no_unit" %>
+        <span class="food-item-attributes hidden"><span class="food-item-name"><%= item.name %></span></span>
+      <% else %>
+        <span class="food-item-attributes hidden"><%= item.unit %> of <span class="food-item-name"><%= item.name %></span></span>
+      <% end %>
+    <% end %>
+    <%= f.button :submit, "OK", class: "btn btn-action btn-ingredient" %>
+  </div>
+<% end %>

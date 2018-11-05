@@ -1,0 +1,19 @@
+function refreshForm(innerHTML) {
+  const newIngredientForm = document.getElementById('new_ingredient');
+  newIngredientForm.innerHTML = innerHTML;
+}
+
+function addIngredient(reviewHTML) {
+  const ingredients = document.getElementById('ingredients');
+  ingredients.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+
+
+<% if @ingredient.errors.any? %>
+  refreshForm('<%= j render "ingredients/form", recipe: @recipe, ingredient: @ingredient %>');
+<% else %>
+  refreshForm('<%= j render "ingredients/form", recipe: @recipe, ingredient: Ingredient.new %>');
+  addIngredient('<%= j render "ingredients/show", ingredient: @ingredient %>');
+<% end %>
+

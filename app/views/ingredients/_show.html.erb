@@ -1,0 +1,7 @@
+<li class="list-group-item">
+  <%= ingredient.quantity %>
+  <% unless ingredient.food_item.unit == "no_unit" %>
+    <%= ingredient.food_item.unit %>
+  <% end %>
+  <%= ingredient.food_item.name %>
+</li>

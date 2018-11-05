@@ -82,7 +82,13 @@
               <i class="fas fa-signal"></i><span> <%= @recipe.difficulty.capitalize %></span>
             </div>
             <div class="recipe-attribute">
-              <i class="fas fa-utensils"></i><span> <%= @recipe.category.name.capitalize %></span>
+              <i class="fas fa-utensils"></i>
+              <span>
+                <%= @recipe.categories[0].name.capitalize %>
+                <% if @recipe.categories.length > 1 %>
+                  | <%= @recipe.categories[1].name.capitalize %>
+                <% end %>
+              </span>
             </div>
           </div>
         </div>
@@ -109,7 +115,12 @@
             <div class="recipe-small-green-line"></div>
           </h4>
           <p>
-            <%= @recipe.description %>
+            <ol>
+              <% array_instructions = @recipe.description.split(".") %>
+              <% array_instructions.each do |sentence| %>
+                <li><%= sentence + "." %></li>
+              <% end %>
+            </ol>
           </p>
         </div>
       </div>

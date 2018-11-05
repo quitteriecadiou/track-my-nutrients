@@ -10,7 +10,9 @@ class Profile < ApplicationRecord
   validates :diet_id, presence: true
   validates :height, presence: true
   validates :weight, presence: true
-  validates :gender, inclusion: { in: ['Female', 'Male'] }
+  validates :gender, inclusion: { in: ['Female', 'Male'] }, presence: true
+
+  after_create :add_personal_diet
 
   def suggested_recipes(added_recipes, recipes)
     tracker = AddedRecipe.tracker(added_recipes)
@@ -20,5 +22,13 @@ class Profile < ApplicationRecord
                   personal_diet[:calcium_obj_personal] - tracker[:calcium] < 0 ? 0 : personal_diet[:calcium_obj_personal] - tracker[:calcium],
                   personal_diet[:sodium_obj_personal] - tracker[:sodium] < 0 ? 0 : personal_diet[:sodium_obj_personal] - tracker[:sodium]).shuffle.first(4)
   end
+
+  private
+
+# compute les objectifs de la personal diet apres la creation du profile
+  def add_personal_diet
+    PersonalDiet.create(profile: self).compute_personal_diet(self)
+  end
+
 
 end

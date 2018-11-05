@@ -1,0 +1,13 @@
+function findSelecytedDiet() {
+  const dietSelector = document.getElementById("selected-diet");
+  const selectedDiet = dietSelector.querySelector('option:checked').value;
+  selectedDiet;
+}
+
+function showDietCard(adjacentHTML) {
+  const dietSelector = document.getElementById("selected-diet");
+  selectedDiet.insertAdjacentHTML('afterend', adjacentHTML);
+}
+
+
+showDietCard('<%= j render "diets/show" %>');

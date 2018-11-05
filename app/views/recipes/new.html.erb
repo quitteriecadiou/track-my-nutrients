@@ -1,6 +1,19 @@
-<%= simple_form_for(@recipe) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :portion %>
-  <%= f.association :category %>
-  <%= f.submit class: "btn btn-action btn-medium-green"%>
-<% end %>
+<div class="medium-green-wrapper">
+  <div class="new-recipe-container container">
+    <div class="new-recipe-card">
+      <div class="new-recipe-card-content">
+        <h3>
+          Create a recipe
+          <div class="new-recipe-green-line"></div>
+        </h3>
+        <%= simple_form_for(@recipe) do |f| %>
+          <%= f.input :name, label: false, placeholder: "Name" %>
+          <%= f.input :portion, label: false, placeholder: "Number of portions", input_html: { min: '0', step: 'any' } %>
+          <%= f.association :categories, label: "              ", required: false, value_method: :id, label_method: :category_capitalize, as: :check_boxes, include_hidden: false %>
+          <%= f.submit "SUBMIT", class: "btn btn-action btn-medium-green"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
