@@ -82,3 +82,15 @@
   align-items: center;
   padding: 1%;
 }
+
+#suggested-recipe-content > div.recipe-card-tracker {
+  width: 80%;
+  // To change with height %
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2%;
+}
+
+
