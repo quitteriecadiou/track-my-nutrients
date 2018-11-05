@@ -63,4 +63,21 @@
   font-weight: 300;
 }
 
+#suggested-recipe-content {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-row {
+  margin-top: 10px;
+}
+
+.suggested-recipe-card-button {
+  margin: 3px;
+  form {
+    margin-top: 0px;
+  }
+}
 

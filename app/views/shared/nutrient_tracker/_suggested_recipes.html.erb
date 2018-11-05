@@ -13,6 +13,7 @@
       <div class="suggested-recipe-content">
         <p class="suggested-recipe-title"><%= recipe.name.capitalize %></p>
         <p  class="body-small view-nutritional-impact"><%= link_to "View nutritional impact"  %></p>
+
         <div class="suggested-recipe-nutrients hidden">
           <div class="recipe-card-tracker">
             <div class="recipe-card-nutrient">
@@ -40,15 +41,21 @@
               </div>
             </div>
           </div>
-          <div class="recipe-card-add">
-            <%= simple_form_for :added_recipe, url: added_recipes_path, method: :post do |f| %>
-              <%= f.hidden_field :recipe_id, value: recipe.id %>
-              <%= f.button :submit, "ADD TO FOOD DIARY", class: "btn btn-action btn-small btn-medium-green" %>
-            <% end %>
+          <div class="inline-row button-row">
+            <div class= "suggested-recipe-card-button">
+              <%= simple_form_for :added_recipe, url: added_recipes_path, method: :post do |f| %>
+                <%= f.hidden_field :recipe_id, value: recipe.id %>
+                <%= f.button :submit, "ADD TO FOOD DIARY", class: "btn btn-action btn-small btn-medium-green" %>
+              <% end %>
+            </div>
+            <div class= "suggested-recipe-card-button">
+              <%=link_to "SEE THE RECIPE", recipe_path(recipe), class: "btn btn-action btn-small btn-medium-green" %>
+            </div>
           </div>
-          <div>
-            <%=link_to "SEE THE RECIPE", recipe_path(recipe), class: "btn btn-action btn-small btn-medium-green" %>
-
+          <div class="inline-row button-row">
+            <div class= "suggested-recipe-card-button">
+              <p  class="body-small back-button"><%= link_to "Go back to suggested recipes list"  %></p>
+            </div>
           </div>
         </div>
       </div>
