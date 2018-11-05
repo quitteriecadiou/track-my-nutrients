@@ -51,8 +51,11 @@
 
 .recipe-card-impact {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  div {
+    width: 60%;
+  }
 }
 
 .recipe-card-impact span {
@@ -79,3 +82,15 @@
   align-items: center;
   padding: 1%;
 }
+
+#suggested-recipe-content > div.recipe-card-tracker {
+  width: 80%;
+  // To change with height %
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2%;
+}
+
+
