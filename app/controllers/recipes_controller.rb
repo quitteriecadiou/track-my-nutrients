@@ -32,6 +32,10 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    fail
+    params[:recipe][:category_ids].each do |category_id|
+      # @recipe.ca
+    end
     @recipe.prep_time = "Unknown" if @recipe.prep_time.nil?
     @recipe.difficulty = "Unknown" if @recipe.difficulty.nil?
     @recipe.description = "No instructions available" if @recipe.description.nil?
@@ -40,7 +44,8 @@ class RecipesController < ApplicationController
 
 
     if @recipe.save
-      redirect_to new_recipe_ingredient_path(@recipe)
+
+      redirect_to edit_recipe_path(@recipe)
     else
       render :new
     end
@@ -55,6 +60,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :portion, :prep_time, :ingredient_id, :difficulty, :photo, :category_ids)
+    params.require(:recipe).permit(:name, :description, :portion, :prep_time, :ingredient_id, :difficulty)
   end
 end
