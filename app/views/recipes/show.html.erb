@@ -109,7 +109,12 @@
             <div class="recipe-small-green-line"></div>
           </h4>
           <p>
-            <%= @recipe.description %>
+            <ol>
+              <% array_instructions = @recipe.description.split(".") %>
+              <% array_instructions.each do |sentence| %>
+                <li><%= sentence + "." %></li>
+              <% end %>
+            </ol>
           </p>
         </div>
       </div>
