@@ -21,6 +21,8 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(current_user.profile.id)
     @added_recipes = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
+    @recipes = Recipe.where(profile_id: [nil, current_user.profile.id])
+    @suggested_recipes = @profile.suggested_recipes(@added_recipes, @recipes)
 
     @tracker = AddedRecipe.tracker(@added_recipes)
 
@@ -36,7 +38,6 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       @personal_diet = PersonalDiet.where(profile_id: @profile.id).first
       @personal_diet.compute_personal_diet(@profile)
-
       redirect_to dashboard_path(@profile)
     else
       render :edit

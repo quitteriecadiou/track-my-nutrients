@@ -43,6 +43,14 @@ admin = User.create(email: "admin@admin.com", password:"password") if User.find_
 profile_admin = Profile.create(first_name:"Admin", last_name:"admin", date_of_birth:Date.new, diet:Diet.first, height:165, weight:55, gender:"Female", user:admin )
 puts "Profile admin created"
 
+# User
+admin = User.create(email: "admin@admin.com", password:"password") if User.find_by_email("admin@admin.com").nil?
+
+
+# Profile admin created
+profile_admin = Profile.create(first_name:"Admin", last_name:"admin", date_of_birth:Date.new, diet:Diet.first, height:165, weight:55, gender:"Female", user:admin )
+puts "Profile admin created"
+
 # Categories
 
 Category.create(name: "lunch")
@@ -73,13 +81,13 @@ csv_filepath_recipes = Rails.root.join('lib', 'seeds', 'recipes.csv')
 csv_recipes = CSV.parse(File.open(csv_filepath_recipes, "r:windows-1251:utf-8"), headers: true)
 
 csv_recipes.each do |row|
+
   recipe = Recipe.create(name: row["name"], description: row["description"], portion: row["portion"], prep_time: row["prep_time"], difficulty: row["difficulty"], profile: profile_admin)
   [row["category1"], row["category2"]].each do |category|
     recipe.categories << Category.where(name: category).first unless category == nil
   end
   recipe[:photo] = row["photo"]
   recipe.save!
-  puts recipe.name if recipe.save
 end
 puts "Created recipes"
 
@@ -91,6 +99,7 @@ csv_filepath_ingredients = Rails.root.join('lib', 'seeds', 'ingredients.csv')
 csv_ingredients = CSV.parse(File.open(csv_filepath_ingredients, "r:windows-1251:utf-8"), headers: true)
 csv_ingredients.each do |row|
   Ingredient.create(food_item: FoodItem.where(name: row["food_item"]).first, recipe: Recipe.where(name: row["recipe"]).first, quantity: row["quantity"])
+  # .find_by_name(row["food_item"])
 end
 puts "Created ingredients"
 
@@ -117,3 +126,4 @@ puts "diet: #{Diet.count}"
 puts "food_item: #{FoodItem.count}"
 puts "recipe: #{Recipe.count}"
 puts "ingr: #{Ingredient.count}"
+

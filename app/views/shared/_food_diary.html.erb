@@ -7,20 +7,32 @@
   <div class="row food-diary-container">
 
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <%= link_to recipes_path do %>
         <div class="food-diary-card add-meal ">
           <div class="add-meal-container front">
             <div class="add-meal-card-content">
-              <div>
+              <div class = "add-meal-card-content-front">
                 <%= image_tag "bowl-spoon.png", height: 50 %>
+                <div class="orange-bar-add"></div>
+                <h4>ADD MEAL TO FOOD DIARY</h4>
               </div>
             </div>
           </div>
           <div class="add-meal-container back">
-            <%= link_to "Show the recipe list", recipes_path %>
+            <div class="add-meal-links">
+              <%= link_to recipes_path, class: "btn btn-action btn-light-orange" do %>
+                <i class="fas fa-plus"></i> VIEW RECIPES
+              <% end %>
+              <div class="add-meal-or">
+                <div class="add-meal-or-line"></div>
+                <span>or</span>
+                <div class="add-meal-or-line"></div>
+              </div>
+              <%= link_to new_recipe_path, class: "btn btn-action btn-light-orange" do %>
+                <i class="fas fa-plus"></i> CREATE A RECIPE
+              <% end %>
+            </div>
           </div>
         </div>
-      <% end %>
     </div>
 
     <% added_recipes.reverse.each do |added_recipe| %>

@@ -1,6 +1,6 @@
 <div class="container complete-form" id="personal-info-form">
   <h2>Personal Details</h2>
-  <%= simple_form_for @profile do |f| %>
+  <%= simple_form_for(@profile) do |f| %>
     <%= f.input :first_name, label: false, placeholder: 'Firstname'%>
     <%= f.input :last_name, label: false, placeholder: 'Lastname'%>
     <%= f.input :gender, as: :select, prompt: 'Gender', label: false, collection: ['Female','Male']%>
@@ -15,7 +15,46 @@
         <p>kg</p>
       </div>
     </div>
-    <%= f.association :diet, prompt: 'Choose your diet', label: false, remote: true %>
+    <div class="form-group select required profile_diet form-group-valid" id="selected-diet">
+      <select name="profile[diet_id]"" id="profile_diet_id" class="form-control is-valid select required" >
+        <% Diet.all.each do |diet| %>
+          <% if current_user.profile.nil? %>
+            <option value="<%= diet.id %>"><%= diet.name %></option>
+          <% else %>
+            <% if current_user.profile.diet == diet %>
+              <option value="<%= diet.id %>" selected><%= diet.name %></option>
+            <% else %>
+              <option value="<%= diet.id %>"><%= diet.name %></option>
+            <% end %>
+          <% end %>
+        <% end %>
+      </select>
+    </div>
+    <div class="diets">
+      <% Diet.all.each do |diet| %>
+        <% if current_user.profile.nil? %>
+          <% if diet.name == "Regular" %>
+            <div class="diet-card-description">
+              <%= render 'shared/diet_card', diet: diet %>
+            </div>
+          <% else %>
+            <div class="diet-card-description hidden">
+              <%= render 'shared/diet_card', diet: diet %>
+            </div>
+          <% end %>
+        <% else %>
+          <% if current_user.profile.diet == diet %>
+            <div class="diet-card-description">
+              <%= render 'shared/diet_card', diet: diet %>
+            </div>
+          <% else %>
+            <div class="diet-card-description hidden">
+              <%= render 'shared/diet_card', diet: diet %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
     <%= f.button :submit, "SUBMIT", class: "btn btn-action btn-purple" %>
   <% end %>
 </div>

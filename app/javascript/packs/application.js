@@ -2,12 +2,16 @@ import "bootstrap";
 import Chart from 'chart.js';
 
 
+
 import { selectedIng } from '../recipes/edit';
-import { showsDietCard } from '../components/personal_info_form';
 import { circleTracker } from '../components/circle_tracker';
+import { suggestedRecipesShowNutrients } from '../components/suggested_recipes';
+import { selectedDiet } from '../components/personal_info_form';
+
 
 
 selectedIng();
-showsDietCard();
 circleTracker();
+suggestedRecipesShowNutrients();
+selectedDiet();
 

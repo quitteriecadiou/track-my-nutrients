@@ -1,18 +1,9 @@
 <div class="full-tracker">
-  <div class="single-tracker">
-    <h4 class="selected">Protein</h4>
-    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[:protein] / personal_diet.protein_obj_personal %>
-  </div>
-   <div class="single-tracker">
-    <h4>Carbohydrate</h4>
-    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[:carbohydrate] / personal_diet.carbohydrate_obj_personal %>
-  </div>
-   <div class="single-tracker">
-    <h4>Calcium</h4>
-    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[:calcium] / personal_diet.calcium_obj_personal %>
-  </div>
-   <div class="single-tracker">
-    <h4>Sodium</h4>
-    <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[:sodium] / personal_diet.sodium_obj_personal %>
-  </div>
+
+  <% hash_nutrient.each do |key, value| %>
+    <div class="single-tracker">
+      <h4 class="selected"><%= value %></h4>
+      <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[key] / personal_diet.protein_obj_personal %>
+    </div>
+  <% end %>
 </div>
