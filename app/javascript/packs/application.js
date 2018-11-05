@@ -1,10 +1,10 @@
 import "bootstrap";
 import Chart from 'chart.js';
 
-
-import { selectedDiet } from '../components/personal_info_form';
 import { circleTracker } from '../components/circle_tracker';
+import { suggestedRecipesShowNutrients } from '../components/suggested_recipes';
+import { selectedDiet } from '../components/personal_info_form';
 
-
-selectedDiet();
 circleTracker();
+suggestedRecipesShowNutrients();
+selectedDiet();
