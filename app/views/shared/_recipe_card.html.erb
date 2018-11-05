@@ -41,7 +41,13 @@
         <i class="far fa-clock"></i><span class="body-small"> <%=  recipe.prep_time %></span>
       </div>
       <div class="recipe-card-attribute">
-        <i class="fas fa-utensils"></i><span class="body-small"> <%= recipe.category.name.capitalize %></span>
+        <i class="fas fa-utensils"></i>
+        <span class="body-small">
+          <%= recipe.categories[0].name.capitalize %>
+          <% if recipe.categories.length > 1 %>
+            | <%= recipe.categories[1].name.capitalize %>
+          <% end %>
+        </span>
       </div>
     </div>
     <div class="recipe-card-add">

@@ -11,16 +11,21 @@ class IngredientsController < ApplicationController
 
     if @ingredient.save
       @recipe.compute_recipe_nutrients
-      redirect_to recipe_path(@recipe)
+      respond_to do |format|
+        format.html { redirect_to edit_recipe_path(@recipe) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- idem
+      end
     end
   end
 
   def destroy
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
-    redirect_to cocktail_path(@ingredient.cocktail)
   end
 
   private

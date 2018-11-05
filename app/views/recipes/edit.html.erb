@@ -1,0 +1,42 @@
+<div class="medium-green-wrapper">
+  <div class="new-ingredients-container container">
+    <div class="row">
+
+      <div class="col-xs-12 col-md-6">
+          <div class="new-ingredients-card">
+              <div class="new-ingredients-header">
+                <h3>
+                  Add Ingredients
+                  <div class="new-recipe-green-line"></div>
+                </h3>
+              </div>
+              <div class="new-ingredient-form">
+                <%= render 'ingredients/form', recipe: @recipe, ingredient: @ingredient %>
+              </div>
+              <div id="ingredients">
+                    <% @recipe.ingredients.reverse.each do |ingredient| %>
+                      <%= render 'ingredients/show', ingredient: ingredient %>
+                    <% end %>
+              </div>
+
+          </div>
+      </div>
+
+
+        <div class="col-xs-12 col-md-6">
+          <div class="new-ingredients-card">
+            <div class="new-ingredients-header">
+                <h3>
+                  Optional
+                  <div class="new-recipe-green-line"></div>
+                </h3>
+              </div>
+            <div class="recipe-edit">
+              <%= render 'shared/forms/edit_recipe_form', recipe: @recipe %>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>

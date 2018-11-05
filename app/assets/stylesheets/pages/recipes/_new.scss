@@ -1,0 +1,36 @@
+.new-recipe-container {
+  background-color: rgba(255,255,255, 0.8);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-recipe-card {
+  background-color: white;
+  border: 1px solid $light-gray;
+  border-radius: 3px;
+  padding: 3% 5%;
+}
+
+.new-recipe-card-content {
+  .parent {
+    height: 100%;
+    width: 100%;
+  }
+  h3 {
+    display: table;
+    padding: 0;
+    margin: 0;
+  }
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.new-recipe-green-line {
+  background-color: $medium-green;
+  height: 5px;
+  border-radius: 3px;
+  width: 100%;
+}
