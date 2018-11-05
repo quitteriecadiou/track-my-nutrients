@@ -8,9 +8,12 @@ function addIngredient(reviewHTML) {
   ingredients.insertAdjacentHTML('beforeend', reviewHTML);
 }
 
+
+
 <% if @ingredient.errors.any? %>
   refreshForm('<%= j render "ingredients/form", recipe: @recipe, ingredient: @ingredient %>');
 <% else %>
-  addIngredient('<%= j render "ingredients/show", ingredient: @ingredient %>');
   refreshForm('<%= j render "ingredients/form", recipe: @recipe, ingredient: Ingredient.new %>');
+  addIngredient('<%= j render "ingredients/show", ingredient: @ingredient %>');
 <% end %>
+
