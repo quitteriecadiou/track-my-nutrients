@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
     @added_recipe = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
     @tracker = AddedRecipe.tracker(@added_recipe)
-    @recipes = Recipe.where(profile_id: [nil, current_user.profile.id])
+    @recipes = Recipe.where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id])
 
     if params[:query].present?
       @recipes = Recipe.where("name ILIKE ?", "%#{params[:query]}%")
@@ -32,9 +32,8 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    fail
     params[:recipe][:category_ids].each do |category_id|
-      # @recipe.ca
+      @recipe.categories << Category.find(category_id.to_i)
     end
     @recipe.prep_time = "Unknown" if @recipe.prep_time.nil?
     @recipe.difficulty = "Unknown" if @recipe.difficulty.nil?
@@ -44,7 +43,6 @@ class RecipesController < ApplicationController
 
 
     if @recipe.save
-
       redirect_to edit_recipe_path(@recipe)
     else
       render :new

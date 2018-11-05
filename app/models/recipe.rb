@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  has_many :categories
+  has_and_belongs_to_many :categories
   belongs_to :profile
   has_many :ingredients
   has_many :food_item, through: :ingredients
