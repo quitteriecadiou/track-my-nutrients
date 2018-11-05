@@ -17,23 +17,23 @@
 
      <!-- Twitter Card data -->
      <meta name=“twitter:card” content=“summary_large_image”>
-     <meta name=“twitter:site” content=“<%= DEFAULT_META[“twitter_account”] %>“>
+     <meta name=“twitter:site” content=“<%= DEFAULT_META['twitter_account'] %>“>
      <meta name=“twitter:title” content=“<%= meta_title %>“>
      <meta name=“twitter:description” content=“<%= meta_description %>“>
-     <meta name=“twitter:creator” content=“<%= DEFAULT_META[“twitter_account”] %>“>
+     <meta name=“twitter:creator” content=“<%= DEFAULT_META["twitter_account"] %>“>
      <meta name=“twitter:image:src” content=“<%= meta_image %>“>
 
    <%= favicon_link_tag %>
    <%= csrf_meta_tags %>
    <%= action_cable_meta_tag %>
-   <%= stylesheet_link_tag ‘application’, media: ‘all’ %>
+   <%= stylesheet_link_tag 'application', media: 'all' %>
    <%#= stylesheet_pack_tag ‘application’, media: ‘all’ %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
  </head>
  <body>
-   <%= render ‘shared/navbar’ if ((Profile.where(user: current_user).count > 0) && user_signed_in?)%>
-   <%= render ‘shared/flashes’ %>
+   <%= render 'shared/navbar' if ((Profile.where(user: current_user).count > 0) && user_signed_in?)%>
+   <%= render 'shared/flashes' %>
    <%= yield %>
-   <%= javascript_include_tag ‘application’ %>
-   <%= javascript_pack_tag ‘application’ %>
+   <%= javascript_include_tag 'application' %>
+   <%= javascript_pack_tag 'application' %>
  </body>
 </html>
