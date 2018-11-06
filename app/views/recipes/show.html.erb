@@ -115,12 +115,16 @@
             <div class="recipe-small-green-line"></div>
           </h4>
           <p>
-            <ol>
-              <% array_instructions = @recipe.description.split(".") %>
-              <% array_instructions.each do |sentence| %>
-                <li><%= sentence + "." %></li>
-              <% end %>
-            </ol>
+            <% if @recipe.description == "No instructions available" %>
+              <%= @recipe.description %>
+            <% else %>
+              <ol>
+                <% array_instructions = @recipe.description.split(".") %>
+                <% array_instructions.each do |sentence| %>
+                  <li><%= sentence + "." %></li>
+                <% end %>
+              </ol>
+            <% end %>
           </p>
         </div>
       </div>

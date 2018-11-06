@@ -1,5 +1,5 @@
 <%= simple_form_for([recipe, ingredient], remote: true) do |f| %>
-  <%= f.association :food_item, prompt: "Choose an ingredient", label: false, remote: true %>
+  <%= f.association :food_item, collection: FoodItem.order('name ASC'), label: false, remote: true, class: 'blabla' %>
   <div class="quantity-ingredient">
     <%= f.input :quantity, input_html: {style: 'width: 100px'}, label: false, placeholder: "Quantity" %>
     <% FoodItem.all.each do |item| %>
