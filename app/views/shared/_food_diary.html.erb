@@ -37,20 +37,42 @@
 
     <% added_recipes.reverse.each do |added_recipe| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= link_to recipe_path(added_recipe.recipe) do %>
           <div class ="food-diary-card added-recipe" style="background-image: url('<%= cl_image_path added_recipe.recipe.photo %>'">
-            <div class="added-recipe-container">
-              <div class="added-recipe-category">
-                <p><%= added_recipe.recipe.categories.first.name.capitalize %></p>
+
+            <%# FRONT %>
+            <div class="front-card">
+              <div class="added-recipe-container">
+                <div class="added-recipe-category">
+                  <p><%= added_recipe.recipe.categories.first.name.capitalize %></p>
+                </div>
+                <div class="orange-bar">
+                </div>
+                <div class="added-recipe-name">
+                  <p class="thin"><%= added_recipe.recipe.name.capitalize %></p>
+                </div>
               </div>
-              <div class="orange-bar">
-              </div>
-              <div class="added-recipe-name">
-                <p class="thin"><%= added_recipe.recipe.name.capitalize %></p>
+            </div>
+
+          <%# BACK %>
+          <div class="back-card">
+            <div class="add-meal-container food-diary-back">
+              <div class="card-options">
+                <%= link_to recipe_path(added_recipe.recipe), class: "btn btn-action btn-light-orange" do %>
+                  <i class="fas fa-plus"></i> SEE RECIPE
+                <% end %>
+                <div class="add-meal-or">
+                  <div class="add-meal-or-line"></div>
+                  <span>or</span>
+                  <div class="add-meal-or-line"></div>
+                </div>
+                <%= link_to added_recipe_path(added_recipe), class: "btn btn-action btn-light-orange", :method => :delete do %>
+                  <i class="fas fa-minus"></i> DELETE RECIPE
+                <% end %>
               </div>
             </div>
           </div>
-        <%end%>
+
+         </div>
       </div>
     <% end %>
 

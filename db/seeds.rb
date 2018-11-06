@@ -19,6 +19,8 @@ puts "Deleted recipes"
 Profile.destroy_all
 puts "Deleted profiles"
 
+User.destroy_all
+puts "Deleted users"
 
 Diet.destroy_all
 puts "Deleted diets"
@@ -43,13 +45,6 @@ admin = User.create(email: "admin@admin.com", password:"password") if User.find_
 profile_admin = Profile.create(first_name:"Admin", last_name:"admin", date_of_birth:Date.new, diet:Diet.first, height:165, weight:55, gender:"Female", user:admin )
 puts "Profile admin created"
 
-# User
-admin = User.create(email: "admin@admin.com", password:"password") if User.find_by_email("admin@admin.com").nil?
-
-
-# Profile admin created
-profile_admin = Profile.create(first_name:"Admin", last_name:"admin", date_of_birth:Date.new, diet:Diet.first, height:165, weight:55, gender:"Female", user:admin )
-puts "Profile admin created"
 
 # Categories
 
