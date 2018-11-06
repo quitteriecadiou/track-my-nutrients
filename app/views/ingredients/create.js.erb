@@ -1,6 +1,7 @@
 function refreshForm(innerHTML) {
   const newIngredientForm = document.getElementById('new_ingredient');
   newIngredientForm.innerHTML = innerHTML;
+  initForm();
 }
 
 function addIngredient(reviewHTML) {
@@ -14,6 +15,6 @@ function addIngredient(reviewHTML) {
   refreshForm('<%= j render "ingredients/form", recipe: @recipe, ingredient: @ingredient %>');
 <% else %>
   refreshForm('<%= j render "ingredients/form", recipe: @recipe, ingredient: Ingredient.new %>');
-  addIngredient('<%= j render "ingredients/show", ingredient: @ingredient %>');
+  addIngredient('<%= j render "ingredients/show", ingredient: @ingredient, recipe: @recipe %>');
 <% end %>
 

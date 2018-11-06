@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
     @added_recipe = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
     @tracker = AddedRecipe.tracker(@added_recipe)
-    @recipes = Recipe.where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id])
+    @recipes = Recipe.where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id]).sort_by{ |recipe| recipe[:created_at] }.reverse
 
     if params[:query].present?
       @recipes = Recipe.where("name ILIKE ?", "%#{params[:query]}%")
@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
     @added_recipe = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
     @tracker = AddedRecipe.tracker(@added_recipe)
+
   end
 
   def new
@@ -38,7 +39,7 @@ class RecipesController < ApplicationController
     @recipe.prep_time = "Unknown" if @recipe.prep_time.nil?
     @recipe.difficulty = "Unknown" if @recipe.difficulty.nil?
     @recipe.description = "No instructions available" if @recipe.description.nil?
-    @recipe[:photo] = "ilins8un6sxf3hhcqm2d.jpg" if @recipe[:photo].nil?
+    @recipe[:photo] = "placeholder_1.jpg" if @recipe[:photo].nil?
     @recipe.profile_id = current_user.profile.id
 
 
@@ -51,10 +52,14 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    @recipe.prep_time = nil if @recipe.prep_time == "Unknown"
-    @recipe.difficulty = nil if @recipe.difficulty == "Unknown"
-    @recipe.description = nil if @recipe.description == "No instructions available"
-    @ingredient = Ingredient.new
+    if @recipe.profile_id == current_user.profile.id
+      @recipe.prep_time = nil if @recipe.prep_time == "Unknown"
+      @recipe.difficulty = nil if @recipe.difficulty == "Unknown"
+      @recipe.description = nil if @recipe.description == "No instructions available"
+      @ingredient = Ingredient.new
+    else
+      redirect_to recipe_path(@recipe)
+    end
   end
 
   def update
@@ -67,7 +72,11 @@ class RecipesController < ApplicationController
       @recipe.description = "No instructions available" if @recipe.description == ""
       @recipe.save
 
-      redirect_to recipe_path(@recipe)
+      if @recipe.ingredients.count < 1
+        redirect_to edit_recipe_path(@recipe)
+      else
+        redirect_to recipe_path(@recipe)
+      end
     else
       render :edit
     end
@@ -76,6 +85,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :portion, :prep_time, :ingredient_id, :difficulty)
+    params.require(:recipe).permit(:name, :description, :portion, :prep_time, :ingredient_id, :difficulty, :photo)
   end
 end
