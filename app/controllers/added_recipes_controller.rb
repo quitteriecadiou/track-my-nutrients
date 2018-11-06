@@ -16,8 +16,10 @@ class AddedRecipesController < ApplicationController
   end
 
   def destroy
-    @added_recipe = AddedRecipe.find(added_recipe_params)
+    @added_recipe = AddedRecipe.find(params[:id])
     @added_recipe.destroy
+
+    redirect_to dashboard_path(current_user.profile)
   end
 
   private
