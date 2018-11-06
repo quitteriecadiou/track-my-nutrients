@@ -16,20 +16,57 @@ function circleTracker() {
     trackerDiv.innerHTML = '<canvas id="circle-tracker-animation"></canvas>'
 
     var ctx = document.getElementById("circle-tracker-animation");
-    var circleTrackerTry = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          backgroundColor: ['#27AE60', '#F5F5F5'],
-          data: [nutrientPercentWithoutSign, 100 - nutrientPercentWithoutSign]
-        }],
-      },
-      options: {
-        animation: {
-          animateRotate: true
-        }
-      },
-    });
+    if (nutrientPercentWithoutSign > 100) {
+      var circleTrackerTry = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            borderWidth: 0,
+            backgroundColor: ['#F2994A', '#F5F5F5'],
+            data: [100, 0]
+          }],
+        },
+        options: {
+          cutoutPercentage: 75,
+          animation: {
+            animateRotate: true
+          },
+          elements: {
+            center: {
+            text: 'Desktop',
+            color: '#36A2EB', //Default black
+            fontStyle: 'Helvetica', //Default Arial
+            sidePadding: 15 //Default 20 (as a percentage)
+            }
+          }
+        },
+      });
+    } else {
+      var circleTrackerTry = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            borderWidth: 0,
+            backgroundColor: ['#27AE60', '#F5F5F5'],
+            data: [nutrientPercentWithoutSign, 100 - nutrientPercentWithoutSign]
+          }],
+        },
+        options: {
+          cutoutPercentage: 75,
+          animation: {
+            animateRotate: true
+          },
+          elements: {
+            center: {
+            text: 'Desktop',
+            color: '#36A2EB', //Default black
+            fontStyle: 'Helvetica', //Default Arial
+            sidePadding: 15 //Default 20 (as a percentage)
+            }
+          }
+        },
+      });
+    }
 
   nutrients.forEach((nutrient) => nutrient.addEventListener("click", event => {
 
@@ -54,20 +91,59 @@ function circleTracker() {
     trackerDiv.innerHTML = '<canvas id="circle-tracker-animation"></canvas>'
 
     var ctx = document.getElementById("circle-tracker-animation");
-    var circleTrackerTry = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        datasets: [{
-          backgroundColor: ['#27AE60', '#F5F5F5'],
-          data: [nutrientPercentWithoutSign, 100 - nutrientPercentWithoutSign]
-        }],
-      },
-      options: {
-        animation: {
-          animateRotate: true
-        }
-      },
-    });
+
+    if (nutrientPercentWithoutSign > 100) {
+      var circleTrackerTry = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            borderWidth: 0,
+            backgroundColor: ['#F2994A', '#F5F5F5'],
+            data: [100, 0]
+          }],
+        },
+        options: {
+          cutoutPercentage: 75,
+          animation: {
+            animateRotate: true
+          },
+          elements: {
+            center: {
+            text: 'Desktop',
+            color: '#36A2EB', //Default black
+            fontStyle: 'Helvetica', //Default Arial
+            sidePadding: 15 //Default 20 (as a percentage)
+            }
+          }
+        },
+      });
+    } else {
+      var circleTrackerTry = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            borderWidth: 0,
+            backgroundColor: ['#27AE60', '#F5F5F5'],
+            data: [nutrientPercentWithoutSign, 100 - nutrientPercentWithoutSign]
+          }],
+        },
+        options: {
+          cutoutPercentage: 75,
+          animation: {
+            animateRotate: true
+          },
+          elements: {
+            center: {
+            text: 'Desktop',
+            color: '#36A2EB', //Default black
+            fontStyle: 'Helvetica', //Default Arial
+            sidePadding: 15 //Default 20 (as a percentage)
+            }
+          }
+        },
+      });
+    }
+
   }))
 
 };
