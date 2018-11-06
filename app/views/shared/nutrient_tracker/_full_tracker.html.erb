@@ -2,7 +2,8 @@
   <% hash_nutrient.each do |key, value| %>
     <div class="single-tracker">
       <h4 class="tracker-nutrient-name"><%= value %></h4>
-      <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[key] / personal_diet.protein_obj_personal %>
+      <% key_obj_personal = "#{key}_obj_personal".to_sym %>
+      <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[key] / personal_diet[key_obj_personal] %>
     </div>
   <% end %>
 </div>
