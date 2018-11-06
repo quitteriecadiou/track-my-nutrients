@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   # url needed to load your images from the external world (Facebook, Twitter, ...).
 
   def default_url_options
-    { host: ENV["track-my-nutrients.herokuapp.com"] || "localhost:3000" }
+    { host: ENV["trackmynutrients.fr"] || "localhost:3000" }
   end
 end
