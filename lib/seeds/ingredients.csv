@@ -7,7 +7,7 @@ recipe,food_item,quantity
 "High protein breakfast","Spinach, cooked",160
 "High protein breakfast","Egg, raw",1
 "Indian chicken protein pots","Lentils, sprouted",90
-"Indian chicken protein pots","Tomato, cherry, raw",160
+"Indian chicken protein pots","Tomato, cherry, raw",20
 "Indian chicken protein pots","Chicken, breast, without skin, cooked",150
 "Indian chicken protein pots","Coriander, fresh",10
 "Creamy courgette lasagne","Dried pasta, cooked, unsalted",500
@@ -46,3 +46,222 @@ recipe,food_item,quantity
 "Mushroom risotto","Butter, unknown fat content , half-salted (average)",25
 "Mushroom risotto","Parmesan cheese, from cow's milk",50
 "Mushroom risotto","Salt, white, for human consumption (sea, igneous or rock), no enrichment",2
+"Spaghetti puttanesca","Dried pasta, cooked, unsalted",100
+"Spaghetti puttanesca","Onion, cooked",1
+"Spaghetti puttanesca","Olive oil, extra virgin",15
+"Spaghetti puttanesca","Tomato, cherry, raw",20
+"Spaghetti puttanesca","Garlic, fresh",2
+"Spaghetti puttanesca","Capers, pickled in vinegar",15
+"Spaghetti puttanesca","Spinach, raw",160
+"Tomato salad","Tomato, raw",6
+"Tomato salad","Onion, raw",1
+"Tomato salad","Basil, fresh",10
+"Tomato salad","Olive oil, extra virgin",15
+"Tomato salad","Sesame seed",10
+"American blueberry pancakes","Wheat flour, type 55 (for pastry)",200
+"American blueberry pancakes","Baking powder or raising agent",10
+"American blueberry pancakes","Egg, raw",1
+"American blueberry pancakes","Milk, semi-skimmed, UHT",300
+"American blueberry pancakes","Blueberry, raw",150
+"Apple & blackberry crumble","Wheat flour, type 55 (for pastry)",120
+"Apple & blackberry crumble","Sugar, brown",100
+"Apple & blackberry crumble","Butter, unknown fat content , half-salted (average)",90
+"Apple & blackberry crumble","Blueberry, raw",150
+"Apple & blackberry crumble","Apple, pulp and peel, raw",1
+"Apple & blackberry crumble","Ice cream, in box",200
+"Homemade protein shake","Banana, pulp, raw",1
+"Homemade protein shake","Yogurt, Greek-style, ewe's milk",170
+"Homemade protein shake","Quinoa, boiled/cooked in water, unsalted",25
+"Homemade protein shake","Soya flour",50
+"Veggie protein chilli","Olive oil, extra virgin",15
+"Veggie protein chilli","Onion, raw",1
+"Veggie protein chilli","Garlic, fresh",2
+"Veggie protein chilli","Sweet potato, cooked",2
+"Veggie protein chilli","Haricot bean, cooked",400
+"Veggie protein chilli","Tomato, peeled, canned, drained",400
+"Breakfast smoothie","Banana, pulp, raw",1
+"Breakfast smoothie","Apple, pulp and peel, raw",1
+"Breakfast smoothie","Blueberry, raw",150
+"Breakfast smoothie","Honey",20
+"Breakfast smoothie","Milk, semi-skimmed, UHT",100
+"Chicken satay salad","Chicken, leg, meat and skin, roasted/baked",300
+"Chicken satay salad","Olive oil, extra virgin",15
+"Chicken satay salad","Quinoa, boiled/cooked in water, unsalted",75
+"Chicken satay salad","Honey",20
+"Courgette & tomato soup","Butter, 82% fat, unsalted",10
+"Courgette & tomato soup","Onion, raw",2
+"Courgette & tomato soup","Courgette or zucchini, pulp and peel, raw",3
+"Courgette & tomato soup","Tomato, raw",5
+"Courgette & tomato soup","Wheat flour, type 110",20
+"Courgette & tomato soup","Turmeric, powder",5
+"Courgette & tomato soup","Broth, stock or bouillon, vegetables, dehydrated and reconstituted",500
+"Moroccan turkey salad","Pita bread",200
+"Moroccan turkey salad","Olive oil, extra virgin",20
+"Moroccan turkey salad","Eggplant, raw",1
+"Moroccan turkey salad","Harissa (hot spicy sauce), prepacked",10
+"Moroccan turkey salad","Tomato, cherry, raw",10
+"Moroccan turkey salad","Turkey, meat, roasted/baked",500
+"Moroccan turkey salad","Roman rocket, raw",100
+"Moroccan turkey salad","Pomegranate, pulp and pips, raw",110
+"Moroccan turkey salad","Mint, fresh",10
+"Two bean, potato & tuna salad","Potato, peeled, raw",3
+"Two bean, potato & tuna salad","French bean, raw",175
+"Two bean, potato & tuna salad","Mung bean, sprouted or soy spouts, raw",175
+"Two bean, potato & tuna salad","Tuna, plain, canned, drained",160
+"Two bean, potato & tuna salad","Roman rocket, raw",50
+"Two bean, potato & tuna salad","Harissa (hot spicy sauce), prepacked",20
+"Two bean, potato & tuna salad","Olive oil, extra virgin",20
+"Two bean, potato & tuna salad","Vinegar",20
+"Favourite pasta salad","Dried pasta, raw",250
+"Favourite pasta salad","Snow pea, raw",140
+"Favourite pasta salad","Parsley, fresh",20
+"Favourite pasta salad","Chive or spring onion, fresh",20
+"Favourite pasta salad","Olive oil, extra virgin",20
+"Favourite pasta salad","Lemon, pulp, raw",1
+"Thai squash soup","Onion, raw",1
+"Thai squash soup","Squash, butternut, pulp, raw",1
+"Thai squash soup","Lime juice, home-made",50
+"Thai squash soup","Coconut milk or coconut cream",125
+"Thai squash soup","Coriander, fresh",10
+"Thai squash soup","Chili pepper, raw",2
+"Curried chicken & mango salad","Chicken, breast, without skin, cooked",200
+"Curried chicken & mango salad","Olive oil, extra virgin",10
+"Curried chicken & mango salad","Curry, powder",10
+"Curried chicken & mango salad","Yogurt, Greek-style, plain",20
+"Curried chicken & mango salad","Mango, pulp, raw",1
+"Curried chicken & mango salad","Lime juice, home-made",10
+"Curried chicken & mango salad","Cos or romaine lettuce, raw",1
+"Curried chicken & mango salad","Onion, raw",1
+"Curried chicken & mango salad","Sesame seed",10
+"Apple & linseed porridge","Oat, raw",100
+"Apple & linseed porridge","Apple, Canada, pulp, raw",1
+"Apple & linseed porridge","Milk, skimmed, UHT",500
+"Apple & linseed porridge","Linseed oil",20
+"Apple & linseed porridge","Cinnamon, powder",10
+"Apple & linseed porridge","Yoghurt, plain (average)",150
+"Baked eggs with spinach & tomato","Spinach, raw",100
+"Baked eggs with spinach & tomato","Tomato pulp, canned",400
+"Baked eggs with spinach & tomato","Egg, raw",4
+"Mushroom & basil omelette","Tomato, raw",2
+"Mushroom & basil omelette","Egg, raw",3
+"Mushroom & basil omelette","Chive or spring onion, fresh",20
+"Mushroom & basil omelette","Chanterelle or girolle mushroom, raw",300
+"Mushroom & basil omelette","Fresh cream cheese, plain, fat free",50
+"Mushroom & basil omelette","Butter, 82% fat, unsalted",10
+"Mushroom & basil omelette","Basil, fresh",20
+"Fruit & nut granola","Honey",70
+"Fruit & nut granola","Syrup, maple",50
+"Fruit & nut granola","Oat, raw",500
+"Fruit & nut granola","Almond, peeled, unpeeled or blanched",100
+"Fruit & nut granola","Pine nuts",50
+"Fruit & nut granola","Sesame seed",20
+"Fruit & nut granola","Raisin",50
+"Fruit & nut granola","Date, pulp and peel, dried",85
+"Fruit & nut granola","Apricot, pitted, dried",85
+"Fruitburst muffins","Wheat flour, type 55 (for pastry)",225
+"Fruitburst muffins","Egg, raw",2
+"Fruitburst muffins","Baking powder or raising agent",10
+"Fruitburst muffins","Butter, 82% fat, unsalted",50
+"Fruitburst muffins","Milk, skimmed, UHT",175
+"Fruitburst muffins","Honey",70
+"Fruitburst muffins","Raisin",140
+"Fruitburst muffins","Apricot, pitted, dried",140
+"Fruitburst muffins","Cinnamon, powder",10
+"Fruitburst muffins","Blueberry, raw",140
+"Fruitburst muffins","Cranberry, raw",85
+"Fruitburst muffins","Lemon zest, raw",15
+"Mexican egg roll","Egg raw",1
+"Mexican egg roll","Tomato sauce, w vegetables, prepacked",20
+"Mexican egg roll","Rapeseed oil",5
+"Mexican egg roll","Coriander, fresh",10
+"Crunchy prawn & noodle","Rice noodle, cooked, unsalted",100
+"Crunchy prawn & noodle","Carrot, raw",2
+"Crunchy prawn & noodle","Onion, raw",2
+"Crunchy prawn & noodle","Coriander, fresh",10
+"Crunchy prawn & noodle","Mint, fresh",10
+"Crunchy prawn & noodle","Shrimp or prawn, raw",140
+"Crunchy prawn & noodle","Soy sauce, prepacked",15
+"Crunchy prawn & noodle","Lime, pulp, raw",1
+"Crunchy prawn & noodle","Sugar, brown",5
+"Crunchy prawn & noodle","Nuoc mam sauce or fish sauce, prepacked",5
+"Cloud bread","Butter, light, 39-41% fat, unsalted",5
+"Cloud bread","Egg raw",4
+"Cloud bread","Fresh cream cheese, plain, fat free",50
+"Cloud bread","Tartare sauce, prepacked",5
+"Cloud bread","Cumin, seed",10
+"Paillard of chicken","Chicken, breast, without skin, cooked",800
+"Paillard of chicken","Olive oil, extra virgin",25
+"Paillard of chicken","Vinegar",10
+"Paillard of chicken","Roman rocket, raw",140
+"Paillard of chicken","Parmesan cheese, from cow’s milk",25
+"Paillard of chicken","Lemon, pulp , raw",1
+"Paillard of chicken","Garlic, fresh",30
+"Paillard of chicken","Rosemary, fresh",20
+"Paillard of chicken","Sage, fresh",20
+"Greek salad omelette","Egg raw",10
+"Greek salad omelette","Olive oil, extra virgin",15
+"Greek salad omelette","Parsley, fresh",20
+"Greek salad omelette","Onion, raw",1
+"Greek salad omelette","Tomato, raw",3
+"Greek salad omelette","Olives, black, in oil (Greek olive)",70
+"Greek salad omelette","Feta-cheese, from ewe’s milk",100
+"Aubergine melts","Olive oil, extra virgin",15
+"Aubergine melts","Tomato, raw",4
+"Aubergine melts","Eggplant, raw",2
+"Aubergine melts","Basil, fresh",40
+"Aubergine melts","Mozzarella cheese, from cow’s milk",150
+"Prawn & bacon frittata","Olive oil, extra virgin",15
+"Prawn & bacon frittata","Onion, raw",1
+"Prawn & bacon frittata","Egg raw",4
+"Prawn & bacon frittata","Shrimp or prawn, cooked",85
+"Prawn & bacon frittata","Milk, whole, UHT", 10
+"Prawn & bacon frittata","Bacon, back",40
+"Prawn & bacon frittata","Garden peas, frozen, raw",100
+"Prawn & bacon frittata","Green salad, raw, without seasoning",1
+"Healthy banana bread","Butter, light, 39-41% fat, unsalted",5
+"Healthy banana bread","Wheat flour, type 110",230
+"Healthy banana bread","Baking powder or raising agent",5
+"Healthy banana bread","Banana, pulp, raw",2
+"Healthy banana bread","Syrup, agave",10
+"Healthy banana bread","Yogurt, fermented milk or dairy specialty, plain, fat free",150
+"Healthy banana bread","Egg raw",3
+"Healthy banana bread","Pecan nut",25
+"Superhealthy salmon burgers","Salmon, raw, farmed",500,
+"Superhealthy salmon burgers","Olive oil, extra virgin",15
+"Superhealthy salmon burgers","Soy sauce, prepacked",15
+"Superhealthy salmon burgers","Ginger, raw",10
+"Superhealthy salmon burgers","Lemon, pulp, raw",1
+"Superhealthy salmon burgers","Coriander, fresh",10
+"Superhealthy salmon burgers","Curry, powder",10
+"Sugar-free carrot cake","Pecan nut",100
+"Sugar-free carrot cake","Wheat flour, self-raising",140
+"Sugar-free carrot cake","Egg raw",2
+"Sugar-free carrot cake","Rapeseed oil", 5
+"Sugar-free carrot cake","Baking powder or raising agent",5
+"Sugar-free carrot cake","Carrot, raw",3
+"Sugar-free carrot cake","Cinnamon, powder",15
+"Sugar-free carrot cake","Raisin",100
+"Sugar-free carrot cake","Aspartame, in powder",100
+"Lemon & coriander hummus","Chick pea, canned, drained",800
+"Lemon & coriander hummus","Garlic, fresh",2
+"Lemon & coriander hummus","Yogurt, Greek-style, plain",30
+"Lemon & coriander hummus","Tahini (sesame paste)",30
+"Lemon & coriander hummus","Olive oil, extra virgin",30
+"Lemon & coriander hummus","Lemon juice, home-made",100
+"Lemon & coriander hummus","Coriander, fresh",20
+"Instant frozen berry yogurt","Yogurt, Greek-style, plain",250
+"Instant frozen berry yogurt","Honey",10
+"Instant frozen berry yogurt","Raspberry, frozen, raw",100
+"Instant frozen berry yogurt","Blackberry, frozen, raw",100
+"Instant frozen berry yogurt","Blueberry, frozen, raw",50
+"Stuffed jacket potatoes","Potato, peeled, raw",4
+"Stuffed jacket potatoes","Cheddar cheese, from cow's milk",100
+"Stuffed jacket potatoes","Sweet corn, canned, drained",100
+"Stuffed jacket potatoes","Sweet pepper, green, yellow or red, raw",1
+"Stuffed jacket potatoes","Coriander, fresh",10
+"Stuffed jacket potatoes","Chive or spring onion, fresh",10
+"Easy hummus recipe","Chick pea, canned, drained",400
+"Easy hummus recipe","Tahini (sesame paste)",15
+"Easy hummus recipe","Garlic, fresh",1
+"Easy hummus recipe","Yogurt, Greek-style, plain",20
+"Easy hummus recipe","Lemon juice, home-made",30

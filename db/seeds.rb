@@ -83,6 +83,7 @@ csv_recipes.each do |row|
   end
   recipe[:photo] = row["photo"]
   recipe.save!
+  puts recipe.name
 end
 puts "Created recipes"
 
