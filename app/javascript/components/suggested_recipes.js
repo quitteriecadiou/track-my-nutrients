@@ -1,32 +1,29 @@
-const recipes = document.querySelectorAll('.suggested-recipe-content');
-const initTitle = document.getElementById("suggested-recipes-title").innerHTML;
-const initContent = document.getElementById("suggested-recipe-content").innerHTML;
-
 function suggestedRecipesShowNutrients() {
-  const content = document.getElementById("suggested-recipe-content");
-  const title = document.getElementById("suggested-recipes-title");
+  const recipes = document.querySelectorAll('.suggested-recipe-content');
+  const recipeArr = Array.prototype.slice.call(recipes);
   recipes.forEach((recipe) => recipe.addEventListener("click", (event) => {
     event.preventDefault();
-    const recipeName = `${recipe.querySelector('.suggested-recipe-title').innerHTML}`;
-    const recipeNutrients = `${recipe.querySelector('.suggested-recipe-nutrients').innerHTML}`;
-    title.innerHTML = recipeName;
-    content.innerHTML = recipeNutrients;
-    backToSuggestedRecipeList();
+    const index = recipeArr.indexOf(recipe)
+    const homePage = document.getElementById('suggested-recipes-dashboard-page')
+    const allRecipeCard = document.querySelectorAll('.suggested-recipe-nutrient-detail')
+    const choosenRecipe = allRecipeCard.item(index)
+    homePage.classList.add('hidden')
+    choosenRecipe.classList.remove('hidden')
   }));
-
 };
 
 function backToSuggestedRecipeList() {
   const backButtons = document.querySelectorAll('.back-button')
+  const buttonArr = Array.prototype.slice.call(backButtons);
   backButtons.forEach((button) => button.addEventListener("click", (event) => {
     event.preventDefault();
-    const title = document.getElementById("suggested-recipes-title");
-    title.innerHTML = initTitle;
-    const content = document.getElementById("suggested-recipe-content");
-    content.innerHTML = initContent;
-    suggestedRecipesShowNutrients();
+    const index = buttonArr.indexOf(button)
+    const homePage = document.getElementById('suggested-recipes-dashboard-page')
+    const allRecipeCard = document.querySelectorAll('.suggested-recipe-nutrient-detail')
+    const choosenRecipe = allRecipeCard.item(index)
+    homePage.classList.remove('hidden')
+    choosenRecipe.classList.add('hidden')
   }));
-
 };
 
 
