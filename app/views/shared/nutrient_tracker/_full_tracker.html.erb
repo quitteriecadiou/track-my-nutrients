@@ -4,6 +4,12 @@
       <h4 class="tracker-nutrient-name"><%= value %></h4>
       <% key_obj_personal = "#{key}_obj_personal".to_sym %>
       <%= render '/shared/progress_bars/progress_bar_large.html.erb', percentage: tracker[key] / personal_diet[key_obj_personal] %>
+      <p class= "hidden nutrient-consumed"><%=ActiveSupport::NumberHelper.number_to_delimited((tracker[key] * unit_conv[nutrients_unit[key].to_sym]).round) %></p>
+      <p class= "hidden nutrient-objective"><%=ActiveSupport::NumberHelper.number_to_delimited((personal_diet[key_obj_personal] * unit_conv[nutrients_unit[key].to_sym]).round)%></p>
+      <p class= "hidden nutrient-unit"><%= nutrients_unit[key] %></p>
+
     </div>
   <% end %>
 </div>
+
+
