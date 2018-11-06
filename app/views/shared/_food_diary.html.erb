@@ -41,7 +41,7 @@
           <div class ="food-diary-card added-recipe" style="background-image: url('<%= cl_image_path added_recipe.recipe.photo %>'">
             <div class="added-recipe-container">
               <div class="added-recipe-category">
-                <p><%= added_recipe.recipe.category.name.capitalize %></p>
+                <p><%= added_recipe.recipe.categories.first.name.capitalize %></p>
               </div>
               <div class="orange-bar">
               </div>
