@@ -6,12 +6,12 @@
     <!-- <div class="row"> -->
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="nutrient-tracker-full">
-          <%= render '/shared/nutrient_tracker/full_tracker', tracker: @tracker, personal_diet: @personal_diet, hash_nutrient: ApplicationHelper::HASH_NUTRIENT  %>
+          <%= render '/shared/nutrient_tracker/full_tracker', tracker: @tracker, personal_diet: @personal_diet, hash_nutrient: ApplicationHelper::HASH_NUTRIENT,unit_conv: ApplicationHelper::UNIT_CONV, nutrients_unit: ApplicationHelper::NUTRIENTS_UNIT %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="nutrient-tracker-circle">
-          <%= render '/shared/nutrient_tracker/circle_tracker' %>
+          <%= render '/shared/nutrient_tracker/circle_tracker'%>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">

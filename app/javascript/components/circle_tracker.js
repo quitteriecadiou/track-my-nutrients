@@ -1,5 +1,3 @@
-
-
 function circleTracker() {
   const nutrients = document.querySelectorAll(".single-tracker")
 
@@ -12,61 +10,22 @@ function circleTracker() {
     const nutrientPercent = nutrients[0].querySelector(".progress-bar-label").innerHTML
     const nutrientPercentWithoutSign = nutrientPercent.substring(0,nutrientPercent.length-1)
 
-    const trackerDiv = document.querySelector('.circle-tracker-progress')
-    trackerDiv.innerHTML = '<canvas id="circle-tracker-animation"></canvas>'
+    const nutrientConsumed = nutrients[0].querySelector(".nutrient-consumed").innerHTML
+    const nutrientObjective = nutrients[0].querySelector(".nutrient-objective").innerHTML
+    const nutrientUnit = nutrients[0].querySelector('.nutrient-unit').innerHTML
+
+    const nutrientConsumedDiv = document.querySelector('.nutrient-eaten')
+    const nutrientObjectiveDiv = document.querySelector('.nutrient-obj')
+
+
+    nutrientConsumedDiv.innerHTML = nutrientConsumed.concat(nutrientUnit)
+    nutrientObjectiveDiv.innerHTML = nutrientObjective.concat(nutrientUnit)
+
+    const trackerDiv = document.querySelector('.circle-tracker-chart')
+    trackerDiv.innerHTML = '<canvas id="circle-tracker-animation" style="height: 230px">'
 
     var ctx = document.getElementById("circle-tracker-animation");
-    if (nutrientPercentWithoutSign > 100) {
-      var circleTrackerTry = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [{
-            borderWidth: 0,
-            backgroundColor: ['#F2994A', '#F5F5F5'],
-            data: [100, 0]
-          }],
-        },
-        options: {
-          cutoutPercentage: 75,
-          animation: {
-            animateRotate: true
-          },
-          elements: {
-            center: {
-            text: 'Desktop',
-            color: '#36A2EB', //Default black
-            fontStyle: 'Helvetica', //Default Arial
-            sidePadding: 15 //Default 20 (as a percentage)
-            }
-          }
-        },
-      });
-    } else {
-      var circleTrackerTry = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [{
-            borderWidth: 0,
-            backgroundColor: ['#27AE60', '#F5F5F5'],
-            data: [nutrientPercentWithoutSign, 100 - nutrientPercentWithoutSign]
-          }],
-        },
-        options: {
-          cutoutPercentage: 75,
-          animation: {
-            animateRotate: true
-          },
-          elements: {
-            center: {
-            text: 'Desktop',
-            color: '#36A2EB', //Default black
-            fontStyle: 'Helvetica', //Default Arial
-            sidePadding: 15 //Default 20 (as a percentage)
-            }
-          }
-        },
-      });
-    }
+    chart(nutrientPercentWithoutSign, ctx);
 
   nutrients.forEach((nutrient) => nutrient.addEventListener("click", event => {
 
@@ -87,65 +46,66 @@ function circleTracker() {
     const nutrientPercent = nutrient.querySelector(".progress-bar-label").innerHTML
     const nutrientPercentWithoutSign = nutrientPercent.substring(0,nutrientPercent.length-1)
 
-    const trackerDiv = document.querySelector('.circle-tracker-progress')
-    trackerDiv.innerHTML = '<canvas id="circle-tracker-animation"></canvas>'
+    const nutrientConsumed = nutrient.querySelector(".nutrient-consumed").innerHTML
+    const nutrientObjective = nutrient.querySelector(".nutrient-objective").innerHTML
+    const nutrientUnit = nutrient.querySelector('.nutrient-unit').innerHTML
+
+    const nutrientConsumedDiv = document.querySelector('.nutrient-eaten')
+    const nutrientObjectiveDiv = document.querySelector('.nutrient-obj')
+
+
+    nutrientConsumedDiv.innerHTML = nutrientConsumed.concat(nutrientUnit)
+    nutrientObjectiveDiv.innerHTML = nutrientObjective.concat(nutrientUnit)
+
+
+    const trackerDiv = document.querySelector('.circle-tracker-chart')
+    trackerDiv.innerHTML = '<canvas id="circle-tracker-animation" style="height: 230px">'
 
     var ctx = document.getElementById("circle-tracker-animation");
-
-    if (nutrientPercentWithoutSign > 100) {
-      var circleTrackerTry = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [{
-            borderWidth: 0,
-            backgroundColor: ['#F2994A', '#F5F5F5'],
-            data: [100, 0]
-          }],
-        },
-        options: {
-          cutoutPercentage: 75,
-          animation: {
-            animateRotate: true
-          },
-          elements: {
-            center: {
-            text: 'Desktop',
-            color: '#36A2EB', //Default black
-            fontStyle: 'Helvetica', //Default Arial
-            sidePadding: 15 //Default 20 (as a percentage)
-            }
-          }
-        },
-      });
-    } else {
-      var circleTrackerTry = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [{
-            borderWidth: 0,
-            backgroundColor: ['#27AE60', '#F5F5F5'],
-            data: [nutrientPercentWithoutSign, 100 - nutrientPercentWithoutSign]
-          }],
-        },
-        options: {
-          cutoutPercentage: 75,
-          animation: {
-            animateRotate: true
-          },
-          elements: {
-            center: {
-            text: 'Desktop',
-            color: '#36A2EB', //Default black
-            fontStyle: 'Helvetica', //Default Arial
-            sidePadding: 15 //Default 20 (as a percentage)
-            }
-          }
-        },
-      });
-    }
+    chart(nutrientPercentWithoutSign, ctx);
 
   }))
 
 };
 
 export { circleTracker };
+
+function chart(nutrientPercentWithoutSign, ctx) {
+  if (nutrientPercentWithoutSign > 100) {
+    var circleTrackerTry = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          borderWidth: 0,
+          backgroundColor: ['#F2994A', '#F5F5F5'],
+          data: [100, 0]
+        }],
+      },
+      options: {
+        maintainAspectRatio: true,
+        cutoutPercentage: 75,
+        animation: {
+          animateRotate: true
+        }
+      },
+    });
+  } else {
+    var circleTrackerTry = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          borderWidth: 0,
+          backgroundColor: ['#27AE60', '#F5F5F5'],
+          data: [nutrientPercentWithoutSign, 100 - nutrientPercentWithoutSign]
+        }],
+      },
+      options: {
+        maintainAspectRatio: true,
+        cutoutPercentage: 75,
+        animation: {
+          animateRotate: true
+        }
+      },
+    });
+  }
+};
