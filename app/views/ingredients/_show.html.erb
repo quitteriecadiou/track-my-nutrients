@@ -1,7 +1,11 @@
-<li class="list-group-item">
+<li class="list-group-item" id="list-ingredient-<%= ingredient.id %>">
   <%= ingredient.quantity %>
   <% unless ingredient.food_item.unit == "no_unit" %>
     <%= ingredient.food_item.unit %>
   <% end %>
+
   <%= ingredient.food_item.name %>
+  <%= link_to  recipe_ingredient_path(recipe, ingredient), method: :delete, remote: true, class: "delete-icon" do %>
+    <i class="far fa-times-circle"></i>
+  <% end %>
 </li>

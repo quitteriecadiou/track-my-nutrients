@@ -21,11 +21,10 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(current_user.profile.id)
     @added_recipes = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
-    @recipes = Recipe.where(profile_id: [nil, current_user.profile.id])
+    @recipes = Recipe.where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id])
     @suggested_recipes = @profile.suggested_recipes(@added_recipes, @recipes)
 
     @tracker = AddedRecipe.tracker(@added_recipes)
-
   end
 
   def edit
