@@ -15,7 +15,9 @@
               </div>
               <div id="ingredients">
                     <% @recipe.ingredients.reverse.each do |ingredient| %>
-                      <%= render 'ingredients/show', ingredient: ingredient %>
+
+                        <%= render 'ingredients/show', ingredient: ingredient, recipe: @recipe %>
+
                     <% end %>
               </div>
 

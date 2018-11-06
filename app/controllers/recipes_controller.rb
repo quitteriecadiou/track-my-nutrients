@@ -72,7 +72,11 @@ class RecipesController < ApplicationController
       @recipe.description = "No instructions available" if @recipe.description == ""
       @recipe.save
 
-      redirect_to recipe_path(@recipe)
+      if @recipe.ingredients.count < 1
+        redirect_to edit_recipe_path(@recipe)
+      else
+        redirect_to recipe_path(@recipe)
+      end
     else
       render :edit
     end
