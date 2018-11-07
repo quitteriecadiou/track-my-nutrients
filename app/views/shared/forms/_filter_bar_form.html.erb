@@ -1,14 +1,14 @@
 <div class="container complete-form" id="filter-bar">
-  <div class="inline-row">
-    <div class="filters ">
+  <div class="inline-row inline-row-property">
+    <div class="filters filter-area">
 
           <%= form_tag recipes_path, method: :get do %>
             <div class="search-container">
               <%= text_field_tag :query,
                 params[:query],
-                class: "form-control margin-search-box",
+                class: "form-control input-medium-plus ",
                 placeholder: "Find A Recipe" %>
-                <%= submit_tag "OK", class: "btn btn-action btn-ingredient"%>
+                <%= submit_tag "OK", class: "btn btn-filter btn-small btn-ingredient"%>
               </div>
           <% end %>
 
@@ -17,17 +17,19 @@
           <div class="search-container">
             <%= collection_select(:category, :id, Category.joins(:recipes).order(:name).distinct, :id, :name,
               {:prompt => "All Meal Types"},
-              {:class => "form-control margin-search-box hidden-xs"})%>
-                <%= submit_tag "OK", class: "btn btn-action btn-ingredient hidden-xs"%>
+              {:class => "form-control input-medium-plus hidden-xs"})%>
+                <%= submit_tag "OK", class: "btn btn-filter btn-small btn-ingredient hidden-xs"%>
           </div>
         <% end %>
 
           <%= form_tag recipes_path, method: :get do %>
+            <div class="search-container" id="search-ingredient">
               <%= collection_select(:fooditem, :id, FoodItem.joins(:recipes).order(:name).distinct, :id, :name,
                 {:prompt => "All Ingredients"},
-                {:class => "form-control hidden-xs "},
+                {:class => "form-control input-medium-plus hidden-xs"},
                 )%>
-                <%= submit_tag "OK", class: "btn btn-action btn-small btn-ingredient hidden-xs"%>
+                <%= submit_tag "OK", class: "btn btn-filter btn-small btn-ingredient"%>
+            </div>
           <% end %>
     </div>
   </div>
@@ -35,16 +37,10 @@
 
 <div class="container complete-form" id="filter-bar">
 
-  <div class="inline-row size-bar">
+  <div class="inline-row">
         <%= link_to recipes_path(current_user.profile.id) do %>
-          <div class="btn btn-action btn-large btn-medium-green"">
-            All Recipes
-          </div>
-        <% end %>
-
-        <%= link_to new_recipe_path do %>
-          <div class="btn btn-action btn-large btn-medium-green">
-            Create a Recipe
+          <div class="btn btn-action btn-small btn-medium-green">
+            RESET </i>
           </div>
         <% end %>
 

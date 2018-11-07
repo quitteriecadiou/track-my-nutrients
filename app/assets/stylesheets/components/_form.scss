@@ -7,13 +7,11 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 label {
   font-weight: 200;
 }
-
 
 .complete-form{
   display: flex;
@@ -37,6 +35,7 @@ label {
   border-radius: 3px;
 }
 
+
 .form-control.input-small {
     width: 80px;
   }
@@ -45,10 +44,19 @@ label {
     width: 110px;
   }
 
+.form-control.input-medium-plus {
+  width: 200px;
+}
+
 .inline-row{
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.inline-row-property {
+justify-content: space-around !important;
+width: 100%;
 }
 
 #personal-info-form {
@@ -76,9 +84,10 @@ label {
   display: flex;
 }
 
-.inline-row.size-bar {
-  width: 35%;
-  margin-top: 10px;
+.filter-area {
+width: 100%;
+flex-direction: row;
+justify-content: space-around;
 }
 
 .filter-btn {
@@ -93,6 +102,10 @@ label {
   padding: 0px;
   overflow: hidden;
   margin:0px;
+}
+
+#search-ingredient {
+  padding: 15px;
 }
 
 .margin-search-box {
@@ -114,3 +127,10 @@ label {
   margin: 10px;
 }
 
+.select2-selection.select2-selection--single {
+  padding-left: 4px;
+}
+
+.select2-fooditem_id_container {
+  height: 20px;
+}
