@@ -189,12 +189,12 @@ recipe,food_item,quantity
 "Paillard of chicken","Garlic, fresh",30
 "Paillard of chicken","Rosemary, fresh",20
 "Paillard of chicken","Sage, fresh",20
-"Greek salad omelette","Egg, raw",10
+"Greek salad omelette","Egg, raw",8
 "Greek salad omelette","Olive oil, extra virgin",15
 "Greek salad omelette","Parsley, fresh",20
 "Greek salad omelette","Onion, raw",1
 "Greek salad omelette","Tomato, raw",3
-"Greek salad omelette","Olives, black, in oil (Greek olive)",70
+"Greek salad omelette","Olives, black, in oil (Greek olive)",30
 "Greek salad omelette","Feta-cheese, from ewe’s milk",100
 "Aubergine melts","Olive oil, extra virgin",15
 "Aubergine melts","Tomato, raw",4
@@ -325,3 +325,38 @@ recipe,food_item,quantity
 "Trout en papillote","Vinegar",50
 "Trout en papillote","Lemon juice, home-made",30
 "Trout en papillote","Basil, fresh",5
+"Ceviche","Haddock, raw",500
+"Ceviche","Lime juice, home-made",250
+"Ceviche","Onion, raw",1
+"Ceviche","Chili pepper, raw",2
+"Ceviche","Tomato, raw",2
+"Ceviche","Coriander, fresh",10
+"Ceviche","Olive oil, extra virgin",20
+"Spiced scrambled eggs","Onion, raw",1
+"Spiced scrambled eggs","Egg, raw",4
+"Spiced scrambled eggs","Chili pepper, raw",1
+"Spiced scrambled eggs","Tomato, raw",1
+"Spiced scrambled eggs","Milk, semi-skimmed, UHT",30
+"Spiced scrambled eggs","Coriander, fresh",5
+"Spiced scrambled eggs","Butter, 82% fat, unsalted",10
+"Crab-stuffed avocados","Crab, raw",100
+"Crab-stuffed avocados","Mustard",10
+"Crab-stuffed avocados","Olive oil, extra virgin",20
+"Crab-stuffed avocados","Chili pepper, raw",1
+"Crab-stuffed avocados","Avocado, pulp, raw",2
+"Crab-stuffed avocados","Basil, fresh",5
+"Italian-style beef stew","Onion, raw",1
+"Italian-style beef stew","Olive oil, extra virgin",20
+"Italian-style beef stew","Garlic, fresh",1
+"Italian-style beef stew","Beef, thin flank, raw",300
+"Italian-style beef stew","Sweet pepper, green, yellow or red, raw",1
+"Italian-style beef stew","Tomato, peeled, canned, drained",400
+"Italian-style beef stew","Rosemary, fresh",10
+"Roasted ratatouille chicken","Onion, raw",1
+"Roasted ratatouille chicken","Sweet pepper, green, yellow or red, raw",2
+"Roasted ratatouille chicken","Courgette or zucchini, pulp and peel, raw",2
+"Roasted ratatouille chicken","Eggplant, raw",1
+"Roasted ratatouille chicken","Tomato, raw",4
+"Roasted ratatouille chicken","Olive oil, extra virgin",40
+"Roasted ratatouille chicken","Rosemary, fresh",5
+"Roasted ratatouille chicken","Chicken, breast, without skin, cooked",300

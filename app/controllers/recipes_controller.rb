@@ -46,8 +46,13 @@ class RecipesController < ApplicationController
     Diet.all.each do |diet|
       @recipe.diets << Diet.find(diet.id)
     end
+    NUTRIENTS.each do |nutrient|
+      nutrient_per_portion = "#{nutrient}_per_portion".to_sym
+      @recipe[nutrient_per_portion] = 0
+    end
 
     if @recipe.save
+      fail
       redirect_to edit_recipe_path(@recipe)
     else
       render :new
