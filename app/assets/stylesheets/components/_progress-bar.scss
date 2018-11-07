@@ -6,6 +6,12 @@
   margin-bottom: 0;
 }
 
+.progress.progress-style.progress-large:hover {
+  font-weight: 250;
+  box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.30);
+  background-color: #F2F2F3;
+}
+
 .progress-large {
   width: 230px;
   height: 24px;

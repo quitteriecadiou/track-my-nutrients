@@ -18,12 +18,19 @@
   h4 {
     margin: 3%;
   }
+  transition: 0.4s;
 }
 
-.tracker-nutrient-name:hover {
-  cursor: pointer;
-}
+// .tracker-nutrient-name:hover {
+//   cursor: pointer;
+// }
 
 .single-tracker span {
   padding-left: 5px;
+}
+
+.single-tracker:hover {
+  cursor: pointer;
+  transform: translateX(17px);
+  transition: 0.5s;
 }
