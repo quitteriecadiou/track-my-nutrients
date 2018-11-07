@@ -4,7 +4,9 @@ class RecipesController < ApplicationController
     @added_recipe = @profile.added_recipes.where(date: Date.today)
     @personal_diet = @profile.personal_diet
     @tracker = AddedRecipe.tracker(@added_recipe)
-    @recipes = Recipe.where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id]).sort_by{ |recipe| recipe[:created_at] }.reverse
+    diet = current_user.profile.diet
+    @diet_recipes = diet.recipes
+    @recipes = @diet_recipes.where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id])
 
     if params[:query].present?
       @recipes = Recipe.where("name ILIKE ?", "%#{params[:query]}%")
@@ -41,7 +43,9 @@ class RecipesController < ApplicationController
     @recipe.description = "No instructions available" if @recipe.description.nil?
     @recipe[:photo] = "placeholder_1.jpg" if @recipe[:photo].nil?
     @recipe.profile_id = current_user.profile.id
-
+    Diet.all.each do |diet|
+      @recipe.diets << Diet.find(diet.id)
+    end
 
     if @recipe.save
       redirect_to edit_recipe_path(@recipe)

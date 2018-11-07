@@ -1,6 +1,7 @@
 module ApplicationHelper
   NUTRIENTS = ["protein", "carbohydrate", "fat", "sugars", "fibres", "fa_saturated", "fa_mono", "fa_poly", "cholesterol", "salt", "calcium", "copper", "iron", "magnesium", "manganese", "phosphorus", "potassium", "sodium", "zinc", "retinol", "beta_carotene", "vitamin_d", "vitamin_e", "vitamin_c", "vitamin_b1", "vitamin_b2", "vitamin_b3", "vitamin_b5", "vitamin_b6", "vitamin_b9", "vitamin_b12"]
 
+
   NUTRIENTS_UNIT = { protein: "g",
                      carbohydrate: "g",
                      fat: "g",
@@ -56,6 +57,7 @@ module ApplicationHelper
   };
 
   DIET_ARRAY = [DIET_1, DIET_2, DIET_3, DIET_4]
+
 
   HASH_NUTRIENT = {
     protein: "Protein",
