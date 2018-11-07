@@ -18,15 +18,6 @@ recipe,food_item,quantity
 "Creamy courgette lasagne","Ricotta cheese",250
 "Creamy courgette lasagne","Cheddar cheese, from cow's milk",50
 "Creamy courgette lasagne","Tomato sauce, with onions, prepacked",300
-"Chocolate brownie cake","Butter, unknown fat content , half-salted (average)",100
-"Chocolate brownie cake","Sugar, white",175
-"Chocolate brownie cake","Sugar, brown",75
-"Chocolate brownie cake","Dark chocolate bar, more than 40% cocoa, for cooking",125
-"Chocolate brownie cake","Syrup, maple",10
-"Chocolate brownie cake","Egg, raw",2
-"Chocolate brownie cake","Wheat flour, type 55 (for pastry)",100
-"Chocolate brownie cake","Baking powder or raising agent",5
-"Chocolate brownie cake","Cocoa powder, without sugar, powder, instant",10
 "Moroccan chickpea soup","Olive oil, extra virgin",5
 "Moroccan chickpea soup","Onion, cooked",1
 "Moroccan chickpea soup","Celery stalk, raw",2
@@ -185,11 +176,11 @@ recipe,food_item,quantity
 "Crunchy prawn & noodle","Sugar, brown",5
 "Crunchy prawn & noodle","Nuoc mam sauce or fish sauce, prepacked",5
 "Cloud bread","Butter, light, 39-41% fat, unsalted",5
-"Cloud bread","Egg raw",4
+"Cloud bread","Egg, raw",4
 "Cloud bread","Fresh cream cheese, plain, fat free",50
 "Cloud bread","Tartare sauce, prepacked",5
 "Cloud bread","Cumin, seed",10
-"Paillard of chicken","Chicken, breast, without skin, cooked",800
+"Paillard of chicken","Chicken, breast, without skin, cooked",600
 "Paillard of chicken","Olive oil, extra virgin",25
 "Paillard of chicken","Vinegar",10
 "Paillard of chicken","Roman rocket, raw",140
@@ -198,7 +189,7 @@ recipe,food_item,quantity
 "Paillard of chicken","Garlic, fresh",30
 "Paillard of chicken","Rosemary, fresh",20
 "Paillard of chicken","Sage, fresh",20
-"Greek salad omelette","Egg raw",10
+"Greek salad omelette","Egg, raw",10
 "Greek salad omelette","Olive oil, extra virgin",15
 "Greek salad omelette","Parsley, fresh",20
 "Greek salad omelette","Onion, raw",1
@@ -212,7 +203,7 @@ recipe,food_item,quantity
 "Aubergine melts","Mozzarella cheese, from cow’s milk",150
 "Prawn & bacon frittata","Olive oil, extra virgin",15
 "Prawn & bacon frittata","Onion, raw",1
-"Prawn & bacon frittata","Egg raw",4
+"Prawn & bacon frittata","Egg, raw",4
 "Prawn & bacon frittata","Shrimp or prawn, cooked",85
 "Prawn & bacon frittata","Milk, whole, UHT", 10
 "Prawn & bacon frittata","Bacon, back",40
@@ -224,7 +215,7 @@ recipe,food_item,quantity
 "Healthy banana bread","Banana, pulp, raw",2
 "Healthy banana bread","Syrup, agave",10
 "Healthy banana bread","Yogurt, fermented milk or dairy specialty, plain, fat free",150
-"Healthy banana bread","Egg raw",3
+"Healthy banana bread","Egg, raw",3
 "Healthy banana bread","Pecan nut",25
 "Superhealthy salmon burgers","Salmon, raw, farmed",500,
 "Superhealthy salmon burgers","Olive oil, extra virgin",15
@@ -235,7 +226,7 @@ recipe,food_item,quantity
 "Superhealthy salmon burgers","Curry, powder",10
 "Sugar-free carrot cake","Pecan nut",100
 "Sugar-free carrot cake","Wheat flour, self-raising",140
-"Sugar-free carrot cake","Egg raw",2
+"Sugar-free carrot cake","Egg, raw",2
 "Sugar-free carrot cake","Rapeseed oil", 5
 "Sugar-free carrot cake","Baking powder or raising agent",5
 "Sugar-free carrot cake","Carrot, raw",3
@@ -260,11 +251,11 @@ recipe,food_item,quantity
 "Stuffed jacket potatoes","Sweet pepper, green, yellow or red, raw",1
 "Stuffed jacket potatoes","Coriander, fresh",10
 "Stuffed jacket potatoes","Chive or spring onion, fresh",10
-"Easy hummus recipe","Chick pea, canned, drained",400
-"Easy hummus recipe","Tahini (sesame paste)",15
-"Easy hummus recipe","Garlic, fresh",1
-"Easy hummus recipe","Yogurt, Greek-style, plain",20
-"Easy hummus recipe","Lemon juice, home-made",30
+"Easy hummus","Chick pea, canned, drained",400
+"Easy hummus","Tahini (sesame paste)",15
+"Easy hummus","Garlic, fresh",1
+"Easy hummus","Yogurt, Greek-style, plain",20
+"Easy hummus","Lemon juice, home-made",30
 "Jamaican grilled fish","Snapper, raw",300
 "Jamaican grilled fish","Onion, raw",1
 "Jamaican grilled fish","Paprika",5
