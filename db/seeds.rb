@@ -13,7 +13,7 @@ puts "Deleted added recipes"
 Ingredient.destroy_all
 puts "Deleted ingredients"
 
-Recipe.destroy_all
+Recipe.delete_all
 puts "Deleted recipes"
 
 Profile.destroy_all
