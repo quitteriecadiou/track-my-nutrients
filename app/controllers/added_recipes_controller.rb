@@ -19,7 +19,7 @@ class AddedRecipesController < ApplicationController
     @added_recipe = AddedRecipe.find(params[:id])
     @added_recipe.destroy
 
-    redirect_to dashboard_path(current_user.profile)
+    redirect_to dashboard_path(current_user.profile, anchor: 'food-diary-container')
   end
 
   private
