@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
     diet = current_user.profile.diet
     diet_recipes = diet.recipes
     @recipes = diet_recipes.where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id])
-    @suggested_recipes = @profile.suggested_recipes(@added_recipes, @recipes)
+    @suggested_recipes = @profile.suggested_recipes(@added_recipes, @recipes, current_user)
 
     @tracker = AddedRecipe.tracker(@added_recipes)
   end

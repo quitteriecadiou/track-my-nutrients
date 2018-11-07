@@ -23,6 +23,8 @@ class Recipe < ApplicationRecord
     end
     self.save
   end
+
+
 end
 
 
