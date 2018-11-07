@@ -3,8 +3,16 @@
   background-color: white;
   border-radius: 3px;
   border: 1px solid $light-gray;
+  transition-duration: 0.4s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
 }
 
+.recipe-card:hover {
+  cursor: pointer;
+  transform: translateY(-12px);
+  opacity: 0.9;
+}
 
 .recipe-card-header {
   display: flex;
