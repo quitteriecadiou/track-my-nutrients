@@ -27,15 +27,21 @@
     <div class="suggested-recipes-list suggested-recipe-nutrient-side" id ="suggested-recipe-content">
       <div class="suggested-recipe-nutrients">
         <div class="recipe-card-tracker dashboard-suggested-recipes">
-          <% hash_nutrient.each do |key, value| %>
-            <div class="recipe-card-nutrient">
-              <p class="recipe-card-nutrient-name body-small"><%= value %></p>
-              <div class="recipe-card-impact">
-                <% key_obj_personal = "#{key}_obj_personal".to_sym %>
-                <% key_per_portion = "#{key}_per_portion".to_sym %>
-                <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[key] / @personal_diet[key_obj_personal], percentage_estimate: recipe[key_per_portion] / @personal_diet[key_obj_personal] %><span>+<%= ActiveSupport::NumberHelper.number_to_delimited((recipe[key_per_portion] * unit_conv[nutrients_unit[key].to_sym]).round) %><%= nutrients_unit[key]%></span>
-              </div>
-            </div>
+          <% diet_array.each do |diet| %>
+            <% if diet[:hash_name] == current_user.profile.diet.name %>
+              <% diet[:nutrients].each do |nut| %>
+                <% key = nut.to_sym %>
+                <% value =  hash_nutrient[key] %>
+                <div class="recipe-card-nutrient">
+                  <p class="recipe-card-nutrient-name body-small"><%= value %></p>
+                  <div class="recipe-card-impact">
+                    <% key_obj_personal = "#{key}_obj_personal".to_sym %>
+                    <% key_per_portion = "#{key}_per_portion".to_sym %>
+                    <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[key] / @personal_diet[key_obj_personal], percentage_estimate: recipe[key_per_portion] / @personal_diet[key_obj_personal] %><span>+<%= ActiveSupport::NumberHelper.number_to_delimited((recipe[key_per_portion] * unit_conv[nutrients_unit[key].to_sym]).round) %><%= nutrients_unit[key]%></span>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
         <div class="inline-row button-row">

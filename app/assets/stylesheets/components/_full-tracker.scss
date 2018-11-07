@@ -1,7 +1,11 @@
+.nutrient-tracker-full{
+  height: 350px;
+}
+
 .full-tracker {
   overflow: scroll;
   width: 100%;
-  height: 350px;
+  height: 100%;
   background-color: white;
   border-radius: 3px;
   border: 1px solid $light-gray;
@@ -15,6 +19,7 @@
 .single-tracker {
   font-weight: 200;
   margin: 3%;
+  margin-bottom: 6%;
   h4 {
     margin: 3%;
   }
