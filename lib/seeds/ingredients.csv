@@ -1,8 +1,8 @@
 recipe,food_item,quantity
 "High protein breakfast","Olive oil, extra virgin",15
 "High protein breakfast","Tomato, raw",1
-"High protein breakfast","Bacon, back",300
-"High protein breakfast","Beef, sirloin steak, roasted/baked",180
+"High protein breakfast","Bacon, back",200
+"High protein breakfast","Beef, sirloin steak, roasted/baked",150
 "High protein breakfast","Mushroom, all types, raw",150
 "High protein breakfast","Spinach, cooked",160
 "High protein breakfast","Egg, raw",1
@@ -169,8 +169,8 @@ recipe,food_item,quantity
 "Fruitburst muffins","Cinnamon, powder",10
 "Fruitburst muffins","Blueberry, raw",140
 "Fruitburst muffins","Cranberry, raw",85
-"Fruitburst muffins","Lemon zest, raw",15
-"Mexican egg roll","Egg raw",1
+"Fruitburst muffins","Lemon zest, raw",1
+"Mexican egg roll","Egg, raw",1
 "Mexican egg roll","Tomato sauce, w vegetables, prepacked",20
 "Mexican egg roll","Rapeseed oil",5
 "Mexican egg roll","Coriander, fresh",10
@@ -265,3 +265,72 @@ recipe,food_item,quantity
 "Easy hummus recipe","Garlic, fresh",1
 "Easy hummus recipe","Yogurt, Greek-style, plain",20
 "Easy hummus recipe","Lemon juice, home-made",30
+"Jamaican grilled fish","Snapper, raw",300
+"Jamaican grilled fish","Onion, raw",1
+"Jamaican grilled fish","Paprika",5
+"Jamaican grilled fish","Beer, dark",100
+"Jamaican grilled fish","Lime, pulp, raw",2
+"Creamy chicken asparagus","New potato, raw",10
+"Creamy chicken asparagus","Chicken, breast, without skin, raw",450
+"Creamy chicken asparagus","Sunflower oil",10
+"Creamy chicken asparagus","Onion, raw",1
+"Creamy chicken asparagus","Garlic, fresh",2
+"Creamy chicken asparagus","Broth, stock or bouillon, poultry, dehydrated and reconstituted",50
+"Creamy chicken asparagus","Asparagus, peeled, raw",175
+"Creamy chicken asparagus","Thick cream, light, 15-20% fat, refrigerated",50
+"Creamy chicken asparagus","Tarragon, fresh",10
+"Salmon & rocket pasta","Salmon, raw, wild",250
+"Salmon & rocket pasta","Fresh egg pasta, cooked, unsalted",200
+"Salmon & rocket pasta","Thick cream, light, 15-20% fat, refrigerated",30
+"Salmon & rocket pasta","Roman rocket, raw",100
+"Salmon & rocket pasta","Olive oil, extra virgin",10
+"Salmon & rocket pasta","Lemon zest, raw",1
+"Bean & pepper chilli","Olive oil, extra virgin",10
+"Bean & pepper chilli","Onion, raw",1
+"Bean & pepper chilli","Sweet pepper, green, yellow or red, raw",4
+"Bean & pepper chilli","Cumin, seed",5
+"Bean & pepper chilli","Paprika",5
+"Bean & pepper chilli","Red kidney bean, canned, drained",400
+"Bean & pepper chilli","Tomato, peeled, canned, drained",400
+"Grapefruit & pistachio salad","Grapefruit, red or pink, pulp, raw",1
+"Grapefruit & pistachio salad","Grapefruit, yellow, pulp, raw",1
+"Grapefruit & pistachio salad","Syrup, agave",10
+"Grapefruit & pistachio salad","Pistachio nut, grilled",15
+"Perfect porridge","Oat, raw",50
+"Perfect porridge","Milk, semi-skimmed, UHT",350
+"Perfect porridge","Yogurt, Greek-style, plain",20
+"Cranberry & raspberry smoothie","Cranberry, raw",100
+"Cranberry & raspberry smoothie","Raspberry, frozen, raw",175
+"Cranberry & raspberry smoothie","Milk, semi-skimmed, UHT",100
+"Cranberry & raspberry smoothie","Yogurt, fermented milk or dairy specialty, plain",200
+"Feta & dried tomato omelette","Olive oil, extra virgin",10
+"Feta & dried tomato omelette","Egg, raw",2
+"Feta & dried tomato omelette","Tomato, dried",100
+"Feta & dried tomato omelette","Feta cheese, from ewe's milk",25
+"Nutty chicken curry","Chili pepper, raw",2
+"Nutty chicken curry","Ginger, raw",20
+"Nutty chicken curry","Garlic, fresh",1
+"Nutty chicken curry","Sunflower oil",10
+"Nutty chicken curry","Chicken, breast, without skin, raw",450
+"Nutty chicken curry","Peanut butter or peanut paste",70
+"Nutty chicken curry","Yogurt, Greek-style, plain",200
+"Nutty chicken curry","Coriander, fresh",10
+"Sweet potato salad","Sweet potato, raw",10
+"Sweet potato salad","Olive oil, extra virgin",30
+"Sweet potato salad","Shallot, raw",2
+"Sweet potato salad","Chive or spring onion, fresh",50
+"Sweet potato salad","Vinegar",20
+"Sweet potato salad","Honey",20
+"Cabbage with almonds","Green cabbage, raw",1
+"Cabbage with almonds","Butter, 82% fat, unsalted",25
+"Cabbage with almonds","Olive oil, extra virgin",10
+"Cabbage with almonds","Garlic, fresh",1
+"Cabbage with almonds","Almond, peeled, unpeeled or blanched",100
+"Cabbage with almonds","Rosemary, fresh",10
+"Trout en papillote","Trout, steamed",700
+"Trout en papillote","Carrot, raw",2
+"Trout en papillote","Celery stalk, raw",3
+"Trout en papillote","Olive oil, extra virgin",10
+"Trout en papillote","Vinegar",50
+"Trout en papillote","Lemon juice, home-made",30
+"Trout en papillote","Basil, fresh",5
