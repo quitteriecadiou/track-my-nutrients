@@ -1,24 +1,29 @@
 <div class="recipe-tracker">
-
-  <% hash_nutrient.each do |key, value| %>
-    <% key_obj_personal = "#{key}_obj_personal".to_sym %>
-    <% key_per_portion = "#{key}_per_portion".to_sym %>
-    <div class="recipe-nutrient-tracker">
-      <div class="recipe-nutrient-tracker-header">
-        <span><%= value %></span>
-      </div>
-      <div class="recipe-nutrient-tracker-content-g">
-        <p>+<%= ActiveSupport::NumberHelper.number_to_delimited((@recipe[key_per_portion] * unit_conv[nutrients_unit[key].to_sym]).round) %><%= nutrients_unit[key] %></p>
-      </div>
-      <div class="recipe-nutrient-tracker-content-arrow">
-        <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
-      </div>
-      <div class="recipe-nutrient-tracker-content-bar">
-        <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[key] / @personal_diet[key_obj_personal], percentage_estimate: @recipe[key_per_portion] / @personal_diet[key_obj_personal] %>
-      </div>
-      <div class="recipe-nutrient-tracker-content-fraction">
-        <div class="recipe-card-fraction body-small"><span><%= ActiveSupport::NumberHelper.number_to_delimited(((@tracker[key] + @recipe[key_per_portion]) * unit_conv[nutrients_unit[key].to_sym]).round) %></span><span class="thin"> / <%= (@personal_diet[key_obj_personal] * unit_conv[nutrients_unit[key].to_sym]).round  %><%= nutrients_unit[key] %></span></div>
-      </div>
-    </div>
+  <% diet_array.each do |diet| %>
+    <% if diet[:hash_name] == current_user.profile.diet.name %>
+        <% diet[:nutrients].each do |nut| %>
+          <% key = nut.to_sym %>
+          <% value =  hash_nutrient[key] %>
+          <% key_obj_personal = "#{key}_obj_personal".to_sym %>
+          <% key_per_portion = "#{key}_per_portion".to_sym %>
+          <div class="recipe-nutrient-tracker">
+            <div class="recipe-nutrient-tracker-header">
+              <span><%= value %></span>
+            </div>
+            <div class="recipe-nutrient-tracker-content-g">
+              <p>+<%= ActiveSupport::NumberHelper.number_to_delimited((@recipe[key_per_portion] * unit_conv[nutrients_unit[key].to_sym]).round) %><%= nutrients_unit[key] %></p>
+            </div>
+            <div class="recipe-nutrient-tracker-content-arrow">
+              <%= image_tag 'thin_arrow.png', class: "recipe-tracker-arrow" %>
+            </div>
+            <div class="recipe-nutrient-tracker-content-bar">
+              <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[key] / @personal_diet[key_obj_personal], percentage_estimate: @recipe[key_per_portion] / @personal_diet[key_obj_personal] %>
+            </div>
+            <div class="recipe-nutrient-tracker-content-fraction">
+              <div class="recipe-card-fraction body-small"><span><%= ActiveSupport::NumberHelper.number_to_delimited(((@tracker[key] + @recipe[key_per_portion]) * unit_conv[nutrients_unit[key].to_sym]).round) %></span><span class="thin"> / <%= (@personal_diet[key_obj_personal] * unit_conv[nutrients_unit[key].to_sym]).round  %><%= nutrients_unit[key] %></span></div>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
   <% end %>
 </div>
