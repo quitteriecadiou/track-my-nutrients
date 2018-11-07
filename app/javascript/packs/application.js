@@ -27,3 +27,6 @@ if(document.querySelector('#new_ingredient')) {
 window.initForm = initForm;
 
 
+if(document.querySelector('.added-recipe')){
+  turnCard();
+};
