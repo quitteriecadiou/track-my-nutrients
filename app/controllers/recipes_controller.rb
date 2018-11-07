@@ -52,7 +52,6 @@ class RecipesController < ApplicationController
     end
 
     if @recipe.save
-      fail
       redirect_to edit_recipe_path(@recipe)
     else
       render :new
