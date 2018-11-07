@@ -4,7 +4,7 @@
     <%= f.input :first_name, label: false, placeholder: 'Firstname'%>
     <%= f.input :last_name, label: false, placeholder: 'Lastname'%>
     <%= f.input :gender, as: :select, prompt: 'Gender', label: false, collection: ['Female','Male']%>
-    <%= f.input :date_of_birth, as: :date, input_html: { class: 'input-medium' }, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:day, :month, :year] %>
+    <%= f.input :date_of_birth, as: :date, input_html: { class: 'input-small' }, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:day, :month, :year] %>
     <div class="inline-row">
       <div class="inline-row">
         <%= f.input :height, input_html: { class: 'input-small' }, label: false %>

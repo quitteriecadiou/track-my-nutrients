@@ -80,12 +80,19 @@ function chart(nutrientPercentWithoutSign, ctx) {
           backgroundColor: ['#F2994A', '#F5F5F5'],
           data: [100, 0]
         }],
+        labels: [
+          "% eaten",
+          "% to eat",
+        ]
       },
       options: {
         maintainAspectRatio: true,
         cutoutPercentage: 75,
         animation: {
           animateRotate: true
+        },
+        legend: {
+          display: false
         }
       },
     });
@@ -98,12 +105,19 @@ function chart(nutrientPercentWithoutSign, ctx) {
           backgroundColor: ['#27AE60', '#F5F5F5'],
           data: [nutrientPercentWithoutSign, 100 - nutrientPercentWithoutSign]
         }],
+        labels: [
+          " % done",
+          " % to do",
+        ]
       },
       options: {
         maintainAspectRatio: true,
         cutoutPercentage: 75,
         animation: {
           animateRotate: true
+        },
+        legend: {
+          display: false
         }
       },
     });
