@@ -51,7 +51,6 @@ label {
   justify-content: space-between;
 }
 
-
 #personal-info-form {
   .form-control {
     margin: 3px;
@@ -71,11 +70,15 @@ label {
   form {
     margin-top: 0px;
   }
-
 }
 
 .filters {
   display: flex;
+}
+
+.inline-row.size-bar {
+  width: 35%;
+  margin-top: 10px;
 }
 
 .filter-btn {
@@ -83,15 +86,17 @@ label {
   align-items: center;
 }
 
-.search-query {
-  padding-left: 43px;
-  background-size: 9%;
-}
-
 .search-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding: 0px;
+  overflow: hidden;
+  margin:0px;
+}
+
+.margin-search-box {
+  margin: 15px 0px 15px 15px;
 }
 
 .d-flex.flex-row.justify-content-between.align-items-center {
