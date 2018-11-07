@@ -8,30 +8,16 @@
       <div class="recipe-card-photo" style="background-image: url('<%= cl_image_path recipe.photo %>'">
       </div>
       <div class="recipe-card-tracker">
-        <div class="recipe-card-nutrient">
-          <p class="recipe-card-nutrient-name body-small">Protein</p>
-          <div class="recipe-card-impact">
-            <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:protein] / @personal_diet.protein_obj_personal, percentage_estimate: recipe.protein_per_portion / @personal_diet.protein_obj_personal %><span>+<%= ActiveSupport::NumberHelper.number_to_delimited((recipe.protein_per_portion * unit_conv[nutrients_unit[:protein].to_sym]).round) %><%= nutrients_unit[:protein] %></span>
+        <% hash_nutrient.each do |key, value| %>
+          <% key_obj_personal = "#{key}_obj_personal".to_sym %>
+          <% key_per_portion = "#{key}_per_portion".to_sym %>
+          <div class="recipe-card-nutrient">
+            <p class="recipe-card-nutrient-name body-small"><%= value %></p>
+            <div class="recipe-card-impact">
+              <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[key] / @personal_diet[key_obj_personal], percentage_estimate: recipe[key_per_portion] / @personal_diet[key_obj_personal] %><span>+<%= ActiveSupport::NumberHelper.number_to_delimited((recipe[key_per_portion] * unit_conv[nutrients_unit[key].to_sym]).round) %><%= nutrients_unit[key] %></span>
+            </div>
           </div>
-        </div>
-        <div class="recipe-card-nutrient">
-          <p class="recipe-card-nutrient-name body-small">Carbohydrate</p>
-          <div class="recipe-card-impact">
-            <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:carbohydrate] / @personal_diet.carbohydrate_obj_personal, percentage_estimate: recipe.carbohydrate_per_portion / @personal_diet.carbohydrate_obj_personal %><span>+<%= ActiveSupport::NumberHelper.number_to_delimited((recipe.carbohydrate_per_portion * unit_conv[nutrients_unit[:carbohydrate].to_sym]).round) %><%= nutrients_unit[:carbohydrate] %></span>
-          </div>
-        </div>
-        <div class="recipe-card-nutrient">
-          <p class="recipe-card-nutrient-name body-small">Calcium</p>
-          <div class="recipe-card-impact">
-            <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:calcium] / @personal_diet.calcium_obj_personal, percentage_estimate: recipe.calcium_per_portion / @personal_diet.calcium_obj_personal %><span>+<%= ActiveSupport::NumberHelper.number_to_delimited((recipe.calcium_per_portion * unit_conv[nutrients_unit[:calcium].to_sym]).round) %><%= nutrients_unit[:calcium] %></span>
-          </div>
-        </div>
-        <div class="recipe-card-nutrient">
-          <p class="recipe-card-nutrient-name body-small">Sodium</p>
-          <div class="recipe-card-impact">
-            <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[:sodium] / @personal_diet.sodium_obj_personal, percentage_estimate: recipe.sodium_per_portion / @personal_diet.sodium_obj_personal %><span>+<%= ActiveSupport::NumberHelper.number_to_delimited((recipe.sodium_per_portion * unit_conv[nutrients_unit[:sodium].to_sym]).round) %><%= nutrients_unit[:sodium] %></span>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   <% end %>
