@@ -8,8 +8,8 @@ class Profile < ApplicationRecord
   validates :last_name, presence: true
   validates :date_of_birth, presence: true
   validates :diet_id, presence: true
-  validates :height, presence: true
-  validates :weight, presence: true
+  validates :height, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :weight, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :gender, inclusion: { in: ['Female', 'Male'] }, presence: true
 
   after_create :add_personal_diet
