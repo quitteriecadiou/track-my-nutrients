@@ -6,14 +6,15 @@ class RecipesController < ApplicationController
     @tracker = AddedRecipe.tracker(@added_recipe)
     diet = current_user.profile.diet
     @diet_recipes = diet.recipes
-    @recipes = @diet_recipes.includes(:categories).where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id]) # TODO: Should probably move to the else part of the below statement
+    @recipes = @diet_recipes.includes(:categories).where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id])
+    # TODO: Should probably move to the else part of the below statement
 
     if params[:query].present?
       @recipes = Recipe.includes(:categories).where("name ILIKE ?", "%#{params[:query]}%")
     elsif params[:category].present?
-      if params[:category][:id] != ""
+      if params[:category][:id].present?
         category = Category.find(params[:category][:id])
-        @recipes = category.recipes
+        @recipes = category.recipes.where(profile_id: [User.where(email: ['admin@admin.com', current_user.email]).map(&:profile).map(&:id)])
       else
         redirect_to recipes_path
       end
