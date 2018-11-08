@@ -30,28 +30,32 @@
 .quantity-ingredient {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
   padding: 0;
   border-radius: 3px;
   border: 1px solid $medium-gray;
   background-color:  $light-gray;
   overflow: hidden;
+
 }
 
 #ingredient_quantity {
   margin: 0;
   border: none;
-  border-right: 1px solid $medium-gray;
   border-radius: 3px 0 0 3px;
 }
+
 .ingredient_quantity {
   margin: 0;
+  background: white;
+  border-right: 1px solid $medium-gray;
+  display: flex;
+  align-items: center;
 }
 
 .btn-ingredient {
   background: $medium-green;
-  height: 45px;
   border-radius: 0;
 }
 
@@ -62,7 +66,10 @@
 
 .food-item-attributes {
   padding: 0 3px;
+  display: flex;
+  align-items: center;
 }
+
 
 #recipe_prep_time, #recipe_difficulty, #recipe_description, #recipe_photo {
   margin: 0;

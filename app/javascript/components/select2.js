@@ -4,8 +4,19 @@ import select2 from 'select2';
 
 $('#fooditem_id').select2();
 
+function matchStart (params, data) {
+    params.term = params.term || '';
+  if (data.text.toUpperCase().indexOf(params.term.toUpperCase()) == 0) {
+      return data;
+  }
+  return false;
+}
+
 function initForm() {
   $('#ingredient_food_item_id').select2({
+    matcher: function(params, data) {
+        return matchStart(params, data);
+    },
     placeholder: 'Choose an ingredient'
   });
 
