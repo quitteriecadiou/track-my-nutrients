@@ -174,13 +174,22 @@ align-items: center;
   right: 0;
   left: 0;
   z-index: 1029;
-  height: 15vh;
   background-color: white;
 }
 
 .large-logo-banner{
   height: 15vh;
   margin-top: 6vh;
+}
+
+.large-logo-banner-new{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1029;
+  background-color: white;
+  margin-top: 0;
 }
 
 .large-logo-banner img {
