@@ -2,3 +2,4 @@ meta_product_name: "Track My Nutrients"
 meta_title: "Track My Nutrients - Your very own nutrition coach"
 meta_description: "It makes life easier for people who are dieting."
 meta_image: "couv.png"                       # should exist in `app/assets/images/`
+twitter_account: "@track-my-nutrients"
