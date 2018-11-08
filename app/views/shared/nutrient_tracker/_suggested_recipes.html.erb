@@ -10,7 +10,9 @@
         <%= image_tag "bowl-spoon.png", alt: "Bowl with spoon", class: "suggested-recipe-icon" %>
       </div>
       <div class="suggested-recipe-content">
-        <p class="suggested-recipe-title"><%= recipe.name.capitalize %></p>
+        <p class="suggested-recipe-title">
+          <%= recipe.name.length < 24 ? recipe.name.capitalize : recipe.name.first(22).concat('...') %>
+        </p>
         <p  class="body-small view-nutritional-impact"><%= link_to "View nutritional impact"  %></p>
       </div>
     </div>

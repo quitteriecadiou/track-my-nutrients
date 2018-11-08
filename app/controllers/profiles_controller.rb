@@ -34,7 +34,6 @@ class ProfilesController < ApplicationController
     ## Daily Tracker
     @tracker = AddedRecipe.tracker(@added_recipes)
 
-
     ## Weekly Tracker (day_1: yesterday to day_6: a week ago)
 
     # Individual tracker for each day of the week (used for graph)
@@ -71,7 +70,6 @@ class ProfilesController < ApplicationController
         @tracker_sum[nutrient.to_sym] += tracker[nutrient.to_sym]
       end
     end
-
   end
 
   def edit

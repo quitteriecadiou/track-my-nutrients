@@ -25,21 +25,6 @@
   margin: 0;
 }
 
-.dashboard-container{
-  background-color: white;
-  margin-top: 5vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1029;
-  width:100%;
-}
-
-.dashboard-container-not-fixed{
-  margin-top: 15vh;
-}
-
 #day {
   cursor: pointer;
 }
@@ -47,3 +32,4 @@
 #week {
   cursor: pointer;
 }
+

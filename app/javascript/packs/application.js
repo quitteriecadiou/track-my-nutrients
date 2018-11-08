@@ -10,6 +10,7 @@ import { selectedDiet } from '../components/personal_info_form';
 import { turnCard } from '../components/added_recipe_options';
 import '../components/select2';
 import { initForm } from '../components/select2';
+import {alertTimeout} from '../components/alert'
 
 if(document.querySelector('#personal-info-form')) {
   selectedDiet();
@@ -33,3 +34,5 @@ window.initForm = initForm;
 if(document.querySelector('.added-recipe')){
   turnCard();
 };
+
+alertTimeout();

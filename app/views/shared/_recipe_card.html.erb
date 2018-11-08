@@ -1,52 +1,55 @@
-<div class="recipe-card">
-  <%= link_to recipe_path(recipe) do %>
-    <div class="recipe-card-header">
-      <h4 class="text-center"><%= recipe.name %></h4>
-      <div class="recipe-card-green-line"></div>
-    </div>
-    <div class="recipe-card-content">
-      <div class="recipe-card-photo" style="background-image: url('<%= cl_image_path recipe.photo %>'">
+<%# @l0ck3: Added bootstrap layout info in the card for optimisation purpose. sorry about that %>
+<div class="col-xs-12 col-sm-6 col-md-4">
+  <div class="recipe-card">
+    <%= link_to recipe_path(recipe) do %>
+      <div class="recipe-card-header">
+        <h4 class="text-center"><%= recipe.name %></h4>
+        <div class="recipe-card-green-line"></div>
       </div>
-      <div class="recipe-card-tracker">
-        <% diet_array.each do |diet| %>
-          <% if diet[:hash_name] == current_user.profile.diet.name %>
-            <% diet[:nutrients].each do |nut| %>
-              <% key = nut.to_sym %>
-              <% value =  hash_nutrient[key] %>
-              <% key_obj_personal = "#{key}_obj_personal".to_sym %>
-              <% key_per_portion = "#{key}_per_portion".to_sym %>
-              <div class="recipe-card-nutrient">
-                <p class="recipe-card-nutrient-name body-small"><%= value %></p>
-                <div class="recipe-card-impact">
-                  <%= render "shared/progress_bars/progress_bar_small", percentage_done: @tracker[key] / @personal_diet[key_obj_personal], percentage_estimate: recipe[key_per_portion] / @personal_diet[key_obj_personal] %><span>+<%= ActiveSupport::NumberHelper.number_to_delimited((recipe[key_per_portion] * unit_conv[nutrients_unit[key].to_sym]).round) %><%= nutrients_unit[key] %></span>
-                </div>
-              </div>
+      <div class="recipe-card-content">
+        <div class="recipe-card-photo" style="background-image: url('<%= cl_image_path recipe.photo %>'">
+        </div>
+        <div class="recipe-card-tracker">
+          <% diet_array.each do |diet| %>
+            <% if diet[:hash_name] == current_user.profile.diet.name %>
+              <%=
+                render(
+                  partial: 'shared/recipe_card_nutrient',
+                  collection: diet[:nutrients], as: :nut,
+                  locals: {
+                    recipe: recipe,
+                    hash_nutrient: hash_nutrient,
+                    unit_conv: unit_conv,
+                    nutrients_unit: nutrients_unit
+                  }
+                )
+              %>
             <% end %>
           <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class="recipe-card-footer">
+      <div class="recipe-card-attributes">
+        <div class="recipe-card-attribute">
+          <i class="far fa-clock"></i><span class="body-small"> <%=  recipe.prep_time %></span>
+        </div>
+        <div class="recipe-card-attribute">
+          <i class="fas fa-utensils"></i>
+          <span class="body-small">
+            <%= recipe.categories[0].name.capitalize %>
+            <% if recipe.categories.length > 1 %>
+              | <%= recipe.categories[1].name.capitalize %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+      <div class="recipe-card-add">
+        <%= simple_form_for :added_recipe, url: added_recipes_path, method: :post do |f| %>
+          <%= f.hidden_field :recipe_id, value: recipe.id %>
+          <%= f.button :submit, "ADD MEAL TO FOOD DIARY", class: "btn btn-action btn-small btn-medium-green" %>
         <% end %>
       </div>
-    </div>
-  <% end %>
-  <div class="recipe-card-footer">
-    <div class="recipe-card-attributes">
-      <div class="recipe-card-attribute">
-        <i class="far fa-clock"></i><span class="body-small"> <%=  recipe.prep_time %></span>
-      </div>
-      <div class="recipe-card-attribute">
-        <i class="fas fa-utensils"></i>
-        <span class="body-small">
-          <%= recipe.categories[0].name.capitalize %>
-          <% if recipe.categories.length > 1 %>
-            | <%= recipe.categories[1].name.capitalize %>
-          <% end %>
-        </span>
-      </div>
-    </div>
-    <div class="recipe-card-add">
-      <%= simple_form_for :added_recipe, url: added_recipes_path, method: :post do |f| %>
-        <%= f.hidden_field :recipe_id, value: recipe.id %>
-        <%= f.button :submit, "ADD MEAL TO FOOD DIARY", class: "btn btn-action btn-small btn-medium-green" %>
-      <% end %>
     </div>
   </div>
 </div>
