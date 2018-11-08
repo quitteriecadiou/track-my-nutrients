@@ -1,0 +1,33 @@
+<% key = nut.to_sym %>
+<% value =  hash_nutrient[key] %>
+<% key_obj_personal = "#{key}_obj_personal".to_sym %>
+<% key_per_portion = "#{key}_per_portion".to_sym %>
+<% percentage_done = @tracker[key] / @personal_diet[key_obj_personal] %>
+<% percentage_estimate = recipe[key_per_portion] / @personal_diet[key_obj_personal] %>
+
+
+<div class="recipe-card-nutrient">
+  <p class="recipe-card-nutrient-name body-small"><%= value %></p>
+  <div class="recipe-card-impact">
+    <div class="progress-bar-base progress-bar-small-round">
+      <% if (percentage_done + percentage_estimate) > 1 %>
+        <div class="progress-bar-estimate progress-bar-warning progress-bar-small-round" style="width: 100%">
+        </div>
+        <% if percentage_done > 1 %>
+          <div class="progress-bar-done progress-bar-warning progress-bar-small-round" role="progressbar" style="width: 100%">
+          </div>
+        <% else %>
+          <div class="progress-bar-done progress-bar-warning progress-bar-small-round" role="progressbar" style="width: <%= percentage_done * 100 %>%">
+          </div>
+        <% end %>
+      <% else %>
+        <div class="progress-bar-estimate progress-bar-success progress-bar-small-round" role="progressbar" style="width: <%= (percentage_estimate + percentage_done) * 100 %>%">
+        </div>
+        <div class="progress-bar-done progress-bar-success progress-bar-small-round" role="progressbar" style="width: <%= percentage_done * 100 %>%">
+        </div>
+      <% end %>
+    </div>
+    <span>+
+    <%= ActiveSupport::NumberHelper.number_to_delimited((recipe[key_per_portion] * unit_conv[nutrients_unit[key].to_sym]).round) %><%= nutrients_unit[key] %></span>
+  </div>
+</div>
