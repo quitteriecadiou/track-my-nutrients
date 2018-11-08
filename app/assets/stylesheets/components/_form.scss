@@ -1,6 +1,5 @@
 .large-logo-banner {
   margin-top: 5vh;
-
 }
 
 form {
@@ -36,7 +35,6 @@ label {
   border-radius: 3px;
 }
 
-
 .form-control.input-small {
     width: 80px;
   }
@@ -67,6 +65,10 @@ width: 100%;
   p{
     margin-right: 10px;
   }
+}
+
+html body div.dark-green-wrapper.recipe-list-filter-bar{
+ height: 100%;
 }
 
 #filter-bar {
