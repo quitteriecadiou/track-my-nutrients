@@ -31,20 +31,22 @@
                 <%= submit_tag "OK", class: "btn btn-filter btn-small btn-ingredient"%>
             </div>
           <% end %>
+
+          <%= link_to recipes_path(current_user.profile.id) do %>
+            <div class="btn btn-action btn-large btn-medium-green reset-btn"><i class="fas fa-sync-alt"></i>
+            </div>
+        <% end %>
+
     </div>
   </div>
 </div>
 
-<div class="container complete-form" id="filter-bar">
-
-  <div class="inline-row">
-        <%= link_to recipes_path(current_user.profile.id) do %>
-          <div class="btn btn-action btn-large btn-medium-green">
+<% #<div class="container complete-form" id="filter-bar"><div class="inline-row"><%= link_to recipes_path(current_user.profile.id) do %>
+  <%#<div class="btn btn-action btn-large btn-medium-green">
             RESET </i>
           </div>
         <% end %>
 
-  </div>
-
-</div>
+  <%# </div> %>
+<!-- </div> -->
 

@@ -172,3 +172,19 @@ html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar
 html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar-container div#filter-bar.container.complete-form div.inline-row.inline-row-property div.filters.filter-area form div#search-ingredient.search-container span.select2.select2-container.select2-container--default span.selection span.select2-selection.select2-selection--single span.select2-selection__arrow {
   margin-top:6px;
 }
+
+// button "RESET - "RELOAD" on the search bar - RECIPES#INDEX
+.reset-btn {
+  margin-top: 14px;
+}
+
+.fa-sync-alt {
+  transition-property: transform;
+  transition: 0.4s;
+}
+
+.reset-btn:hover .fa-sync-alt {
+  transform: rotate(60deg);
+  transition-duration: 0.3s;
+  transition: all 1s ease;
+}
