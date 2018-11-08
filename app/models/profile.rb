@@ -60,7 +60,7 @@ class Profile < ApplicationRecord
     end
 
 
-    return suggested_recipes
+    return suggested_recipes.first(8)
     # tracker = AddedRecipe.tracker(added_recipes)
     # recipes.where("protein_per_portion <= ? and carbohydrate_per_portion <= ? and calcium_per_portion <= ? and sodium_per_portion <= ?",
     #               personal_diet[:protein_obj_personal] - tracker[:protein] < 0 ? 0 : personal_diet[:protein_obj_personal] - tracker[:protein],

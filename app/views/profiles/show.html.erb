@@ -1,10 +1,10 @@
-  <div class="container">
+  <div class="container dashboard-container">
     <h2 class="dashboard-header"><%= Date.today.strftime("%A, %d %B %Y") %>
       <div class="dashboard-orange-line"></div>
     </h2>
     <div class="dashboard-gray-line"></div>
   </div>
-<div class="orange-wrapper">
+<div class="orange-wrapper dashboard-container-not-fixed">
   <div class="container">
     <%= render 'shared/nutrient_tracker', suggested_recipes: @suggested_recipes%>
     <div class="dashboard-gray-line-background">
