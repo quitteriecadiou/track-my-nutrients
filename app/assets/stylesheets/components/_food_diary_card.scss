@@ -69,10 +69,16 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center center;
   width: 100%;
+  transition-duration: 0.4s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
 }
 
 .added-recipe:hover {
+  background-position: bottom;
   cursor: pointer;
+  transform: translateY(-8px);
+  opacity: 0.9;
 }
 
 .added-recipe-container {

@@ -8,13 +8,11 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 label {
   font-weight: 200;
 }
-
 
 .complete-form{
   display: flex;
@@ -38,6 +36,7 @@ label {
   border-radius: 3px;
 }
 
+
 .form-control.input-small {
     width: 80px;
   }
@@ -46,12 +45,20 @@ label {
     width: 110px;
   }
 
+.form-control.input-medium-plus {
+  width: 200px;
+}
+
 .inline-row{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.inline-row-property {
+justify-content: space-around !important;
+width: 100%;
+}
 
 #personal-info-form {
   .form-control {
@@ -72,11 +79,16 @@ label {
   form {
     margin-top: 0px;
   }
-
 }
 
 .filters {
   display: flex;
+}
+
+.filter-area {
+width: 100%;
+flex-direction: row;
+justify-content: space-around;
 }
 
 .filter-btn {
@@ -84,18 +96,21 @@ label {
   align-items: center;
 }
 
-.search-query {
-  padding-left: 43px;
-  background-image: url(https://www.iconsdb.com/icons/preview/green/magnifying-glass-3-xxl.png);
-  background-repeat: no-repeat;
-  background-position: 12px 8px;
-  background-size: 9%;
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  overflow: hidden;
+  margin:0px;
 }
 
-.search-recipes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#search-ingredient {
+  padding: 15px;
+}
+
+.margin-search-box {
+  margin: 15px 0px 15px 15px;
 }
 
 .d-flex.flex-row.justify-content-between.align-items-center {
@@ -113,3 +128,47 @@ label {
   margin: 10px;
 }
 
+//"FIND A RECIPE" - RECIPES#INDEX
+html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar-container div#filter-bar.container.complete-form div.inline-row.inline-row-property div.filters.filter-area form div.search-container input#query.form-control.input-medium-plus {
+ margin: 15px 0 15px 15px;
+}
+
+// "ALL MEAL TYPES SEARCH BUTTON" - RECIPES#INDEX
+html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar-container div#filter-bar.container.complete-form div.inline-row.inline-row-property div.filters.filter-area form div.search-container select#category_id.form-control.input-medium-plus.hidden-xs{
+ margin:15px 0 15px 15px;
+}
+
+// "ADD AN INGREDIENT" - RECIPES#INDEX
+html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar-container div#filter-bar.container.complete-form div.inline-row.inline-row-property div.filters.filter-area form div#search-ingredient.search-container span.select2.select2-container.select2-container--default span.selection span.select2-selection.select2-selection--single {
+  padding-left: 4px;
+  padding-top: 6px;
+}
+
+.select2-fooditem_id_container {
+  height: 40px;
+}
+
+html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar-container div#filter-bar.container.complete-form div.inline-row.inline-row-property div.filters.filter-area form div#search-ingredient.search-container span.select2.select2-container.select2-container--default.select2-container--below.select2-container--open span.selection span.select2-selection.select2-selection--single {
+  height: 44px;
+}
+
+html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar-container div#filter-bar.container.complete-form div.inline-row.inline-row-property div.filters.filter-area form div#search-ingredient.search-container span.select2.select2-container.select2-container--default span.selection span.select2-selection.select2-selection--single {
+  height: 44px;
+}
+
+// RECIPE#EDIT BUTTON FOR "CHOOSE AN INGREDIENT"
+html body div.medium-green-wrapper div.new-ingredients-container.container div.row div.col-xs-12.col-md-6 div.new-ingredients-card div.new-ingredient-form form#new_ingredient.simple_form.new_ingredient div.form-group.select.required.ingredient_food_item span.select2.select2-container.select2-container--default span.selection span.select2-selection.select2-selection--single {
+  height: 40px;
+}
+
+html body div.medium-green-wrapper div.new-ingredients-container.container div.row div.col-xs-12.col-md-6 div.new-ingredients-card div.new-ingredient-form form#new_ingredient.simple_form.new_ingredient div.form-group.select.required.ingredient_food_item span.select2.select2-container.select2-container--default span.selection span.select2-selection.select2-selection--single span#select2-ingredient_food_item_id-container.select2-selection__rendered  {
+  padding-top: 6px;
+}
+
+html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar-container div#filter-bar.container.complete-form div.inline-row.inline-row-property div.filters.filter-area form div#search-ingredient.search-container span.select2.select2-container.select2-container--default span.selection span.select2-selection.select2-selection--single span.select2-selection__arrow {
+  padding-top:6px;
+}
+
+html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar-container div#filter-bar.container.complete-form div.inline-row.inline-row-property div.filters.filter-area form div#search-ingredient.search-container span.select2.select2-container.select2-container--default span.selection span.select2-selection.select2-selection--single span.select2-selection__arrow {
+  margin-top:6px;
+}
