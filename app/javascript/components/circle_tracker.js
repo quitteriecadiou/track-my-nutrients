@@ -31,7 +31,7 @@ function circleTracker() {
 
     event.preventDefault();
 
-    const nutrientsTitle = document.querySelectorAll(".tracker-nutrient-name")
+    const nutrientsTitle = document.getElementById('nutrient-tracker-values').querySelectorAll(".tracker-nutrient-name")
     nutrientsTitle.forEach((nutrientTitle) => {
       nutrientTitle.classList.remove("selected");
     });
