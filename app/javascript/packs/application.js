@@ -1,8 +1,9 @@
 import "bootstrap";
 import Chart from 'chart.js';
 
-
+import { toggleDayOrWeek } from '../components/nutrient_tracker';
 import { circleTracker } from '../components/circle_tracker';
+import { weekTracker } from '../components/week_tracker';
 import { suggestedRecipesShowNutrients } from '../components/suggested_recipes';
 import { backToSuggestedRecipeList } from '../components/suggested_recipes';
 import { selectedDiet } from '../components/personal_info_form';
@@ -15,7 +16,9 @@ if(document.querySelector('#personal-info-form')) {
 };
 
 if(document.querySelector('#circle-tracker-animation')) {
+  toggleDayOrWeek();
   circleTracker();
+  weekTracker();
   suggestedRecipesShowNutrients();
   backToSuggestedRecipeList();
 };

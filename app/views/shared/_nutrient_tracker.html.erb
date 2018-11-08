@@ -1,11 +1,13 @@
 <div class="nutrient-tracker">
   <div class="nutrient-tracker-header">
     <h3>Nutrient Tracker</h3>
+    <div class="tracker-view"><span id="day">Day</span><span> | </span><span id="week">Week</span></div>
   </div>
-  <div class="row nutrient-tracker-body">
+  <%= render 'shared/week_tracker' %>
+  <div class="row nutrient-tracker-body" id="day-tracker-body">
     <!-- <div class="row"> -->
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="nutrient-tracker-full">
+        <div class="nutrient-tracker-full" id="nutrient-tracker-values">
           <%= render '/shared/nutrient_tracker/full_tracker', tracker: @tracker, personal_diet: @personal_diet, hash_nutrient: ApplicationHelper::HASH_NUTRIENT, unit_conv: ApplicationHelper::UNIT_CONV, nutrients_unit: ApplicationHelper::NUTRIENTS_UNIT, diet_array: ApplicationHelper::DIET_ARRAY%>
         </div>
       </div>
