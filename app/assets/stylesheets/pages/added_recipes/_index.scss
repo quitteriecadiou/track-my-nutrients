@@ -1,6 +1,6 @@
 .dashboard-header {
   display: table;
-  padding: 2% 5%;
+  padding: 2.5vh 5%;
   margin: 0;
   background-color: white;
 }
@@ -25,4 +25,21 @@
   height: 1px;
   width: 90%;
   margin: 0 5%;
+}
+
+.dashboard-container{
+  background-color: white;
+  margin-top: 6vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1029;
+  width:100%;
+  padding-left: 3%;
+  height: 11vh;
+}
+
+.dashboard-container-not-fixed{
+  margin-top: 17vh;
 }
