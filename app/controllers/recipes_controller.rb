@@ -6,10 +6,10 @@ class RecipesController < ApplicationController
     @tracker = AddedRecipe.tracker(@added_recipe)
     diet = current_user.profile.diet
     @diet_recipes = diet.recipes
-    @recipes = @diet_recipes.where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id])
+    @recipes = @diet_recipes.includes(:categories).where(profile_id: [User.where(email: "admin@admin.com").first.profile.id, current_user.profile.id]) # TODO: Should probably move to the else part of the below statement
 
     if params[:query].present?
-      @recipes = Recipe.where("name ILIKE ?", "%#{params[:query]}%")
+      @recipes = Recipe.includes(:categories).where("name ILIKE ?", "%#{params[:query]}%")
     elsif params[:category].present?
       category = Category.find(params[:category][:id])
       @recipes = category.recipes
