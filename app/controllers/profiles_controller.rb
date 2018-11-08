@@ -27,6 +27,7 @@ class ProfilesController < ApplicationController
     @suggested_recipes = @profile.suggested_recipes(@added_recipes, @recipes, current_user)
 
     @tracker = AddedRecipe.tracker(@added_recipes)
+
   end
 
   def edit

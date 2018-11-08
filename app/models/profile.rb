@@ -19,17 +19,22 @@ class Profile < ApplicationRecord
     nutrients_obj = user.profile.personal_diet
 
     diet = user.profile.diet
+    id_recipes_done = []
+    added_recipes.each do |recipe|
+      id_recipes_done << recipe.recipe_id
+    end
+
 
 
     # Main condition: only recipes where focus nutrient objective (protein, sodium or carb) will not be exceeded
     if diet.name == "High Protein"
-      approved_recipes = recipes.where( "protein_per_portion < ?", (nutrients_obj[:protein_obj_personal] - nutrients_eaten[:protein]) )
+      approved_recipes = recipes.where.not(id: id_recipes_done).where( "protein_per_portion < ?", (nutrients_obj[:protein_obj_personal] - nutrients_eaten[:protein]))
     elsif diet.name == "Low Carb"
-      approved_recipes = recipes.where( "carbohydrate_per_portion < ?", (nutrients_obj[:carbohydrate_obj_personal] - nutrients_eaten[:carbohydrate]) )
+      approved_recipes = recipes.where.not(id: id_recipes_done).where( "carbohydrate_per_portion < ?", (nutrients_obj[:carbohydrate_obj_personal] - nutrients_eaten[:carbohydrate]))
     elsif diet.name == "Low Sodium"
-      approved_recipes = recipes.where( "sodium_per_portion < ?", (nutrients_obj[:sodium_obj_personal] - nutrients_eaten[:sodium]) )
+      approved_recipes = recipes.where.not(id: id_recipes_done).where( "sodium_per_portion < ?", (nutrients_obj[:sodium_obj_personal] - nutrients_eaten[:sodium]))
     else
-      approved_recipes = recipes
+      approved_recipes = recipes.where.not(id: id_recipes_done)
     end
 
 
