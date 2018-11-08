@@ -188,3 +188,10 @@ html body div.dark-green-wrapper.recipe-list-filter-bar div.container.filter-bar
   transition-duration: 0.3s;
   transition: all 1s ease;
 }
+
+//CREATE A RECIPE - UNDER FILTER BAR in RECIPES#INDEX
+#create-a-recipe-btn-area {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
