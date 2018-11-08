@@ -10,23 +10,26 @@ class RecipesController < ApplicationController
     # TODO: Should probably move to the else part of the below statement
 
     if params[:query].present?
-      @recipes = Recipe.includes(:categories).where("name ILIKE ?", "%#{params[:query]}%")
-    elsif params[:category].present?
-      if params[:category][:id].present?
-        category = Category.find(params[:category][:id])
-        @recipes = category.recipes.where(profile_id: [User.where(email: ['admin@admin.com', current_user.email]).map(&:profile).map(&:id)])
-      else
-        redirect_to recipes_path
-      end
+       @recipes = Recipe.includes(:categories).where("name ILIKE ?", "%#{params[:query]}%")
+      elsif params[:category].present?
+        if params[:category][:id].present?
+          category = Category.find(params[:category][:id])
+          @recipes = category.recipes.where(profile_id: [User.where(email: ['admin@admin.com', current_user.email]).map(&:profile).map(&:id)])
+          #.map(&:profile) => .map { |email| email.profile }
+        else
+          redirect_to recipes_path
+        end
+
     elsif params[:fooditem].present?
-      if params[:fooditem][:id] != ""
-        ingredients = FoodItem.find(params[:fooditem][:id]).ingredients
-        @recipes = ingredients.map { |i| i.recipe }
+        if params[:fooditem][:id].present?
+          fi = FoodItem.find(params[:fooditem][:id])
+          @recipes = fi.recipes.where(profile_id: [User.where(email: ['admin@admin.com', current_user.email]).map(&:profile).map(&:id)])
+          # @recipes = recipes.map(&:profile_id)
+        else
+          redirect_to recipes_path
+        end
       else
-        redirect_to recipes_path
-      end
-    else
-      @recipes
+        @recipes
     end
   end
 
