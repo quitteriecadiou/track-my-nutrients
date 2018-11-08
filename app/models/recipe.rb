@@ -6,7 +6,7 @@ class Recipe < ApplicationRecord
   has_many :diet_recipes
   has_many :diets, through: :diet_recipes
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true, length: { in: 2..35 }
   validates :portion, presence: true
   validates :categories, presence: true
 
@@ -23,6 +23,8 @@ class Recipe < ApplicationRecord
     end
     self.save
   end
+
+
 end
 
 

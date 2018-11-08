@@ -48,8 +48,13 @@
   height: 180px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  margin: 2%;
   padding: 2%;
+  overflow: scroll;
+}
+
+.recipe-card-nutrient{
+  margin-bottom: 2%
 }
 
 .recipe-card-nutrient-name {

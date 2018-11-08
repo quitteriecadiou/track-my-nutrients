@@ -2,12 +2,17 @@
 .navbar-tmn {
   background: white;
   transition: all 0.3s ease;
-  height: 40px;
+  height: 5vh;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
 /* Logo */
@@ -41,15 +46,20 @@
 
 /* Navbar link */
 .navbar-tmn-link {
-  color: #616668;
+  color: $dark-gray;
   font-size: 14px;
 }
 .navbar-tmn-link:hover {
-  color: #da552f;
+  color: $medium-orange;
   text-decoration: none;
 }
 
 /* Dropdown menu */
+
+.dropdown{
+  z-index: 2000;
+}
+
 .navbar-tmn-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;

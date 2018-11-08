@@ -13,7 +13,7 @@ puts "Deleted added recipes"
 Ingredient.destroy_all
 puts "Deleted ingredients"
 
-Recipe.destroy_all
+Recipe.delete_all
 puts "Deleted recipes"
 
 Profile.destroy_all
@@ -31,9 +31,9 @@ puts "Deleted categories"
 
 # Diets
 
-Diet.create(name:"Regular", description:"For people who do not have any dietary restrictions and who only wish to track their daily nutrional intake.", protein_factor_diet: 1, carbohydrate_factor_diet: 1, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 1, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 1, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
-Diet.create(name:"High Protein", description:"For people who do not have any dietary restrictions and who only wish to track their daily nutrional intake.", protein_factor_diet: 2.25, carbohydrate_factor_diet: 1, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 1, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 1, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
-Diet.create(name:"Low Sodium", description:"For people who do not have any dietary restrictions and who only wish to track their daily nutrional intake.", protein_factor_diet: 1, carbohydrate_factor_diet: 1, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 0.5, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 0.5, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
+Diet.create(name:"Regular", description:"This diet is for people who are not following a diet in particular but who would like to keep track of their nutritional intake.", protein_factor_diet: 1, carbohydrate_factor_diet: 1, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 1, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 1, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
+Diet.create(name:"High Protein", description:"A high-protein diet is often recommended to build muscle and lose fat. It focuses on meat, fish, eggs and beans.", protein_factor_diet: 2.25, carbohydrate_factor_diet: 1, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 1, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 1, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
+Diet.create(name:"Low Sodium", description:"A low-sodium diet is often recommended for people with certain medical conditions (high blood pressure or fluid retention).", protein_factor_diet: 1, carbohydrate_factor_diet: 1, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 0.5, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 0.5, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
 Diet.create(name:"Low Carb", description:"A low-carb diet is a diet that restricts carbohydrates, such as those found in sugary foods, pasta and bread. It is high in protein, fat and healthy vegetables.", protein_factor_diet: 1.5, carbohydrate_factor_diet: 0.5, fat_factor_diet: 1, sugars_factor_diet: 1, fibres_factor_diet: 1, fa_saturated_factor_diet: 1, fa_mono_factor_diet: 1, fa_poly_factor_diet: 1, cholesterol_factor_diet: 1, salt_factor_diet: 1, calcium_factor_diet: 1, copper_factor_diet: 1, iron_factor_diet: 1, magnesium_factor_diet: 1, manganese_factor_diet: 1, phosphorus_factor_diet: 1, potassium_factor_diet: 1, sodium_factor_diet: 1, zinc_factor_diet: 1, retinol_factor_diet: 1, beta_carotene_factor_diet: 1, vitamin_d_factor_diet: 1, vitamin_e_factor_diet: 1, vitamin_c_factor_diet: 1, vitamin_b1_factor_diet: 1, vitamin_b2_factor_diet: 1, vitamin_b3_factor_diet: 1, vitamin_b5_factor_diet: 1, vitamin_b6_factor_diet: 1, vitamin_b9_factor_diet: 1, vitamin_b12_factor_diet: 1)
 puts "Created diets"
 
@@ -105,13 +105,13 @@ end
 
 # Diet Recipes
 
-# DietRecipe.create(recipe: Recipe.where(name: "High protein breakfast").first, diet: Diet.where(name: "High Protein").first)
-# DietRecipe.create(recipe: Recipe.where(name: "Creamy courgette lasagne").first, diet: Diet.where(name: "Regular").first)
-# DietRecipe.create(recipe: Recipe.where(name: "Chocolate brownie cake").first, diet: Diet.where(name: "Regular").first)
-# DietRecipe.create(recipe: Recipe.where(name: "Indian chicken protein pots").first, diet: Diet.where(name: "High Protein").first)
-# DietRecipe.create(recipe: Recipe.where(name: "Moroccan chickpea soup").first, diet: Diet.where(name: "Low Carb").first)
-# DietRecipe.create(recipe: Recipe.where(name: "Mushroom risotto").first, diet: Diet.where(name: "Low Sodium").first)
-# puts "Created diet recipes"
+csv_filepath_diet_recipes = Rails.root.join('lib', 'seeds', 'diet_recipes.csv')
+csv_diet_recipes = CSV.parse(File.open(csv_filepath_diet_recipes, "r:windows-1251:utf-8"), headers: true)
+csv_diet_recipes.each do |row|
+  diet_recipe = DietRecipe.create(recipe: Recipe.where(name: row["recipe_name"]).first, diet: Diet.where(name: row["diet_name"]).first)
+end
+puts "Created diet recipes"
+
 
 puts "check models counts"
 
@@ -122,4 +122,4 @@ puts "diet: #{Diet.count}"
 puts "food_item: #{FoodItem.count}"
 puts "recipe: #{Recipe.count}"
 puts "ingr: #{Ingredient.count}"
-
+puts "diet_recipes: #{DietRecipe.count}"

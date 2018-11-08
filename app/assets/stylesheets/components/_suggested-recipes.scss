@@ -26,11 +26,13 @@
 }
 
 .suggested-recipes-list {
+  height: 300px;
   padding-left: 12%;
-  padding-top: 20px;
+  margin-top: 15px;
   padding-bottom: 10px;
-  display: flex;
   flex-direction: column;
+  overflow: scroll;
+  height: 80%;
 }
 
 .suggested-recipe {
@@ -38,6 +40,7 @@
   display: flex;
   padding-top: 5px;
   padding-bottom: 10px;
+  height: 70px;
 }
 
 .suggested-recipe-icon {
@@ -65,12 +68,14 @@
 
 .suggested-recipe-nutrient-side{
   padding: 1%;
+  height: 85%;
 }
 
 .suggested-recipe-nutrients {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .button-row {
@@ -87,3 +92,20 @@
 .back-button:hover{
   cursor: pointer;
 }
+
+.recipe-card-tracker.dashboard-suggested-recipes{
+  justify-content: unset;
+  width: 75%;
+  overflow: scroll;
+  padding: 0px;
+}
+
+.suggested-recipes-list.suggested-recipe-nutrient-side{
+  overflow: unset;
+}
+
+div.recipe-card-tracker.dashboard-suggested-recipes > div.recipe-card-nutrient{
+  margin-bottom: 2%;
+}
+
+

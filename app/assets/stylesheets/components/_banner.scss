@@ -175,3 +175,13 @@ align-items: center;
 .orange-spot {
   background-color: $medium-orange;
 }
+
+.large-logo-banner-edit{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  height: 15vh;
+  background-color: white;
+}
