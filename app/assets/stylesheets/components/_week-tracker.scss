@@ -1,27 +1,25 @@
 .week-graph-card {
-  height: 260px;
+  height: 50vh;
   width: 100%;
   background-color: white;
   border-radius: 3px 3px 0 0;
   border: 1px solid $light-gray;
   border-bottom: none;
   padding: 3% 0;
-  margin-top: 2.4%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#week-graph {
-  flex: 1;
+.week-graph-total {
+  margin-bottom: 10vh;
 }
-
 
 .week-graph-header {
   border: 1px solid $light-gray;
   border-radius: 0 0 3px 3px;
   border-top: none;
-  height: 70px;
+  height: 10vh;
   background-color: rgba(255,255,255,0.7);
   display: flex;
   justify-content: center;
