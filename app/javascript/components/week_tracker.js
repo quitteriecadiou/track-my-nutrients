@@ -9,6 +9,9 @@ function weekTracker() {
 
     let selectedNutrientName = nutrient.querySelector('.nutrient-name').innerHTML
 
+    let showName = document.getElementById('week-nutrient-header');
+    showName.innerHTML = nutrient.querySelector('.tracker-nutrient-name').innerHTML;
+
     let selectedNutrientWeek = document.getElementById("week-".concat(selectedNutrientName));
 
     let nutrientDay0 = selectedNutrientWeek.querySelector('.day_0').innerHTML;
@@ -148,6 +151,8 @@ function barChart(dataNutrients, dataDates, dataColors, ctx ) {
       }],
     },
     options: {
+      maintainAspectRatio: false,
+      responsive: true,
       barPercentage: 0.5,
       legend: {
         display: false

@@ -2,16 +2,16 @@
 
 .circle-tracker {
   width: 100%;
-  height: 350px;
+  height: 60vh;
   background-color: transparent;
   border-radius: 3px;
   border: 1px solid $light-gray;
   padding: 0;
-  margin: 5% 0;
+  margin: 0;
 }
 
 .circle-tracker-progress {
-  height: 280px;
+  height: 50vh;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 .circle-tracker-title {
-  height: 69px;
+  height: 10vh;
   background-color: rgba(255,255,255,0.7);
   display: flex;
   flex-direction: column;
