@@ -1,5 +1,5 @@
 function circleTracker() {
-  const nutrients = document.querySelectorAll(".single-tracker")
+  const nutrients = document.getElementById('nutrient-tracker-values').querySelectorAll(".single-tracker")
 
     const nutrientTitle = document.querySelector(".tracker-nutrient-name").innerHTML
     nutrients[0].querySelector(".tracker-nutrient-name").classList.add("selected");
@@ -31,7 +31,7 @@ function circleTracker() {
 
     event.preventDefault();
 
-    const nutrientsTitle = document.querySelectorAll(".tracker-nutrient-name")
+    const nutrientsTitle = document.getElementById('nutrient-tracker-values').querySelectorAll(".tracker-nutrient-name")
     nutrientsTitle.forEach((nutrientTitle) => {
       nutrientTitle.classList.remove("selected");
     });

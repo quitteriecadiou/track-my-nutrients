@@ -1,0 +1,42 @@
+
+
+  <div class="row nutrient-tracker-body hidden" id="week-tracker-body">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+
+
+        <div id="week-tracker-full">
+          <div class="nutrient-tracker-full">
+            <%= render '/shared/nutrient_tracker/full_tracker', tracker: @tracker_sum, personal_diet: @personal_diet_week, hash_nutrient: ApplicationHelper::HASH_NUTRIENT, unit_conv: ApplicationHelper::UNIT_CONV, nutrients_unit: ApplicationHelper::NUTRIENTS_UNIT, diet_array: ApplicationHelper::DIET_ARRAY%>
+          </div>
+
+          <%  ApplicationHelper::NUTRIENTS.each do |nutrient| %>
+            <div class="week-values hidden" id="<%= "week-#{nutrient}" %>">
+              <% @tracker_week.each do |day, tracker| %>
+                <span class="<%= "#{day}" %> hidden" ><%= (tracker[nutrient.to_sym] / @personal_diet["#{nutrient}_obj_personal".to_sym]) * 100 %></span>
+              <% end %>
+            </div>
+          <% end %>
+
+          <span class="day_1_date hidden"><%= Date.today.prev_day(1).strftime("%a, %d %b") %></span>
+          <span class="day_2_date hidden"><%= Date.today.prev_day(2).strftime("%a, %d %b") %></span>
+          <span class="day_3_date hidden"><%= Date.today.prev_day(3).strftime("%a, %d %b") %></span>
+          <span class="day_4_date hidden"><%= Date.today.prev_day(4).strftime("%a, %d %b") %></span>
+          <span class="day_5_date hidden"><%= Date.today.prev_day(5).strftime("%a, %d %b") %></span>
+          <span class="day_6_date hidden"><%= Date.today.prev_day(6).strftime("%a, %d %b") %></span>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-8">
+        <div class="week-graph-total">
+          <div class="week-graph-content">
+            <div class="week-graph-card">
+              <canvas id="week-graph" style="height: 40vh"></canvas>
+            </div>
+          </div>
+          <div class="week-graph-header">
+            <h4 id="week-nutrient-header"></h4>
+          </div>
+        </div>
+      </div>
+  </div>
+

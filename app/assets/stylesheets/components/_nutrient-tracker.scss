@@ -1,6 +1,7 @@
 .nutrient-tracker-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 70px;
   width: 100%;
   background-color: white;
@@ -22,5 +23,13 @@
   height: 100%;
   padding: 0.75% 3.4%;
   margin: 0;
+}
+
+#day {
+  cursor: pointer;
+}
+
+#week {
+  cursor: pointer;
 }
 
