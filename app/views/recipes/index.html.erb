@@ -22,6 +22,12 @@
 <div class="recipe-list-grey-background">
   <div class="container recipe-card-container">
     <div class="recipe-list-gray-line"></div>
+    <div class="row" id="create-a-recipe-btn-area">
+        <%= link_to new_recipe_path do %>
+          <div class="btn btn-action btn-large btn-medium-green reset-btn">CREATE A RECIPE
+          </div>
+        <% end %>
+    </div>
     <div class="row">
       <% @recipes.each do |recipe| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
