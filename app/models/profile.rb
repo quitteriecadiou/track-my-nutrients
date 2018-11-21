@@ -80,8 +80,17 @@ class Profile < ApplicationRecord
       suggested_recipes << Recipe.find(recipe_id)
     end
 
+    if meals == 0
+      final_suggested_recipes = suggested_recipes.select {|recipe| recipe.categories.include?(Category.where(name: "breakfast").first) }
+    elsif meals == 1
+      final_suggested_recipes = suggested_recipes.select {|recipe| recipe.categories.include?(Category.where(name: "lunch").first) }
+    elsif meals == 2
+      final_suggested_recipes = suggested_recipes.select {|recipe| recipe.categories.include?(Category.where(name: "dinner").first) }
+    else
+      final_suggested_recipes = suggested_recipes.select {|recipe| recipe.categories.include?(Category.where(name: "snack").first) }
+    end
 
-    return suggested_recipes.first(8)
+    return final_suggested_recipes.first(8)
     # tracker = AddedRecipe.tracker(added_recipes)
     # recipes.where("protein_per_portion <= ? and carbohydrate_per_portion <= ? and calcium_per_portion <= ? and sodium_per_portion <= ?",
     #               personal_diet[:protein_obj_personal] - tracker[:protein] < 0 ? 0 : personal_diet[:protein_obj_personal] - tracker[:protein],
