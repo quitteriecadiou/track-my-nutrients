@@ -24,7 +24,15 @@ class Profile < ApplicationRecord
       id_recipes_done << recipe.recipe_id
     end
 
-
+    # Number of meals in food diary
+    meals = id_recipes_done.count
+    # We use a factor to split the objective in three (considering there are three meals in a day)
+    # For the first meal of the day, we only want to reach 1/3 of the daily objective
+    if meals < 3
+      k = (meals + 1).fdiv(3)
+    else
+      k = 1
+    end
 
     # Main condition: only recipes where focus nutrient objective (protein, sodium or carb) will not be exceeded
     if diet.name == "High Protein"
@@ -37,30 +45,38 @@ class Profile < ApplicationRecord
       approved_recipes = recipes.where.not(id: id_recipes_done)
     end
 
-
     recipe_scores = {}
 
     approved_recipes.each do |recipe|
       recipe_score = 0
       NUTRIENTS.each do |nutrient|
-        nutrient_score = (nutrients_obj["#{nutrient}_obj_personal".to_sym] - (nutrients_eaten[nutrient.to_sym] + recipe["#{nutrient}_per_portion".to_sym])) / nutrients_obj["#{nutrient}_obj_personal".to_sym]
-        if nutrient_score < 0
-          updated_nutrient_score = (nutrients_obj["#{nutrient}_obj_personal".to_sym] * NUTRIENTS_UL[nutrient.to_sym] - (nutrients_eaten[nutrient.to_sym] + recipe["#{nutrient}_per_portion".to_sym])) / (nutrients_obj["#{nutrient}_obj_personal".to_sym] * NUTRIENTS_UL[nutrient.to_sym])
-          nutrient_score = 0 if updated_nutrient_score > 0
+        revised_obj_upper = nutrients_obj["#{nutrient}_obj_personal".to_sym]*k*1.2
+        revised_obj_lower = nutrients_obj["#{nutrient}_obj_personal".to_sym]*k*0.8
+        recipe_add = nutrients_eaten[nutrient.to_sym] + recipe["#{nutrient}_per_portion".to_sym]
+        if recipe_add > revised_obj_lower && recipe_add < revised_obj_upper
+          recipe_score += 1
         end
-        recipe_score += nutrient_score * NUTRIENTS_WEIGHT[nutrient.to_sym]
+        recipe_scores[recipe.id] = recipe_score
       end
-      recipe_score = recipe_score / NUTRIENTS.count
-      recipe_scores[recipe.id] = recipe_score
+
+
+      #   nutrient_score = (nutrients_obj["#{nutrient}_obj_personal".to_sym] - (nutrients_eaten[nutrient.to_sym] + recipe["#{nutrient}_per_portion".to_sym])) / nutrients_obj["#{nutrient}_obj_personal".to_sym]
+      #   if nutrient_score < 0
+      #     updated_nutrient_score = (nutrients_obj["#{nutrient}_obj_personal".to_sym] * NUTRIENTS_UL[nutrient.to_sym] - (nutrients_eaten[nutrient.to_sym] + recipe["#{nutrient}_per_portion".to_sym])) / (nutrients_obj["#{nutrient}_obj_personal".to_sym] * NUTRIENTS_UL[nutrient.to_sym])
+      #     nutrient_score = 0 if updated_nutrient_score > 0
+      #   end
+      #   recipe_score += nutrient_score * NUTRIENTS_WEIGHT[nutrient.to_sym]
+      # recipe_score = recipe_score / NUTRIENTS.count
+      # recipe_scores[recipe.id] = recipe_score
     end
 
     recipe_scores.delete_if {|recipe_id, recipe_score| recipe_score < 0 }
 
-    recipe_scores.sort_by {|recipe_id, recipe_score| recipe_score }
+    sorted_recipe_scores = recipe_scores.sort_by {|recipe_id, recipe_score| -recipe_score }
 
     suggested_recipes = []
 
-    recipe_scores.each do |recipe_id, recipe_score|
+    sorted_recipe_scores.to_h.each do |recipe_id, recipe_score|
       suggested_recipes << Recipe.find(recipe_id)
     end
 

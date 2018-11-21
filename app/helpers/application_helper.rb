@@ -1,5 +1,5 @@
 module ApplicationHelper
-  NUTRIENTS = ["protein", "carbohydrate", "fat", "sugars", "fibres", "fa_saturated", "fa_mono", "fa_poly", "cholesterol", "salt", "calcium", "copper", "iron", "magnesium", "manganese", "phosphorus", "potassium", "sodium", "zinc", "retinol", "beta_carotene", "vitamin_d", "vitamin_e", "vitamin_c", "vitamin_b1", "vitamin_b2", "vitamin_b3", "vitamin_b5", "vitamin_b6", "vitamin_b9", "vitamin_b12"]
+  NUTRIENTS = ["protein", "carbohydrate", "fat", "sugars", "fibres", "fa_saturated", "fa_mono", "fa_poly", "salt", "calcium", "copper", "iron", "magnesium", "manganese", "phosphorus", "potassium", "sodium", "zinc", "retinol", "beta_carotene", "vitamin_e", "vitamin_c", "vitamin_b1", "vitamin_b2", "vitamin_b3", "vitamin_b5", "vitamin_b6", "vitamin_b9", "vitamin_b12"]
 
 
   NUTRIENTS_UNIT = { protein: "g",
@@ -10,7 +10,6 @@ module ApplicationHelper
                      fa_saturated: "g",
                      fa_mono: "g",
                      fa_poly: "g",
-                     cholesterol: "mg",
                      salt: "g",
                      calcium: "mg",
                      copper: "mg",
@@ -23,7 +22,6 @@ module ApplicationHelper
                      zinc: "mg",
                      retinol: "µg",
                      beta_carotene: "µg",
-                     vitamin_d: "µg",
                      vitamin_e: "mg",
                      vitamin_c: "mg",
                      vitamin_b1: "mg",
@@ -41,19 +39,19 @@ module ApplicationHelper
                 µg: 1000 }
 
   DIET_1 = { hash_name: "Regular",
-             nutrients: ["protein","carbohydrate","fat","sugars","fibres","fa_saturated","fa_mono","fa_poly","cholesterol", "salt","calcium", "copper", "iron", "magnesium", "manganese","phosphorus","potassium","sodium","zinc","retinol","beta_carotene","vitamin_d","vitamin_e","vitamin_c","vitamin_b1","vitamin_b2","vitamin_b3","vitamin_b5","vitamin_b6","vitamin_b9","vitamin_b12"]
+             nutrients: ["protein","carbohydrate","fat","sugars","fibres","fa_saturated","fa_mono","fa_poly", "salt","calcium", "copper", "iron", "magnesium", "manganese","phosphorus","potassium","sodium","zinc","retinol","beta_carotene","vitamin_e","vitamin_c","vitamin_b1","vitamin_b2","vitamin_b3","vitamin_b5","vitamin_b6","vitamin_b9","vitamin_b12"]
 };
 
   DIET_2 = { hash_name: "High Protein",
-             nutrients: ["protein","carbohydrate","fat","sugars","fibres","fa_saturated","fa_mono","fa_poly","cholesterol", "salt","calcium", "copper", "iron", "magnesium", "manganese","phosphorus","potassium","sodium","zinc","retinol","beta_carotene","vitamin_d","vitamin_e","vitamin_c","vitamin_b1","vitamin_b2","vitamin_b3","vitamin_b5","vitamin_b6","vitamin_b9","vitamin_b12"]
+             nutrients: ["protein","carbohydrate","fat","sugars","fibres","fa_saturated","fa_mono","fa_poly", "salt","calcium", "copper", "iron", "magnesium", "manganese","phosphorus","potassium","sodium","zinc","retinol","beta_carotene","vitamin_e","vitamin_c","vitamin_b1","vitamin_b2","vitamin_b3","vitamin_b5","vitamin_b6","vitamin_b9","vitamin_b12"]
   };
 
   DIET_3 = { hash_name: "Low Sodium",
-             nutrients: ["sodium","protein","carbohydrate","fat","sugars","fibres","fa_saturated","fa_mono","fa_poly","cholesterol", "salt","calcium", "copper", "iron", "magnesium", "manganese","phosphorus","potassium","zinc","retinol","beta_carotene","vitamin_d","vitamin_e","vitamin_c","vitamin_b1","vitamin_b2","vitamin_b3","vitamin_b5","vitamin_b6","vitamin_b9","vitamin_b12"]
+             nutrients: ["sodium","protein","carbohydrate","fat","sugars","fibres","fa_saturated","fa_mono","fa_poly", "salt","calcium", "copper", "iron", "magnesium", "manganese","phosphorus","potassium","zinc","retinol","beta_carotene","vitamin_e","vitamin_c","vitamin_b1","vitamin_b2","vitamin_b3","vitamin_b5","vitamin_b6","vitamin_b9","vitamin_b12"]
   };
 
   DIET_4 = { hash_name: "Low Carb",
-             nutrients: ["carbohydrate","protein","fat","sugars","fibres","fa_saturated","fa_mono","fa_poly","cholesterol", "salt","calcium", "copper", "iron", "magnesium", "manganese","phosphorus","potassium","sodium","zinc","retinol","beta_carotene","vitamin_d","vitamin_e","vitamin_c","vitamin_b1","vitamin_b2","vitamin_b3","vitamin_b5","vitamin_b6","vitamin_b9","vitamin_b12"]
+             nutrients: ["carbohydrate","protein","fat","sugars","fibres","fa_saturated","fa_mono","fa_poly", "salt","calcium", "copper", "iron", "magnesium", "manganese","phosphorus","potassium","sodium","zinc","retinol","beta_carotene","vitamin_e","vitamin_c","vitamin_b1","vitamin_b2","vitamin_b3","vitamin_b5","vitamin_b6","vitamin_b9","vitamin_b12"]
   };
 
   DIET_ARRAY = [DIET_1, DIET_2, DIET_3, DIET_4]
@@ -68,7 +66,6 @@ module ApplicationHelper
     fat: "Fat",
     iron: "Iron",
     manganese: "Manganese",
-    cholesterol: "Cholesterol",
     sugars: "Sugar",
     fibres: "Fibres",
     fa_saturated: "Saturated Fat",
@@ -81,7 +78,6 @@ module ApplicationHelper
     zinc: "Zinc",
     retinol: "Retinol",
     vitamin_c: "Vitamin C",
-    vitamin_d: "Vitamin D",
     vitamin_e: "Vitamin E",
     phosphorus: "Phosphorus",
     vitamin_b1: "Vitamin B1",
@@ -91,5 +87,40 @@ module ApplicationHelper
     vitamin_b6: "Vitamin B6",
     vitamin_b9: "Vitamin B9",
     vitamin_b12: "Vitamin B12"
+  }
+
+
+  NUTRIENTS_UL = {
+    protein: 1,
+    carbohydrate: 1,
+    fat: 1,
+    sugars: 1,
+    fibres: 1.2,
+    fa_saturated: 1,
+    fa_mono: 1,
+    fa_poly: 1,
+    cholesterol: 1,
+    salt: 1,
+    calcium: 2,
+    copper: 1,
+    iron: 2,
+    magnesium: 2,
+    manganese: 2,
+    phosphorus: 2,
+    potassium: 2,
+    sodium: 2,
+    zinc: 2,
+    retinol: 1,
+    beta_carotene: 2,
+    vitamin_d: 2,
+    vitamin_e: 1,
+    vitamin_c: 2,
+    vitamin_b1: 2,
+    vitamin_b2: 2,
+    vitamin_b3: 2,
+    vitamin_b5: 2,
+    vitamin_b6: 2,
+    vitamin_b9: 2,
+    vitamin_b12: 1.5
   }
 end

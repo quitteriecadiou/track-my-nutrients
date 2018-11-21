@@ -39,7 +39,7 @@ class ApplicationRecord < ActiveRecord::Base
   }
 
   NUTRIENTS_WEIGHT = {
-    protein: 1,
+    protein: 3,
     carbohydrate: 1,
     fat: 1,
     sugars: 1,
