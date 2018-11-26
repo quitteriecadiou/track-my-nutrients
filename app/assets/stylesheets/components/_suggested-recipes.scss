@@ -76,6 +76,7 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  justify-content: space-around;
 }
 
 .button-row {
@@ -98,6 +99,7 @@
   width: 75%;
   overflow: scroll;
   padding: 0px;
+  height: 65%;
 }
 
 .suggested-recipes-list.suggested-recipe-nutrient-side{
